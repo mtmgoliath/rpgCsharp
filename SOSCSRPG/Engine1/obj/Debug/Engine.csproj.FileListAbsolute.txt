@@ -1,0 +1,6 @@
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\Engine1\bin\Debug\Engine1.dll
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\Engine1\bin\Debug\Engine1.pdb
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\Engine1\obj\Debug\Engine.csproj.AssemblyReference.cache
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\Engine1\obj\Debug\Engine.csproj.CoreCompileInputs.cache
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\Engine1\obj\Debug\Engine1.dll
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\Engine1\obj\Debug\Engine1.pdb
