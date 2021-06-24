@@ -15,3 +15,5 @@ C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\WPFUI\obj\Debug\WPFUI.pdb
 C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\WPFUI\obj\Debug\WPFUI.csproj.CopyComplete
 C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\WPFUI\bin\Debug\Engine.dll
 C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\WPFUI\bin\Debug\Engine.pdb
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\WPFUI\obj\Debug\TradeScreen.baml
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\WPFUI\obj\Debug\TradeScreen.g.cs

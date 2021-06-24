@@ -1,50 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Engine.Models
+﻿namespace Engine.Models
 {
-    public class Monster : BaseNotificationClass
+    public class Monster : LivingEntity
     {
-        private int _hitPoints;
+        public string ImageName { get; }
+        public int MinimumDamage { get; }
+        public int MaximumDamage { get; }
 
-        public string Name { get; private set; }
-        public string ImageName { get; set; }
-        public int MaximumHitPoints { get; private set; }
-        public int HitPoints
-        {
-            get { return _hitPoints; }
-            set
-            {
-                _hitPoints = value;
-                OnPropertyChanged(nameof(HitPoints));
-            }
-        }
-        public int MinimumDamage { get; set; }
-        public int MaximumDamage { get; set; }
-
-        public int RewardExperiencePoints { get; private set; }
-        public int RewardGold { get; private set; }
-
-        public ObservableCollection<ItemQuantity> Inventory { get; set; }
+        public int RewardExperiencePoints { get; }
 
         public Monster(string name, string imageName,
-            int maximumHitPoints, int hitPoints, int minimumDamage, int maximumDamage,
-            int rewardExperiencePoints, int rewardGold)
+                       int maximumHitPoints, int currentHitPoints,
+                       int minimumDamage, int maxmumDamage,
+                       int rewardExperiencePoints, int gold) :
+            base(name, maximumHitPoints, currentHitPoints, gold)
         {
-            Name = name;
             ImageName = $"/Engine;component/Images/Monsters/{imageName}";
-            MaximumHitPoints = maximumHitPoints;
-            HitPoints = hitPoints;
             MinimumDamage = minimumDamage;
-            MaximumDamage = maximumDamage;
+            MaximumDamage = maxmumDamage;
             RewardExperiencePoints = rewardExperiencePoints;
-            RewardGold = rewardGold;
-
-            Inventory = new ObservableCollection<ItemQuantity>();
         }
     }
 }
