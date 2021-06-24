@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Collections.Generic;
+using System.Linq;
 using Engine.Models;
 using Engine.Factories;
 
@@ -104,6 +105,17 @@ namespace Engine.ViewModel
             if (HasLocationToWest)
             {
                 CurrentLocation = CurrentWorld.LocationAt(CurrentLocation.XCoordinate - 1, CurrentLocation.YCoordinate);
+            }
+        }
+
+        public void GivePlayerQuestsAtLocation()
+        {
+            foreach (Quest quest in CurrentLocation.QuestsAvailableHere)
+            {
+                if (!CurrentPlayer.Quests.Any(q => q.PlayerQuest.ID == quest.ID))
+                {
+                    CurrentPlayer.Quests.Add(new QuestStatus(quest));
+                }
             }
         }
 
