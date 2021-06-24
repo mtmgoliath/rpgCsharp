@@ -72,7 +72,7 @@ namespace WPFUI {
             {
             case 1:
             
-            #line 127 "..\..\MainWindow.xaml"
+            #line 146 "..\..\MainWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.OnClick_MoveNorth);
             
             #line default
@@ -80,7 +80,7 @@ namespace WPFUI {
             return;
             case 2:
             
-            #line 132 "..\..\MainWindow.xaml"
+            #line 151 "..\..\MainWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.OnClick_MoveWest);
             
             #line default
@@ -88,7 +88,7 @@ namespace WPFUI {
             return;
             case 3:
             
-            #line 137 "..\..\MainWindow.xaml"
+            #line 156 "..\..\MainWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.OnClick_MoveEast);
             
             #line default
@@ -96,7 +96,7 @@ namespace WPFUI {
             return;
             case 4:
             
-            #line 142 "..\..\MainWindow.xaml"
+            #line 161 "..\..\MainWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.OnClick_MoveSouth);
             
             #line default
