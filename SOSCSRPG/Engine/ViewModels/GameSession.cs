@@ -4,24 +4,43 @@ using System.Linq;
 using Engine.Models;
 using Engine.Factories;
 
-namespace Engine.ViewModel
+namespace Engine.ViewModels
 {
     public class GameSession : BaseNotificationClass
     {
         private Location _currentLocation;
+        private Monster _currentMonster;
+
         public World CurrentWorld { get; set; }
         public Player CurrentPlayer { get; set; }
-        public Location CurrentLocation 
+
+        public Location CurrentLocation
         {
             get { return _currentLocation; }
-            set 
+            set
             {
                 _currentLocation = value;
+
                 OnPropertyChanged(nameof(CurrentLocation));
                 OnPropertyChanged(nameof(HasLocationToNorth));
                 OnPropertyChanged(nameof(HasLocationToEast));
                 OnPropertyChanged(nameof(HasLocationToWest));
                 OnPropertyChanged(nameof(HasLocationToSouth));
+
+                GivePlayerQuestsAtLocation();
+                GetMonsterAtLocation();
+            }
+        }
+
+        public Monster CurrentMonster
+        {
+            get { return _currentMonster; }
+            set
+            {
+                _currentMonster = value;
+
+                OnPropertyChanged(nameof(CurrentMonster));
+                OnPropertyChanged(nameof(HasMonster));
             }
         }
 
@@ -57,19 +76,19 @@ namespace Engine.ViewModel
             }
         }
 
+        public bool HasMonster => CurrentMonster != null;
 
         public GameSession()
         {
-            
-            CurrentPlayer = new Player { Name = "Ivar Wolfsbane",
-            CharacterClass = "Fighter",
-            HitPoints = 10,
-            Gold = 1000000,
-            ExperiencePoints = 0,
-            Level = 1
-        };
-        
-
+            CurrentPlayer = new Player
+            {
+                Name = "Scott",
+                CharacterClass = "Fighter",
+                HitPoints = 10,
+                Gold = 1000000,
+                ExperiencePoints = 0,
+                Level = 1
+            };
 
             CurrentWorld = WorldFactory.CreateWorld();
 
@@ -78,7 +97,7 @@ namespace Engine.ViewModel
 
         public void MoveNorth()
         {
-            if(HasLocationToNorth)
+            if (HasLocationToNorth)
             {
                 CurrentLocation = CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate + 1);
             }
@@ -95,7 +114,7 @@ namespace Engine.ViewModel
         public void MoveSouth()
         {
             if (HasLocationToSouth)
-            { 
+            {
                 CurrentLocation = CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate - 1);
             }
         }
@@ -108,7 +127,7 @@ namespace Engine.ViewModel
             }
         }
 
-        public void GivePlayerQuestsAtLocation()
+        private void GivePlayerQuestsAtLocation()
         {
             foreach (Quest quest in CurrentLocation.QuestsAvailableHere)
             {
@@ -119,7 +138,10 @@ namespace Engine.ViewModel
             }
         }
 
+        private void GetMonsterAtLocation()
+        {
+            CurrentMonster = CurrentLocation.GetMonster();
+        }
     }
 }
-
 
