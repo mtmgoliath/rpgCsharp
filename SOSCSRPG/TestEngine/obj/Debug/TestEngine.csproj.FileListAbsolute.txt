@@ -1,0 +1,16 @@
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\bin\Debug\TestEngine.dll
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\bin\Debug\TestEngine.pdb
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\bin\Debug\Engine.dll
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\bin\Debug\Engine.pdb
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\obj\Debug\TestEngine.csproj.AssemblyReference.cache
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\obj\Debug\TestEngine.csproj.CoreCompileInputs.cache
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\obj\Debug\TestEngine.csproj.CopyComplete
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\obj\Debug\TestEngine.dll
+C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\obj\Debug\TestEngine.pdb
