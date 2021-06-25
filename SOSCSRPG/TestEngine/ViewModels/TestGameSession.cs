@@ -1,6 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using Engine.ViewModels;
+﻿using Engine.ViewModels;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TestEngine.ViewModels
 {
@@ -13,8 +12,8 @@ namespace TestEngine.ViewModels
             GameSession gameSession = new GameSession();
 
             Assert.IsNotNull(gameSession.CurrentPlayer);
-            Assert.AreEqual("Town square", gameSession.CurrentLocation.Name);
-       }
+            Assert.AreEqual("Town Square", gameSession.CurrentLocation.Name);
+        }
 
         [TestMethod]
         public void TestPlayerMovesHomeAndIsCompletelyHealedOnKilled()
@@ -22,10 +21,9 @@ namespace TestEngine.ViewModels
             GameSession gameSession = new GameSession();
 
             gameSession.CurrentPlayer.TakeDamage(999);
-                        
+
             Assert.AreEqual("Home", gameSession.CurrentLocation.Name);
             Assert.AreEqual(gameSession.CurrentPlayer.Level * 10, gameSession.CurrentPlayer.CurrentHitPoints);
         }
-
     }
 }
