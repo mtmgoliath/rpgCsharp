@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Engine.Services;
+using Newtonsoft.Json;
 
 namespace Engine.Models
 {
@@ -17,9 +19,12 @@ namespace Engine.Models
         private GameItem _currentConsumable;
         private Inventory _inventory;
 
+        public ObservableCollection<PlayerAttribute> Attributes { get; } =
+            new ObservableCollection<PlayerAttribute>();
+
         public string Name
         {
-            get { return _name; }
+            get => _name;
             private set
             {
                 _name = value;
@@ -29,7 +34,7 @@ namespace Engine.Models
 
         public int CurrentHitPoints
         {
-            get { return _currentHitPoints; }
+            get => _currentHitPoints;
             private set
             {
                 _currentHitPoints = value;
@@ -39,7 +44,7 @@ namespace Engine.Models
 
         public int MaximumHitPoints
         {
-            get { return _maximumHitPoints; }
+            get => _maximumHitPoints;
             protected set
             {
                 _maximumHitPoints = value;
@@ -49,7 +54,7 @@ namespace Engine.Models
 
         public int Gold
         {
-            get { return _gold; }
+            get => _gold;
             private set
             {
                 _gold = value;
@@ -59,7 +64,7 @@ namespace Engine.Models
 
         public int Level
         {
-            get { return _level; }
+            get => _level;
             protected set
             {
                 _level = value;
@@ -79,7 +84,7 @@ namespace Engine.Models
 
         public GameItem CurrentWeapon
         {
-            get { return _currentWeapon; }
+            get => _currentWeapon;
             set
             {
                 if (_currentWeapon != null)
@@ -119,7 +124,10 @@ namespace Engine.Models
             }
         }
 
-        public bool IsDead => CurrentHitPoints <= 0;
+        [JsonIgnore]
+        public bool IsAlive => CurrentHitPoints > 0;
+        [JsonIgnore]
+        public bool IsDead => !IsAlive;
 
         #endregion
 
@@ -127,13 +135,18 @@ namespace Engine.Models
         public event EventHandler OnKilled;
 
         protected LivingEntity(string name, int maximumHitPoints, int currentHitPoints,
-                               int gold, int level = 1)
+                               IEnumerable<PlayerAttribute> attributes, int gold, int level = 1)
         {
             Name = name;
             MaximumHitPoints = maximumHitPoints;
             CurrentHitPoints = currentHitPoints;
             Gold = gold;
             Level = level;
+
+            foreach (PlayerAttribute attribute in attributes)
+            {
+                Attributes.Add(attribute);
+            }
 
             Inventory = new Inventory();
         }

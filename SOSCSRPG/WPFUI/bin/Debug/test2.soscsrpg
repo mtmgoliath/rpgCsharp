@@ -1,0 +1,68 @@
+{
+  "Version": "0.1.000",
+  "CurrentPlayer": {
+    "CharacterClass": "Fighter",
+    "ExperiencePoints": 25,
+    "Quests": [
+      {
+        "PlayerQuest": {
+          "ID": 1
+        },
+        "IsCompleted": false
+      }
+    ],
+    "Recipes": [
+      {
+        "ID": 1
+      }
+    ],
+    "Name": "Scott",
+    "Dexterity": 9,
+    "CurrentHitPoints": 10,
+    "MaximumHitPoints": 10,
+    "Gold": 1000005,
+    "Level": 1,
+    "Inventory": {
+      "Items": [
+        {
+          "ItemTypeID": 1001
+        },
+        {
+          "ItemTypeID": 2001
+        },
+        {
+          "ItemTypeID": 3001
+        },
+        {
+          "ItemTypeID": 3002
+        },
+        {
+          "ItemTypeID": 3003
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9001
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9002
+        }
+      ]
+    },
+    "CurrentWeapon": {
+      "ItemTypeID": 1001
+    },
+    "CurrentConsumable": null
+  },
+  "CurrentLocation": {
+    "XCoordinate": 0,
+    "YCoordinate": 1
+  }
+}
