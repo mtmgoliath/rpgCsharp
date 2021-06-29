@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -30,16 +31,23 @@ namespace Engine.Models
         public ObservableCollection<Recipe> Recipes { get; } =
             new ObservableCollection<Recipe>();
 
+        public new ObservableCollection<PlayerAttribute> Attributes { get; set; } =
+            new ObservableCollection<PlayerAttribute>();
+
         #endregion
 
         public event EventHandler OnLeveledUp;
 
         public Player(string name, int experiencePoints,
             int maximumHitPoints, int currentHitPoints,
-            IEnumerable<PlayerAttribute> attributes, int gold) :
+            ObservableCollection<PlayerAttribute> attributes, int gold) :
             base(name, maximumHitPoints, currentHitPoints, attributes, gold)
         {
             ExperiencePoints = experiencePoints;
+            foreach (PlayerAttribute attribute in attributes)
+            {
+                Attributes.Add(attribute);
+            }
         }
 
         public void AddExperience(int experiencePoints)
@@ -68,5 +76,20 @@ namespace Engine.Models
                 OnLeveledUp?.Invoke(this, System.EventArgs.Empty);
             }
         }
+
+        public int GetAttributeModifiedValue(string key)
+        {
+            var tempModValue = 0;
+            foreach ( PlayerAttribute attribute in Attributes)
+            {
+                if (attribute.Key == key)
+                {
+                    tempModValue = attribute.ModifiedValue;
+                }
+
+            }
+            return tempModValue;
+        }
+
     }
 }

@@ -1,14 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Xml;
 using Engine.Models;
 using Engine.Shared;
+using Engine.ViewModels;
 
 namespace Engine.Factories
 {
     public static class TraderFactory
     {
+        //initializing empty collection just to pass into Trader constructor
+        public static ObservableCollection<PlayerAttribute> PlayerAttributes { get; set; } =
+            new ObservableCollection<PlayerAttribute>();
+
         private const string GAME_DATA_FILENAME = ".\\GameData\\Traders.xml";
 
         private static readonly List<Trader> _traders = new List<Trader>();
@@ -34,7 +41,7 @@ namespace Engine.Factories
             {
                 Trader trader =
                     new Trader(node.AttributeAsInt("ID"),
-                               node.SelectSingleNode("./Name")?.InnerText ?? "");
+                               node.SelectSingleNode("./Name")?.InnerText ?? "", PlayerAttributes);
 
                 foreach (XmlNode childNode in node.SelectNodes("./InventoryItems/Item"))
                 {
@@ -52,6 +59,7 @@ namespace Engine.Factories
             }
         }
 
+        
         public static Trader GetTraderByID(int id)
         {
             return _traders.FirstOrDefault(t => t.ID == id);

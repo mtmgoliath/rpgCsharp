@@ -34,7 +34,6 @@ C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\bin\Debug\GameData\Rec
 C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\bin\Debug\GameData\Traders.xml
 C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\bin\Debug\Newtonsoft.Json.dll
 C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\bin\Debug\Newtonsoft.Json.xml
-C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\bin\Debug\TestFiles\SavedGames\Game_0_1_000.soscsrpg
 C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\bin\Debug\TestEngine.dll.config
 C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\bin\Debug\D20Tek.Common.Net47.dll
 C:\Users\mtmgo\source\repos\rpgCsharp\SOSCSRPG\TestEngine\bin\Debug\D20Tek.DiceNotation.Net47.dll

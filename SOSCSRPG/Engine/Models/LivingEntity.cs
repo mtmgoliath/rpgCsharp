@@ -135,7 +135,7 @@ namespace Engine.Models
         public event EventHandler OnKilled;
 
         protected LivingEntity(string name, int maximumHitPoints, int currentHitPoints,
-                               IEnumerable<PlayerAttribute> attributes, int gold, int level = 1)
+                               ObservableCollection<PlayerAttribute>attributes, int gold, int level = 1)
         {
             Name = name;
             MaximumHitPoints = maximumHitPoints;
@@ -217,6 +217,20 @@ namespace Engine.Models
         public void RemoveItemsFromInventory(IEnumerable<ItemQuantity> itemQuantities)
         {
             Inventory = Inventory.RemoveItems(itemQuantities);
+        }
+
+        public int GetAttributeModifiedValue(string key)
+        {
+            var tempModValue = 0;
+            foreach (PlayerAttribute attribute in Attributes)
+            {
+                if (attribute.Key == key)
+                {
+                    tempModValue = attribute.ModifiedValue;
+                }
+
+            }
+            return tempModValue;
         }
 
         #region Private functions

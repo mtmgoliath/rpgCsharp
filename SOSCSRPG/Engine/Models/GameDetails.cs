@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Engine.Models
 {
@@ -8,8 +9,8 @@ namespace Engine.Models
         public string SubTitle { get; set; }
         public string Version { get; set; }
 
-        public List<PlayerAttribute> PlayerAttributes { get; } =
-            new List<PlayerAttribute>();
+        public ObservableCollection<PlayerAttribute> PlayerAttributes { get; set; } =
+            new ObservableCollection<PlayerAttribute>();
         public List<Race> Races { get; } =
             new List<Race>();
 

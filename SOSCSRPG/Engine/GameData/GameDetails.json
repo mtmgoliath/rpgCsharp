@@ -9,13 +9,8 @@
       "DiceNotation": "3d6"
     },
     {
-      "Key": "INT",
-      "DisplayName": "Intelligence",
-      "DiceNotation": "3d6"
-    },
-    {
-      "Key": "WIS",
-      "DisplayName": "Wisdom",
+      "Key": "DEX",
+      "DisplayName": "Dexterity",
       "DiceNotation": "3d6"
     },
     {
@@ -24,8 +19,13 @@
       "DiceNotation": "3d6"
     },
     {
-      "Key": "DEX",
-      "DisplayName": "Dexterity",
+      "Key": "INT",
+      "DisplayName": "Intelligence",
+      "DiceNotation": "3d6"
+    },
+    {
+      "Key": "WIS",
+      "DisplayName": "Wisdom",
       "DiceNotation": "3d6"
     },
     {

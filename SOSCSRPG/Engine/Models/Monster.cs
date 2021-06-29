@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Engine.Factories;
 using Engine.Services;
 
@@ -13,8 +14,11 @@ namespace Engine.Models
         public string ImageName { get; }
         public int RewardExperiencePoints { get; }
 
+        public new ObservableCollection<PlayerAttribute> Attributes { get; } =
+            new ObservableCollection<PlayerAttribute>();
+
         public Monster(int id, string name, string imageName,
-                       int maximumHitPoints, IEnumerable<PlayerAttribute> attributes,
+                       int maximumHitPoints, ObservableCollection<PlayerAttribute> attributes,
                        GameItem currentWeapon,
                        int rewardExperiencePoints, int gold) :
             base(name, maximumHitPoints, maximumHitPoints, attributes, gold)
@@ -23,6 +27,7 @@ namespace Engine.Models
             ImageName = imageName;
             CurrentWeapon = currentWeapon;
             RewardExperiencePoints = rewardExperiencePoints;
+            Attributes = attributes;
         }
 
         public void AddItemToLootTable(int id, int percentage)
@@ -54,6 +59,20 @@ namespace Engine.Models
             }
 
             return newMonster;
+        }
+
+        public int GetAttributeModifiedValue(string key)
+        {
+            var tempModValue = 0;
+            foreach (PlayerAttribute attribute in Attributes)
+            {
+                if (attribute.Key == key)
+                {
+                    tempModValue = attribute.ModifiedValue;
+                }
+
+            }
+            return tempModValue;
         }
     }
 }

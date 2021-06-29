@@ -1,0 +1,109 @@
+{
+  "CurrentPlayer": {
+    "ExperiencePoints": 25,
+    "Quests": [
+      {
+        "PlayerQuest": {
+          "ID": 1
+        },
+        "IsCompleted": false
+      }
+    ],
+    "Recipes": [
+      {
+        "ID": 1
+      }
+    ],
+    "Attributes": [
+      {
+        "Key": "STR",
+        "DisplayName": "Strength",
+        "DiceNotation": "3d6",
+        "BaseValue": 15,
+        "ModifiedValue": 15
+      },
+      {
+        "Key": "INT",
+        "DisplayName": "Intelligence",
+        "DiceNotation": "3d6",
+        "BaseValue": 11,
+        "ModifiedValue": 11
+      },
+      {
+        "Key": "WIS",
+        "DisplayName": "Wisdom",
+        "DiceNotation": "3d6",
+        "BaseValue": 5,
+        "ModifiedValue": 5
+      },
+      {
+        "Key": "CON",
+        "DisplayName": "Constitution",
+        "DiceNotation": "3d6",
+        "BaseValue": 7,
+        "ModifiedValue": 8
+      },
+      {
+        "Key": "DEX",
+        "DisplayName": "Dexterity",
+        "DiceNotation": "3d6",
+        "BaseValue": 10,
+        "ModifiedValue": 10
+      },
+      {
+        "Key": "CHA",
+        "DisplayName": "Charisma",
+        "DiceNotation": "3d6",
+        "BaseValue": 10,
+        "ModifiedValue": 10
+      }
+    ],
+    "Name": "Jim",
+    "CurrentHitPoints": 10,
+    "MaximumHitPoints": 10,
+    "Gold": 15,
+    "Level": 1,
+    "Inventory": {
+      "Items": [
+        {
+          "ItemTypeID": 1001
+        },
+        {
+          "ItemTypeID": 2001
+        },
+        {
+          "ItemTypeID": 3001
+        },
+        {
+          "ItemTypeID": 3002
+        },
+        {
+          "ItemTypeID": 3003
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        }
+      ]
+    },
+    "CurrentWeapon": {
+      "ItemTypeID": 1001
+    },
+    "CurrentConsumable": null
+  },
+  "CurrentLocation": {
+    "XCoordinate": 0,
+    "YCoordinate": -1
+  }
+}
