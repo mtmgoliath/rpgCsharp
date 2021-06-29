@@ -1,0 +1,667 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>D20Tek.DiceNotation.Net47</name>
+    </assembly>
+    <members>
+        <member name="T:D20Tek.DiceNotation.Dice">
+            <summary>
+            Dice class for manipulation of variable die rolls and modifiers.
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.Dice.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.DiceNotation.Dice"/> class.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.Dice.Configuration">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.Dice.Clear">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.Dice.Constant(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.Dice.D20Tek#DiceNotation#IDice#Dice(System.Int32,System.Int32,System.Double,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.Dice.FudgeDice(System.Int32,System.Nullable{System.Int32})">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.Dice.Concat(D20Tek.DiceNotation.IDice)">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.Dice.Roll(System.String,D20Tek.DiceNotation.IDieRoller)">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.Dice.Roll(D20Tek.DiceNotation.IDieRoller)">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.Dice.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:D20Tek.DiceNotation.DiceConfiguration">
+            <summary>
+            Class to encapsulate dice configuration which allows users to customize
+            some of the default behavior of the DiceNotation system.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DiceConfiguration.HasBoundedResult">
+            <summary>
+            Gets or sets a value indicating whether these dice have their results bounded to 1 or greater.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DiceConfiguration.BoundedResultMinimum">
+            <summary>
+            Gets or sets the value for the bounded minimum.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DiceConfiguration.DefaultDieSides">
+            <summary>
+            Gets or sets the defualt sides of dice to use when it's omitted from dice notation.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DiceConfiguration.DefaultDieRoller">
+            <inheritdoc/>
+        </member>
+        <member name="T:D20Tek.DiceNotation.DiceParser">
+            <summary>
+            Class to parse dice notation string expressions and convert the
+            expression into Dice instance.
+            </summary>
+            <summary>
+            Class to parse dice notation string expressions and convert the
+            expression into Dice instance.
+            </summary>
+            <summary>
+            Class to parse dice notation string expressions and convert the
+            expression into Dice instance.
+            </summary>
+            <summary>
+            Class to parse dice notation string expressions and convert the
+            expression into Dice instance.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DiceParser.Operators">
+            <summary>
+            Gets the list of math operators for this parser. Order in the list signifies order of operations.
+            Caller can customize the operators list by adding/removing elements in the list.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DiceParser.OperatorActions">
+            <summary>
+            Gets the list of operator actions used by this parser. If there is an operator in the operators list,
+            then it should have a corresponding operation here.
+            Caller can customize the operator actions by adding/updating elements in this list.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DiceParser.DefaultOperator">
+            <summary>
+            Gets or sets the default operator to use when there's a missing operator.
+            Basic behavior is the multiplication operator, but can be changed by caller.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DiceParser.GroupStartOperator">
+            <summary>
+            Gets or sets the grouping start operator to use when discovering groups of subexpressions.
+            Basic behavior is the ( operator, but can be changed by caller.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DiceParser.GroupEndOperator">
+            <summary>
+            Gets or sets the grouping end operator to use when discovering groups of subexpressions.
+            Basic behavior is the ) operator, but can be changed by caller.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DiceParser.DefaultNumDice">
+            <summary>
+            Gets or sets the default number of dice when nothing is specified (defaults to 1).
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceParser.ChooseLookAhead(System.Collections.Generic.List{System.String},System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Looks ahead in a die expression for the choose operators.
+            </summary>
+            <param name="tokens">Tokenized string expression.</param>
+            <param name="opPosition">current operator position.</param>
+            <param name="numDice">number of dice in expression.</param>
+            <param name="length">length of subexpression.</param>
+            <returns>Returns the value for choose, or null if not specified.</returns>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceParser.ExplodeLookAhead(System.Collections.Generic.List{System.String},System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Looks ahead in a die expression for the choose operators.
+            </summary>
+            <param name="tokens">Tokenized string expression.</param>
+            <param name="opPosition">current operator position.</param>
+            <param name="sides">number of sides in expression.</param>
+            <param name="length">length of subexpression.</param>
+            <returns>Returns the value for choose, or null if not specified.</returns>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceParser.EvaluateDiceTerm(System.Collections.Generic.List{D20Tek.DiceNotation.TermResult},System.Collections.Generic.List{System.String},D20Tek.DiceNotation.IDieRoller,System.Int32,System.Int32,D20Tek.DiceNotation.DiceTerms.IExpressionTerm)">
+            <summary>
+            Evaluate the term and save the value and results, and updates the token list to
+            reflect the completion of the operation.
+            </summary>
+            <param name="results">List of term results.</param>
+            <param name="tokens">String expression to parse.</param>
+            <param name="dieRoller">Die roller to use.</param>
+            <param name="opPosition">Current operator position in tokens list.</param>
+            <param name="length">length of tokens that were affected.</param>
+            <param name="term">Dice term to evaluate.</param>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceParser.Parse(System.String,D20Tek.DiceNotation.IDiceConfiguration,D20Tek.DiceNotation.IDieRoller)">
+            <summary>
+            Parses the specified dice expression and converts it into a
+            Dice instance to perform oprations on.
+            </summary>
+            <param name="expression">String expression to parse.</param>
+            <param name="config">Dice config to tell whether this result will be bounded or unbounded.</param>
+            <param name="dieRoller">Die roller to use.</param>
+            <returns>Dice result.</returns>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceParser.ParseLogic(System.String,System.Collections.Generic.List{System.String},D20Tek.DiceNotation.IDieRoller)">
+            <summary>
+            Parses the specified list of tokens with appropriate logic to convert
+            it into a Dice instance to evaluate oprations on.
+            </summary>
+            <param name="expression">dice expression rolled.</param>
+            <param name="tokens">String expression to parse.</param>
+            <param name="dieRoller">Die roller to use.</param>
+            <returns>Dice result.</returns>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceParser.HandleBasicOperation(System.Collections.Generic.List{D20Tek.DiceNotation.TermResult},System.Collections.Generic.List{System.String},D20Tek.DiceNotation.IDieRoller)">
+            <summary>
+            Processes through all of the operator and evaluates the tokens for a single strand
+            of values.
+            </summary>
+            <param name="results">List of term results.</param>
+            <param name="tokens">String expression to parse.</param>
+            <param name="dieRoller">Die roller to use.</param>
+            <returns>value of operation total.</returns>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceParser.HandleArithmeticOperators(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Handles specific arithmetic opearations and returns the result of the operation
+            in the token list.
+            </summary>
+            <param name="tokens">String expression to parse.</param>
+            <param name="op">current operator.</param>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceParser.HandleDieOperator(System.Collections.Generic.List{D20Tek.DiceNotation.TermResult},System.Collections.Generic.List{System.String},System.String,D20Tek.DiceNotation.IDieRoller)">
+            <summary>
+            Handles the dice operator and its sub-expressions, and returns the result of the
+            dice rolls in the results list and token value.
+            </summary>
+            <param name="results">List of term results.</param>
+            <param name="tokens">String expression to parse.</param>
+            <param name="op">current operator.</param>
+            <param name="dieRoller">Die roller to use.</param>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceParser.HandleFudgeOperator(System.Collections.Generic.List{D20Tek.DiceNotation.TermResult},System.Collections.Generic.List{System.String},System.String,D20Tek.DiceNotation.IDieRoller)">
+            <summary>
+            Handles the fudge dice operator and its sub-expressions, and returns the result of the
+            dice rolls in the results list and token value.
+            </summary>
+            <param name="results">List of term results.</param>
+            <param name="tokens">String expression to parse.</param>
+            <param name="op">current operator.</param>
+            <param name="dieRoller">Die roller to use.</param>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceParser.Tokenize(System.String)">
+            <summary>
+            Deconstructs the expression string in to the individual tokens that makes
+            up the expression.
+            </summary>
+            <param name="expression">Expression string to parse.</param>
+            <returns>List of the expression tokens.</returns>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceParser.CorrectExpression(System.String)">
+            <summary>
+            Cleanup the expression text to lower case, remove spaces, and replace duplicate operatiors.
+            </summary>
+            <param name="expression">Expression to clean up.</param>
+            <returns>Corrected expression text.</returns>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceParser.TokenizeUnaryOperators(System.String,System.Collections.Generic.List{System.String},System.String@,System.Int32@,System.String)">
+            <summary>
+            Handle processing unary operators and number in the expression and breaking down to the
+            appropriate tokens.
+            </summary>
+            <param name="expression">expression to parse.</param>
+            <param name="tokens">toke list to update.</param>
+            <param name="substring">portion being tokenized.</param>
+            <param name="position">current position in expression.</param>
+            <param name="ch">current character.</param>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceParser.TokenizeNumbers(System.String,System.Collections.Generic.List{System.String},System.String@,System.Int32@,System.String)">
+            <summary>
+            Handle processing numbers in the expression and breaking down to the
+            appropriate tokens.
+            </summary>
+            <param name="expression">expression to parse.</param>
+            <param name="tokens">toke list to update.</param>
+            <param name="substring">portion being tokenized.</param>
+            <param name="position">current position in expression.</param>
+            <param name="ch">current character.</param>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceParser.TokenizeLetters(System.String,System.Collections.Generic.List{System.String},System.String@,System.Int32@,System.String,System.String)">
+            <summary>
+            Handle processing letters in the expression and breaking down to the
+            appropriate tokens.
+            </summary>
+            <param name="expression">expression to parse.</param>
+            <param name="tokens">toke list to update.</param>
+            <param name="substring">portion being tokenized.</param>
+            <param name="position">current position in expression.</param>
+            <param name="ch">current character.</param>
+            <param name="prev">previous character.</param>
+        </member>
+        <member name="T:D20Tek.DiceNotation.DiceTerms.ConstantTerm">
+            <summary>
+            Dice expression term that represents a constant value.
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceTerms.ConstantTerm.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.DiceNotation.DiceTerms.ConstantTerm"/> class.
+            </summary>
+            <param name="constant">Constant value for this term.</param>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceTerms.ConstantTerm.CalculateResults(D20Tek.DiceNotation.IDieRoller)">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceTerms.ConstantTerm.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:D20Tek.DiceNotation.DiceTerms.DiceTerm">
+            <summary>
+            Dice expression term that represents dice roll values.
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceTerms.DiceTerm.#ctor(System.Int32,System.Int32,System.Double,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.DiceNotation.DiceTerms.DiceTerm"/> class.
+            </summary>
+            <param name="numberDice">Number of dice in the expression.</param>
+            <param name="sides">Type of die based on number of sides.</param>
+            <param name="scalar">Scalar multiplier to dice term.</param>
+            <param name="choose">How many dice to use (value should be between 1 and number of dice).</param>
+            <param name="exploding">Exploding threshold for dice re-rolls.</param>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DiceTerms.DiceTerm.FormatResultType">
+            <summary>
+            Gets or sets the format string for ResultTerm type.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DiceTerms.DiceTerm.FormatDiceTermText">
+            <summary>
+            Gets or sets the format string for die operator display text.
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceTerms.DiceTerm.CalculateResults(D20Tek.DiceNotation.IDieRoller)">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceTerms.DiceTerm.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceTerms.DiceTerm.RollTerm(D20Tek.DiceNotation.IDieRoller,System.Int32)">
+            <summary>
+            Performs the actual dice rolls for this term.
+            </summary>
+            <param name="dieRoller">IDieRoller to use.</param>
+            <param name="sides">Number of sides to roll.</param>
+            <returns>Returns rolled value.</returns>
+        </member>
+        <member name="T:D20Tek.DiceNotation.DiceTerms.FudgeDiceTerm">
+            <summary>
+            Fudge dice expression term that represents dice roll values.
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceTerms.FudgeDiceTerm.#ctor(System.Int32,System.Nullable{System.Int32})">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.DiceNotation.DiceTerms.FudgeDiceTerm"/> class.
+            </summary>
+            <param name="numberDice">Number of dice in the expression.</param>
+            <param name="choose">How many dice to use (value should be between 1 and number of dice).</param>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceTerms.FudgeDiceTerm.RollTerm(D20Tek.DiceNotation.IDieRoller,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="T:D20Tek.DiceNotation.DiceTerms.IExpressionTerm">
+            <summary>
+            Interface for all terms in our dice notation expression.
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceTerms.IExpressionTerm.CalculateResults(D20Tek.DiceNotation.IDieRoller)">
+            <summary>
+            Calculates the result for this term using the specified die roller.
+            </summary>
+            <param name="dieRoller">IDieRoller to use for calculation.</param>
+            <returns>List of results for this expression term.</returns>
+        </member>
+        <member name="T:D20Tek.DiceNotation.DieRoller.AggregateDieTrackingData">
+            <summary>
+            Data class to hold aggregate tracking data count per roll result.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DieRoller.AggregateDieTrackingData.RollerType">
+            <summary>
+            Gets or sets the die roller type used in roll.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DieRoller.AggregateDieTrackingData.DieSides">
+            <summary>
+            Gets or sets the number of side on the die.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DieRoller.AggregateDieTrackingData.Result">
+            <summary>
+            Gets or sets the result of the roll.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DieRoller.AggregateDieTrackingData.Count">
+            <summary>
+            Gets or sets the instance count of this roll result.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DieRoller.AggregateDieTrackingData.Percentage">
+            <summary>
+            Gets or sets the percentage of counts of this roll result.
+            </summary>
+        </member>
+        <member name="T:D20Tek.DiceNotation.DieRoller.AggregateRollTracker">
+            <summary>
+            Die roll tracker that only keeps aggregate data and not detailed roll data.
+            It loses some of its auditing of each roll, but better performant and less memory usage.
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.AggregateRollTracker.AddDieRoll(System.Int32,System.Int32,System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.AggregateRollTracker.Clear">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.AggregateRollTracker.GetFrequencyDataView">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.AggregateRollTracker.LoadFromJson(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.AggregateRollTracker.ToJson">
+            <inheritdoc/>
+        </member>
+        <member name="T:D20Tek.DiceNotation.DieRoller.ConstantDieRoller">
+            <summary>
+            Die roller that always returns a constant value.
+            Useful for testing and providing non-random rolls.
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.ConstantDieRoller.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.DiceNotation.DieRoller.ConstantDieRoller"/> class.
+            </summary>
+            <param name="rollValue">Constant roll value to use.</param>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.ConstantDieRoller.Roll(System.Int32,System.Nullable{System.Int32})">
+            <inheritdoc/>
+        </member>
+        <member name="T:D20Tek.DiceNotation.DieRoller.DieRollTracker">
+            <summary>
+            Class for in-memory statistical tracking service for die rolls.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DieRoller.DieRollTracker.TrackerDataLimit">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.DieRollTracker.AddDieRoll(System.Int32,System.Int32,System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.DieRollTracker.GetTrackingDataAsync(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.DieRollTracker.Clear">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.DieRollTracker.ToJsonAsync">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.DieRollTracker.LoadFromJsonAsync(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.DieRollTracker.GetFrequencyDataViewAsync">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.DieRollTracker.GetTrackingData(System.String,System.String)">
+            <summary>
+            Gets the tracking data based on dieType and dieSides filters.
+            </summary>
+            <param name="dieType">die type filter.</param>
+            <param name="dieSides">die sides filter.</param>
+            <returns>List of tracking data.</returns>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.DieRollTracker.GetFrequencyDataView">
+            <summary>
+            Creates the frequency data view for this die roll tracker.
+            </summary>
+            <returns>List of aggregate frequency data.</returns>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.DieRollTracker.GetTrimmedData">
+            <summary>
+            Trims the roll data to the tracker limit and returns the list.
+            </summary>
+            <returns>Limited tracker data list.</returns>
+        </member>
+        <member name="T:D20Tek.DiceNotation.DieRoller.DieTrackingData">
+            <summary>
+            Data class to hold individual tracking data.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DieRoller.DieTrackingData.Id">
+            <summary>
+            Gets or sets id of the entry.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DieRoller.DieTrackingData.RollerType">
+            <summary>
+            Gets or sets the die roller type used in roll.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DieRoller.DieTrackingData.DieSides">
+            <summary>
+            Gets or sets the number of side on the die.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DieRoller.DieTrackingData.Result">
+            <summary>
+            Gets or sets the result of the roll.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DieRoller.DieTrackingData.Timpstamp">
+            <summary>
+            Gets or sets the timestamp of this roll.
+            </summary>
+        </member>
+        <member name="T:D20Tek.DiceNotation.DieRoller.IAllowRollTrackerEntry">
+            <summary>
+            Interface for multiple roll trackers that have an isomporphic entry method.
+            That way entry code does not need to care about what tracking service is used.
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.IAllowRollTrackerEntry.AddDieRoll(System.Int32,System.Int32,System.Type)">
+            <summary>
+            Adds the current roll to the tracking service.
+            </summary>
+            <param name="dieSides">Die being rolled.</param>
+            <param name="result">Result of the die roll.</param>
+            <param name="dieRoller">Type of die roller used.</param>
+        </member>
+        <member name="T:D20Tek.DiceNotation.DieRoller.IDieRollTracker">
+            <summary>
+            Interface to define in-memory statistical tracking service for die rolls.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DieRoller.IDieRollTracker.TrackerDataLimit">
+            <summary>
+            Gets or sets the limit of roll data kept in the tracker.
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.IDieRollTracker.GetTrackingDataAsync(System.String,System.String)">
+            <summary>
+            Gets the roll tracking data based on specified filters. Not specifying a filter
+            means that filter is not applied to the results.
+            </summary>
+            <param name="dieType">Filter results by die type.</param>
+            <param name="dieSides">Filter results by die sides.</param>
+            <returns>List of roll tracking data.</returns>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.IDieRollTracker.GetFrequencyDataViewAsync">
+            <summary>
+            Gets a frequency view of the tracking data in memory for reporting
+            purposes.
+            </summary>
+            <returns>Frequency of rolls per roller type, sides, and results.</returns>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.IDieRollTracker.Clear">
+            <summary>
+            Clears the current set of die tracking data.
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.IDieRollTracker.ToJsonAsync">
+            <summary>
+            Converts this set of tracker data to a json string representation.
+            </summary>
+            <returns>Json text representation.</returns>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.IDieRollTracker.LoadFromJsonAsync(System.String)">
+            <summary>
+            Loads this object data from a json string.
+            </summary>
+            <param name="jsonText">text to load.</param>
+            <returns>Task.</returns>
+        </member>
+        <member name="T:D20Tek.DiceNotation.DieRoller.IAggregateRollTracker">
+            <summary>
+            Interface to define in-memory statistical tracking service for die rolls.
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.IAggregateRollTracker.GetFrequencyDataView">
+            <summary>
+            Gets a frequency view of the tracking data in memory for reporting
+            purposes.
+            </summary>
+            <returns>Frequency of rolls per roller type, sides, and results.</returns>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.IAggregateRollTracker.Clear">
+            <summary>
+            Clears the current set of die tracking data.
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.IAggregateRollTracker.ToJson">
+            <summary>
+            Converts this set of tracker data to a json string representation.
+            </summary>
+            <returns>Json text representation.</returns>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.IAggregateRollTracker.LoadFromJson(System.String)">
+            <summary>
+            Loads this object data from a json string.
+            </summary>
+            <param name="jsonText">text to load.</param>
+        </member>
+        <member name="T:D20Tek.DiceNotation.DieRoller.RandomDieRoller">
+            <summary>
+            Die roller that rolls a random number between 1 and number of sides.
+            This uses the .NET framework random number generator (to its a
+            pseudo-random number).
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.RandomDieRoller.#ctor(D20Tek.DiceNotation.DieRoller.IAllowRollTrackerEntry)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.DiceNotation.DieRoller.RandomDieRoller"/> class.
+            Uses the default static random number generator.
+            </summary>
+            <param name="tracker">Tracking service to remember die rolls.</param>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.RandomDieRoller.#ctor(System.Random,D20Tek.DiceNotation.DieRoller.IAllowRollTrackerEntry)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.DiceNotation.DieRoller.RandomDieRoller"/> class.
+            </summary>
+            <param name="random">Random number generator to use.</param>
+            <param name="tracker">Tracking service to remember die rolls.</param>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.RandomDieRoller.GetNextRandom(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="T:D20Tek.DiceNotation.DieRoller.RandomDieRollerBase">
+            <summary>
+            Die roller base class that rolls a random number between 1 and number of sides.
+            This base class is used by all random rollers to implement standard IDieRoller behavior.
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.RandomDieRollerBase.#ctor(D20Tek.DiceNotation.DieRoller.IAllowRollTrackerEntry)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.DiceNotation.DieRoller.RandomDieRollerBase"/> class.
+            Uses the default static random number generator.
+            </summary>
+            <param name="tracker">Tracking service to remember die rolls.</param>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.RandomDieRollerBase.Roll(System.Int32,System.Nullable{System.Int32})">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.RandomDieRollerBase.GetNextRandom(System.Int32)">
+            <summary>
+            Method that calculates the actual next random number.
+            Abstract method that must be implemented by each random roller.
+            </summary>
+            <param name="sides">Number of sides on the die (also its max value).</param>
+            <returns>Random value between 1 and sides.</returns>
+        </member>
+        <member name="T:D20Tek.DiceNotation.DieRoller.CryptoDieRoller">
+            <summary>
+            Die roller that rolls a random number between 1 and number of sides.
+            This uses the .NET framework random number generator (to its a
+            pseudo-random number).
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.CryptoDieRoller.#ctor(D20Tek.DiceNotation.DieRoller.IAllowRollTrackerEntry)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.DiceNotation.DieRoller.CryptoDieRoller"/> class.
+            </summary>
+            <param name="tracker">Die roll tracker to use; null means don't track roll data.</param>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.CryptoDieRoller.GetNextRandom(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.CryptoDieRoller.NumberBetween(System.Int32,System.Int32)">
+            <summary>
+            Uses cryptography library to calculate a random number between two numbers.
+            </summary>
+            <param name="minValue">minimum value in range.</param>
+            <param name="maxValue">maximum value in range.</param>
+            <returns>Random number between minValue and maxValue.</returns>
+        </member>
+        <member name="T:D20Tek.DiceNotation.DieRoller.MathNetDieRoller">
+            <summary>
+            Die roller class that uses MathNet numerics library to generate random numbers.
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.MathNetDieRoller.#ctor(D20Tek.DiceNotation.DieRoller.IAllowRollTrackerEntry)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.DiceNotation.DieRoller.MathNetDieRoller"/> class.
+            </summary>
+            <param name="tracker">Die roll tracker to use; null means don't track roll data.</param>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.MathNetDieRoller.#ctor(MathNet.Numerics.Random.RandomSource,D20Tek.DiceNotation.DieRoller.IAllowRollTrackerEntry)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.DiceNotation.DieRoller.MathNetDieRoller"/> class.
+            </summary>
+            <param name="source">Random source to use.</param>
+            <param name="tracker">Die roll tracker to use; null means don't track roll data.</param>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DieRoller.MathNetDieRoller.GetNextRandom(System.Int32)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

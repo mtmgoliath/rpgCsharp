@@ -1,0 +1,1074 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>D20Tek.Common.Net47</name>
+    </assembly>
+    <members>
+        <member name="T:D20Tek.Common.Collections.PagedList`1">
+            <summary>
+            Class that represents a list that can be separated into different pages
+            and each page queried individually.
+            </summary>
+            <typeparam name="T">Type of element in the list.</typeparam>
+        </member>
+        <member name="M:D20Tek.Common.Collections.PagedList`1.#ctor(System.Linq.IQueryable{`0},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.Common.Collections.PagedList`1"/> class.
+            </summary>
+            <param name="fullList">The full list for pagination.</param>
+            <param name="pageNumber">Initial page number.</param>
+            <param name="pageSize">Initial page size.</param>
+            <param name="maxVisiblePages">Maximum number of visible pages. Defaults to 5.</param>
+        </member>
+        <member name="M:D20Tek.Common.Collections.PagedList`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.Common.Collections.PagedList`1"/> class.
+            </summary>
+            <param name="fullList">The full list for pagination.</param>
+            <param name="pageNumber">Initial page number.</param>
+            <param name="pageSize">Initial page size.</param>
+            <param name="maxVisiblePages">Maximum number of visible pages. Defaults to 5.</param>
+        </member>
+        <member name="T:D20Tek.Common.Collections.PagedListBase`1">
+            <summary>
+            Base class that represents a list that can be separated into different pages
+            and each page queried individually.
+            </summary>
+            <typeparam name="T">Type of element in the list.</typeparam>
+        </member>
+        <member name="M:D20Tek.Common.Collections.PagedListBase`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.Common.Collections.PagedListBase`1"/> class.
+            </summary>
+        </member>
+        <member name="M:D20Tek.Common.Collections.PagedListBase`1.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.Common.Collections.PagedListBase`1"/> class.
+            </summary>
+            <param name="pageNumber">Initial page number.</param>
+            <param name="pageSize">Initial page size.</param>
+            <param name="totalItemCount">Initial total item count.</param>
+            <param name="maxVisiblePages">Maximum number of visible pages.</param>
+        </member>
+        <member name="P:D20Tek.Common.Collections.PagedListBase`1.TotalItemCount">
+            <inheritdoc/>
+        </member>
+        <member name="P:D20Tek.Common.Collections.PagedListBase`1.PageNumber">
+            <inheritdoc/>
+        </member>
+        <member name="P:D20Tek.Common.Collections.PagedListBase`1.PageSize">
+            <inheritdoc/>
+        </member>
+        <member name="P:D20Tek.Common.Collections.PagedListBase`1.PageCount">
+            <inheritdoc/>
+        </member>
+        <member name="P:D20Tek.Common.Collections.PagedListBase`1.HasPreviousPage">
+            <inheritdoc/>
+        </member>
+        <member name="P:D20Tek.Common.Collections.PagedListBase`1.HasNextPage">
+            <inheritdoc/>
+        </member>
+        <member name="P:D20Tek.Common.Collections.PagedListBase`1.IsFirstPage">
+            <inheritdoc/>
+        </member>
+        <member name="P:D20Tek.Common.Collections.PagedListBase`1.IsLastPage">
+            <inheritdoc/>
+        </member>
+        <member name="P:D20Tek.Common.Collections.PagedListBase`1.HasMultiplePages">
+            <summary>
+            Gets a value indicating whether PagedResults has multiple pages.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Collections.PagedListBase`1.MaxVisiblePages">
+            <summary>
+            Gets the maximum number of visible pages even if more are required to show full list.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Collections.PagedListBase`1.FirstVisiblePage">
+            <summary>
+            Gets the first visible page based on currently selected page and maximum pages allowed.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Collections.PagedListBase`1.LastVisiblePage">
+            <summary>
+            Gets the last visible page based on the currently selected page and maximum pages allowed.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Collections.PagedListBase`1.VisiblePageNumbers">
+            <inheritdoc/>
+        </member>
+        <member name="P:D20Tek.Common.Collections.PagedListBase`1.Count">
+            <inheritdoc/>
+        </member>
+        <member name="P:D20Tek.Common.Collections.PagedListBase`1.PagedView">
+            <summary>
+            Gets the presentation view of the paged list.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Collections.PagedListBase`1.Item(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.Common.Collections.PagedListBase`1.CalculatePreviousPage">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.Common.Collections.PagedListBase`1.CalculateNextPage">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.Common.Collections.PagedListBase`1.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.Common.Collections.PagedListBase`1.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="T:D20Tek.Common.Collections.PagedListExtensions">
+            <summary>
+            Extension methods to simplify working with PagedLists.
+            </summary>
+        </member>
+        <member name="M:D20Tek.Common.Collections.PagedListExtensions.ToPagedList``1(System.Linq.IQueryable{``0},System.Int32,System.Int32)">
+            <summary>
+            Creates a PagedList from a collection of items.
+            </summary>
+            <typeparam name="T">Type of element in the collection.</typeparam>
+            <param name="fullList">Full list of items.</param>
+            <param name="pageNumber">Initial page number.</param>
+            <param name="pageSize">Initial page size.</param>
+            <returns>Returns PagedList constrained to initial values.</returns>
+        </member>
+        <member name="M:D20Tek.Common.Collections.PagedListExtensions.ToPagedList``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Int32)">
+            <summary>
+            Creates a PagedList from a collection of items.
+            </summary>
+            <typeparam name="T">Type of element in the collection.</typeparam>
+            <param name="fullList">Full list of items.</param>
+            <param name="pageNumber">Initial page number.</param>
+            <param name="pageSize">Initial page size.</param>
+            <returns>Returns PagedList constrained to initial values.</returns>
+        </member>
+        <member name="M:D20Tek.Common.Collections.PagedListExtensions.ToPagedList``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Creates a PagedList from a collection of items.
+            </summary>
+            <typeparam name="T">Type of element in the collection.</typeparam>
+            <param name="fullList">Full list of items.</param>
+            <returns>Returns PagedList with a single page.</returns>
+        </member>
+        <member name="T:D20Tek.Common.Collections.IPagedList`1">
+            <summary>
+            Represents a list that can be separated into different pages and
+            each page queried individually.
+            </summary>
+            <typeparam name="T">Type of element in the list.</typeparam>
+        </member>
+        <member name="P:D20Tek.Common.Collections.IPagedList`1.PageCount">
+            <summary>
+            Gets the total number of pages in this list.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Collections.IPagedList`1.TotalItemCount">
+            <summary>
+            Gets the total item count for the full list.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Collections.IPagedList`1.PageNumber">
+            <summary>
+            Gets the current page being retrieved.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Collections.IPagedList`1.PageSize">
+            <summary>
+            Gets the maximum size of each page (number of elements per page).
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Collections.IPagedList`1.HasPreviousPage">
+            <summary>
+            Gets a value indicating whether there are previous pages from the PageNumber.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Collections.IPagedList`1.HasNextPage">
+            <summary>
+            Gets a value indicating whether there are next pages from the PageNumber.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Collections.IPagedList`1.IsFirstPage">
+            <summary>
+            Gets a value indicating whether the PageNumber represents the first page.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Collections.IPagedList`1.IsLastPage">
+            <summary>
+            Gets a value indicating whether the PageNumber represents the last page.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Collections.IPagedList`1.HasMultiplePages">
+            <summary>
+            Gets a value indicating whether there are multiple pages in this list.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Collections.IPagedList`1.MaxVisiblePages">
+            <summary>
+            Gets the maximum number of visible pages allowed, even if more
+            would be required to show full list. Used to limit the number of pages
+            that would be presented to a user interface.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Collections.IPagedList`1.FirstVisiblePage">
+            <summary>
+            Gets the first visible page based on currently selected page and maximum pages allowed.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Collections.IPagedList`1.LastVisiblePage">
+            <summary>
+            Gets the last visible page based on the currently selected page and maximum pages allowed.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Collections.IPagedList`1.VisiblePageNumbers">
+            <summary>
+            Gets the list of visible page numbers.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Collections.IPagedList`1.Count">
+            <summary>
+            Gets the number of elements on this page.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Collections.IPagedList`1.Item(System.Int32)">
+            <summary>
+            Gets the element at the specified index.
+            </summary>
+            <param name="index">Index of element to get.</param>
+            <returns>Element at specified index.</returns>
+        </member>
+        <member name="M:D20Tek.Common.Collections.IPagedList`1.CalculatePreviousPage">
+            <summary>
+            Calculates the value of the previous page number from the current page.
+            </summary>
+            <returns>Previous page number.</returns>
+        </member>
+        <member name="M:D20Tek.Common.Collections.IPagedList`1.CalculateNextPage">
+            <summary>
+            Calculates the value of the next page number from the current page.
+            </summary>
+            <returns>Previous page number.</returns>
+        </member>
+        <member name="T:D20Tek.Common.DataTypes.Collections.VirtualPagedList`1">
+            <summary>
+            Class that represents a list that has been separated into different pages.
+            This is a virtual list and only keeps the list for the current page.
+            Maintains all of the pagination information (but not all of the items).
+            </summary>
+            <typeparam name="T">Type of element in the list.</typeparam>
+        </member>
+        <member name="M:D20Tek.Common.DataTypes.Collections.VirtualPagedList`1.#ctor(System.Linq.IQueryable{`0},System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.Common.DataTypes.Collections.VirtualPagedList`1"/> class.
+            </summary>
+            <param name="pageList">The list of items of this page.</param>
+            <param name="pageNumber">Initial page number.</param>
+            <param name="pageSize">Initial page size.</param>
+            <param name="totalItemCount">Total item count.</param>
+            <param name="maxVisiblePages">Maximum number of visible pages. Defaults to 5.</param>
+        </member>
+        <member name="M:D20Tek.Common.DataTypes.Collections.VirtualPagedList`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.Common.DataTypes.Collections.VirtualPagedList`1"/> class.
+            </summary>
+            <param name="pageList">The full list for pagination.</param>
+            <param name="pageNumber">Initial page number.</param>
+            <param name="pageSize">Initial page size.</param>
+            <param name="totalItemCount">Total item count.</param>
+            <param name="maxVisiblePages">Maximum number of visible pages. Defaults to 5.</param>
+        </member>
+        <member name="T:D20Tek.Common.DataTypes.NamedElement`1">
+            <summary>
+            Base model class for elements with ids, names, and descriptions.
+            </summary>
+            <typeparam name="T">Type of the Id to use for this element.</typeparam>
+        </member>
+        <member name="M:D20Tek.Common.DataTypes.NamedElement`1.#ctor(`0,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.Common.DataTypes.NamedElement`1"/> class
+            that takes an id and name.
+            </summary>
+            <param name="id">Element's id.</param>
+            <param name="name">Element's name.</param>
+            <param name="description">Element's description.</param>
+        </member>
+        <member name="M:D20Tek.Common.DataTypes.NamedElement`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.Common.DataTypes.NamedElement`1"/> class.
+            Default constructor for serialization.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.DataTypes.NamedElement`1.Id">
+            <summary>
+            Gets or sets the element id.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.DataTypes.NamedElement`1.Name">
+            <summary>
+            Gets or sets the element name.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.DataTypes.NamedElement`1.Description">
+            <summary>
+            Gets or sets the element description.
+            </summary>
+        </member>
+        <member name="M:D20Tek.Common.DataTypes.NamedElement`1.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.Common.DataTypes.NamedElement`1.Equals(D20Tek.Common.DataTypes.NamedElement{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.Common.DataTypes.NamedElement`1.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.Common.DataTypes.NamedElement`1.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="T:D20Tek.Common.DataTypes.NameValuePair`1">
+            <summary>
+            Class to encapsulate name value pair.
+            </summary>
+            <typeparam name="TValue">Type of the value.</typeparam>
+        </member>
+        <member name="M:D20Tek.Common.DataTypes.NameValuePair`1.#ctor(System.String,`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.Common.DataTypes.NameValuePair`1"/> class.
+            </summary>
+            <param name="name">Name to intialize.</param>
+            <param name="value">Value to initialize.</param>
+        </member>
+        <member name="M:D20Tek.Common.DataTypes.NameValuePair`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.Common.DataTypes.NameValuePair`1"/> class.
+            Default constructor for serialization.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.DataTypes.NameValuePair`1.Name">
+            <summary>
+            Gets or sets the name of this element.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.DataTypes.NameValuePair`1.Value">
+            <summary>
+            Gets or sets the value of this element.
+            </summary>
+        </member>
+        <member name="M:D20Tek.Common.DataTypes.NameValuePair`1.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.Common.DataTypes.NameValuePair`1.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.Common.DataTypes.NameValuePair`1.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="T:D20Tek.Common.ObservableObject">
+            <summary>
+            Observable object with INotifyPropertyChanged implemented.
+            </summary>
+        </member>
+        <member name="E:D20Tek.Common.ObservableObject.PropertyChanged">
+            <summary>
+            Occurs when property changed.
+            </summary>
+        </member>
+        <member name="M:D20Tek.Common.ObservableObject.SetProperty``1(``0@,``0,System.String,System.Action)">
+            <summary>
+            Sets the property.
+            </summary>
+            <returns><c>true</c>, if property was set, <c>false</c> otherwise.</returns>
+            <param name="backingStore">Backing store.</param>
+            <param name="value">Value.</param>
+            <param name="propertyName">Property name.</param>
+            <param name="onChanged">On changed.</param>
+            <typeparam name="T">The 1st type parameter.</typeparam>
+        </member>
+        <member name="M:D20Tek.Common.ObservableObject.OnPropertyChanged(System.String)">
+            <summary>
+            Raises the property changed event.
+            </summary>
+            <param name="propertyName">Property name.</param>
+        </member>
+        <member name="T:D20Tek.Common.ValueRange">
+            <summary>
+            A struct that represents a range of values from the specified
+            min to max range.
+            </summary>
+        </member>
+        <member name="M:D20Tek.Common.ValueRange.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.Common.ValueRange"/> struct
+            with specified minimum and maximum values.
+            </summary>
+            <param name="minimum">Minimum value in the range.</param>
+            <param name="maximum">Maximum value in the range.</param>
+        </member>
+        <member name="P:D20Tek.Common.ValueRange.Minimum">
+            <summary>
+            Gets or sets the minimum value in the range.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.ValueRange.Maximum">
+            <summary>
+            Gets or sets the maximum value in the range.
+            </summary>
+        </member>
+        <member name="M:D20Tek.Common.ValueRange.op_Equality(D20Tek.Common.ValueRange,D20Tek.Common.ValueRange)">
+            <summary>
+            Equality operator for ValueRange type.
+            </summary>
+            <param name="lhs">first ValueRange to check.</param>
+            <param name="rhs">second ValueRange to check.</param>
+            <returns>true means they are equal; false means they are not equal.</returns>
+        </member>
+        <member name="M:D20Tek.Common.ValueRange.op_Inequality(D20Tek.Common.ValueRange,D20Tek.Common.ValueRange)">
+            <summary>
+            Inequality operator for ValueRange type.
+            </summary>
+            <param name="lhs">first ValueRange to check.</param>
+            <param name="rhs">second ValueRange to check.</param>
+            <returns>true means they are not equal; false means they are equal.</returns>
+        </member>
+        <member name="M:D20Tek.Common.ValueRange.InRange(System.Int32)">
+            <summary>
+            Returns whether the specified value is within the given range.
+            Range test is inclusive of the minimum and maximum values.
+            </summary>
+            <param name="value">Value to test.</param>
+            <returns>true means value is within range; false means it is outside of the range.</returns>
+        </member>
+        <member name="M:D20Tek.Common.ValueRange.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.Common.ValueRange.Equals(D20Tek.Common.ValueRange)">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.Common.ValueRange.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.Common.ValueRange.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="T:D20Tek.Common.Helpers.HtmlFormatHelper">
+            <summary>
+            Helper class that formats different types into Html text formats.
+            </summary>
+        </member>
+        <member name="M:D20Tek.Common.Helpers.HtmlFormatHelper.ListToString``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Converts a list of items of different types to a comma delimited string.
+            This method using the T.ToString to get the string representation of each item.
+            </summary>
+            <typeparam name="T">Type of list items.</typeparam>
+            <param name="items">List of items.</param>
+            <returns>Comma delimited string representation of the list.</returns>
+        </member>
+        <member name="T:D20Tek.Common.Helpers.JsonSerializationHelper">
+            <summary>
+            Helper class to work with json serialization to and from text files.
+            </summary>
+        </member>
+        <member name="M:D20Tek.Common.Helpers.JsonSerializationHelper.DeserializeResourceStream``1(System.String)">
+            <summary>
+            Deserializes the specified type and returns a list of items.
+            Reads the json file from the assembly's resource manifest.
+            </summary>
+            <typeparam name="T">Type of entity to deserialize.</typeparam>
+            <param name="resourceNamespace">Full namespace path to the resource file.</param>
+            <returns>List of entities deserialized.</returns>
+        </member>
+        <member name="T:D20Tek.Common.Helpers.PropertyHelpers">
+            <summary>
+            Helper methods for verifying property setters.
+            </summary>
+        </member>
+        <member name="M:D20Tek.Common.Helpers.PropertyHelpers.VerifyValueRange(System.Int32,D20Tek.Common.ValueRange)">
+            <summary>
+            Verifies the value is within the specified range.
+            If it is not, method throws ArgumentOutOfRange exception.
+            </summary>
+            <param name="value">Value to test.</param>
+            <param name="range">Range to check.</param>
+            <returns>Verified value.</returns>
+        </member>
+        <member name="T:D20Tek.Common.Models.ContentCitation">
+            <summary>
+            Class that encapsulates citation for content entities.
+            </summary>
+        </member>
+        <member name="M:D20Tek.Common.Models.ContentCitation.#ctor(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.Common.Models.ContentCitation"/> class.
+            </summary>
+            <param name="source">Source for the citation.</param>
+            <param name="page">Citation page [optional].</param>
+        </member>
+        <member name="M:D20Tek.Common.Models.ContentCitation.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.Common.Models.ContentCitation"/> class.
+            </summary>
+            <param name="source">Source for the citation.</param>
+            <param name="link">Url link for source.</param>
+        </member>
+        <member name="M:D20Tek.Common.Models.ContentCitation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.Common.Models.ContentCitation"/> class.
+            Default constructor for serialization.
+            </summary>
+        </member>
+        <member name="M:D20Tek.Common.Models.ContentCitation.#ctor(System.String,System.Nullable{System.Int32},System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.Common.Models.ContentCitation"/> class.
+            </summary>
+            <param name="source">Source for the citation.</param>
+            <param name="page">Citation page.</param>
+            <param name="link">Url link for source.</param>
+        </member>
+        <member name="P:D20Tek.Common.Models.ContentCitation.Source">
+            <summary>
+            Gets or sets the citation source.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Models.ContentCitation.Page">
+            <summary>
+            Gets or sets the citation page.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Models.ContentCitation.Link">
+            <summary>
+            Gets or sets the url for the citation if it's an online source.
+            </summary>
+        </member>
+        <member name="M:D20Tek.Common.Models.ContentCitation.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:D20Tek.Common.Models.ContentEntity`1">
+            <summary>
+            Entity class for objects that are persisted to repositories.
+            </summary>
+            <typeparam name="T">Type for entity id.</typeparam>
+        </member>
+        <member name="M:D20Tek.Common.Models.ContentEntity`1.#ctor(`0,System.String,System.String,D20Tek.Common.Models.ContentCitation,System.Collections.Generic.IList{System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.Common.Models.ContentEntity`1"/> class.
+            </summary>
+            <param name="id">Entity's id.</param>
+            <param name="name">Entity's name.</param>
+            <param name="description">Entity's description.</param>
+            <param name="citation">Citation to intialize with.</param>
+            <param name="tags">Tags to intialize with.</param>
+        </member>
+        <member name="M:D20Tek.Common.Models.ContentEntity`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.Common.Models.ContentEntity`1"/> class.
+            Default constructor for serialization.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Models.ContentEntity`1.Citation">
+            <summary>
+            Gets or sets the citation for this content element.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Models.ContentEntity`1.Tags">
+            <summary>
+            Gets or sets the tags for this content element.
+            </summary>
+        </member>
+        <member name="T:D20Tek.Common.Models.EntityAlreadyExistsException">
+            <summary>
+            Exception class is thrown when an entity is not found in a repository.
+            </summary>
+        </member>
+        <member name="M:D20Tek.Common.Models.EntityAlreadyExistsException.#ctor(System.String,System.Object,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.Common.Models.EntityAlreadyExistsException"/> class.
+            </summary>
+            <param name="entityIdName">Name of id property.</param>
+            <param name="entityIdValue">Type of id property.</param>
+            <param name="innerException">Inner exception if needed.</param>
+        </member>
+        <member name="P:D20Tek.Common.Models.EntityAlreadyExistsException.EntityIdName">
+            <summary>
+            Gets the name of the entity id.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Models.EntityAlreadyExistsException.EntityIdValue">
+            <summary>
+            Gets the value of the entity id.
+            </summary>
+        </member>
+        <member name="T:D20Tek.Common.Models.EntityNotFoundException">
+            <summary>
+            Exception class is thrown when an entity is not found in a repository.
+            </summary>
+        </member>
+        <member name="M:D20Tek.Common.Models.EntityNotFoundException.#ctor(System.String,System.Object,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.Common.Models.EntityNotFoundException"/> class.
+            </summary>
+            <param name="entityIdName">Name of id property.</param>
+            <param name="entityIdValue">Type of id property.</param>
+            <param name="innerException">Inner exception if needed.</param>
+        </member>
+        <member name="P:D20Tek.Common.Models.EntityNotFoundException.EntityIdName">
+            <summary>
+            Gets the name of the entity id.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Models.EntityNotFoundException.EntityIdValue">
+            <summary>
+            Gets the value of the entity id.
+            </summary>
+        </member>
+        <member name="T:D20Tek.Common.Models.IEditableRepository`2">
+            <summary>
+            Interface for read and write repositories.
+            </summary>
+            <typeparam name="T">Type of repository entity.</typeparam>
+            <typeparam name="TId">Type of entity Id.</typeparam>
+        </member>
+        <member name="M:D20Tek.Common.Models.IEditableRepository`2.Create(`0)">
+            <summary>
+            Creates a new entity in the repository.
+            </summary>
+            <param name="entity">Entity to create.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:D20Tek.Common.Models.IEditableRepository`2.Update(`0)">
+            <summary>
+            Updates an existing entity in the repository.
+            </summary>
+            <param name="entity">Entity to update.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:D20Tek.Common.Models.IEditableRepository`2.Delete(`1)">
+            <summary>
+            Deletes an entity from this repository by its Id.
+            </summary>
+            <param name="id">Id of entity to delete.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the asynchronous operation.</returns>
+        </member>
+        <member name="T:D20Tek.Common.Models.InMemoryReadRepository`2">
+            <summary>
+            Repository that holds entities in memory only.
+            </summary>
+            <typeparam name="T">Element type.</typeparam>
+            <typeparam name="TId">Element id type.</typeparam>
+        </member>
+        <member name="M:D20Tek.Common.Models.InMemoryReadRepository`2.#ctor(System.Collections.Generic.List{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.Common.Models.InMemoryReadRepository`2"/> class.
+            </summary>
+            <param name="entities">Initial memory elements for this repository.</param>
+        </member>
+        <member name="M:D20Tek.Common.Models.InMemoryReadRepository`2.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.Common.Models.InMemoryReadRepository`2"/> class.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Models.InMemoryReadRepository`2.Entities">
+            <summary>
+            Gets or sets the list of entities in the repository.
+            </summary>
+        </member>
+        <member name="M:D20Tek.Common.Models.InMemoryReadRepository`2.GetAll">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.Common.Models.InMemoryReadRepository`2.GetEntityCount(System.Collections.Generic.IEnumerable{D20Tek.Common.DataTypes.NameValuePair{System.String}})">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.Common.Models.InMemoryReadRepository`2.GetEntities(System.Nullable{System.Int32},System.Nullable{System.Int32},System.Collections.Generic.IEnumerable{D20Tek.Common.DataTypes.NameValuePair{System.String}},System.Collections.Generic.IEnumerable{D20Tek.Common.DataTypes.NameValuePair{System.String}})">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.Common.Models.InMemoryReadRepository`2.GetEntityById(`1)">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.Common.Models.InMemoryReadRepository`2.GetBulkEntitiesById(System.Collections.Generic.IEnumerable{`1})">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.Common.Models.InMemoryReadRepository`2.ApplyFilters(System.Collections.Generic.IEnumerable{D20Tek.Common.DataTypes.NameValuePair{System.String}})">
+            <summary>
+            Applies filters to the specified list.
+            </summary>
+            <param name="filters">Filters to apply.</param>
+            <returns>Filtered list.</returns>
+        </member>
+        <member name="M:D20Tek.Common.Models.InMemoryReadRepository`2.GetSortedEntities">
+            <summary>
+            Gets entities list in a sorted manner.
+            </summary>
+            <returns>Sorted entity list.</returns>
+        </member>
+        <member name="T:D20Tek.Common.Models.InMemoryRepository`2">
+            <summary>
+            Repository that holds entities in memory only.
+            </summary>
+            <typeparam name="T">Element type.</typeparam>
+            <typeparam name="TId">Element id type.</typeparam>
+        </member>
+        <member name="M:D20Tek.Common.Models.InMemoryRepository`2.#ctor(System.Collections.Generic.List{`0},System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.Common.Models.InMemoryRepository`2"/> class.
+            </summary>
+            <param name="entities">Initial memory elements for this repository.</param>
+            <param name="entityLimit">Entity limit to initialize repository with (default to unlimited).</param>
+        </member>
+        <member name="M:D20Tek.Common.Models.InMemoryRepository`2.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.Common.Models.InMemoryRepository`2"/> class.
+            </summary>
+            <param name="entityLimit">Entity limit to initialize repository with (default to unlimited).</param>
+        </member>
+        <member name="P:D20Tek.Common.Models.InMemoryRepository`2.EntityLimit">
+            <summary>
+            Gets or sets the entity limit for this repository, if it has one.
+            </summary>
+        </member>
+        <member name="P:D20Tek.Common.Models.InMemoryRepository`2.HasEntityLimit">
+            <summary>
+            Gets a value indicating whether this repository has an entity limit.
+            </summary>
+        </member>
+        <member name="M:D20Tek.Common.Models.InMemoryRepository`2.Create(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.Common.Models.InMemoryRepository`2.Update(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:D20Tek.Common.Models.InMemoryRepository`2.Delete(`1)">
+            <inheritdoc/>
+        </member>
+        <member name="T:D20Tek.Common.Models.IReadableRepository`2">
+            <summary>
+            Interface for ReadOnly repositories.
+            </summary>
+            <typeparam name="T">Type of repository entity.</typeparam>
+            <typeparam name="TId">Type of entity Id.</typeparam>
+        </member>
+        <member name="M:D20Tek.Common.Models.IReadableRepository`2.GetAll">
+            <summary>
+            Gets all of the entities as an enumerable.
+            </summary>
+            <returns>Enumerable of entities.</returns>
+        </member>
+        <member name="M:D20Tek.Common.Models.IReadableRepository`2.GetEntityCount(System.Collections.Generic.IEnumerable{D20Tek.Common.DataTypes.NameValuePair{System.String}})">
+            <summary>
+            Gets the count of all entities in the repository.
+            </summary>
+            <param name="filters">List of filter to apply to query.</param>
+            <returns>Item count.</returns>
+        </member>
+        <member name="M:D20Tek.Common.Models.IReadableRepository`2.GetEntities(System.Nullable{System.Int32},System.Nullable{System.Int32},System.Collections.Generic.IEnumerable{D20Tek.Common.DataTypes.NameValuePair{System.String}},System.Collections.Generic.IEnumerable{D20Tek.Common.DataTypes.NameValuePair{System.String}})">
+            <summary>
+            Gets a set of entities based on the starting index and amount of items to retrieve.
+            </summary>
+            <param name="offset">Starting index entities to retrieve (0 based).</param>
+            <param name="limit">Limit of amount of items to retrieve per request.</param>
+            <param name="filters">List of filter to apply to query.</param>
+            <param name="sorts">List of sort options to apply to query.</param>
+            <returns>Enumerable of entities.</returns>
+        </member>
+        <member name="M:D20Tek.Common.Models.IReadableRepository`2.GetEntityById(`1)">
+            <summary>
+            Gets an entity from this repository by its Id.
+            </summary>
+            <param name="id">Id to search by.</param>
+            <returns>Entity that was searched for; null if not found.</returns>
+        </member>
+        <member name="M:D20Tek.Common.Models.IReadableRepository`2.GetBulkEntitiesById(System.Collections.Generic.IEnumerable{`1})">
+            <summary>
+            Gets a set of entities in the repository based on a set of ids.
+            </summary>
+            <param name="ids">List of ids to retrieve.</param>
+            <returns>Enumerable of entities.</returns>
+        </member>
+        <member name="T:D20Tek.DiceNotation.DiceResult">
+            <summary>
+            Class the represents the results for any dice expression calculation.
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceResult.#ctor(System.String,System.Collections.Generic.List{D20Tek.DiceNotation.TermResult},System.String,D20Tek.DiceNotation.IDiceConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.DiceNotation.DiceResult"/> class.
+            </summary>
+            <param name="expression">dice expression rolled.</param>
+            <param name="results">List for results for each term in dice expression.</param>
+            <param name="rollerUsed">Define die roller used to get the results.</param>
+            <param name="config">Dice config to tell whether this result will be bounded or unbounded.</param>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceResult.#ctor(System.String,System.Int32,System.Collections.Generic.List{D20Tek.DiceNotation.TermResult},System.String,D20Tek.DiceNotation.IDiceConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.DiceNotation.DiceResult"/> class.
+            </summary>
+            <param name="expression">dice expression rolled.</param>
+            <param name="value">calculated value of the results.</param>
+            <param name="results">List for results for each term in dice expression.</param>
+            <param name="rollerUsed">Define die roller used to get the results.</param>
+            <param name="config">Dice config to tell whether this result will be bounded or unbounded.</param>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceResult.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:D20Tek.DiceNotation.DiceResult"/> class.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DiceResult.DiceExpression">
+            <summary>
+            Gets or sets the dice expression that was evaluated.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DiceResult.DieRollerUsed">
+            <summary>
+            Gets or sets the die roller used to generate this result.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DiceResult.RollsDisplayText">
+            <summary>
+            Gets the display text representation of the Results list.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DiceResult.Results">
+            <summary>
+            Gets or sets the results list for all of the terms in this dice expression.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.DiceResult.Value">
+            <summary>
+            Gets or sets the numeric value for this result.
+            </summary>
+        </member>
+        <member name="T:D20Tek.DiceNotation.DiceResultConverter">
+            <summary>
+            Value converter to change a DiceResult into a display string.
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceResultConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts the DiceResult into a string respresentation.
+            </summary>
+            <param name="value">value to convert.</param>
+            <param name="targetType">target type of the conversion.</param>
+            <param name="parameter">converter parameter.</param>
+            <param name="language">language.</param>
+            <returns>Converted value.</returns>
+        </member>
+        <member name="M:D20Tek.DiceNotation.DiceResultConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts back from string representation to a DiceResult.
+            </summary>
+            <param name="value">value to convert.</param>
+            <param name="targetType">target type of the conversion.</param>
+            <param name="parameter">converter parameter.</param>
+            <param name="language">language.</param>
+            <returns>Converted value.</returns>
+        </member>
+        <member name="T:D20Tek.DiceNotation.IDice">
+            <summary>
+            Interface that defines operations on dice.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.IDice.Configuration">
+            <summary>
+            Gets the current configuration for this set of Dice.
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.IDice.Clear">
+            <summary>
+            Clears the current dice expression.
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.IDice.Dice(System.Int32,System.Int32,System.Double,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Creates a DiceTerm with specified values for this dice expression.
+            </summary>
+            <param name="sides">sides of die.</param>
+            <param name="numberDice">number of dice.</param>
+            <param name="scalar">scalar multiplier.</param>
+            <param name="choose">choose how many results to return.</param>
+            <param name="exploding">Exploding threshold for dice re-rolls.</param>
+            <returns>IDice representing the current terms.</returns>
+        </member>
+        <member name="M:D20Tek.DiceNotation.IDice.FudgeDice(System.Int32,System.Nullable{System.Int32})">
+            <summary>
+            Creates a FudgeDiceTerm with specified values for this dice expression.
+            </summary>
+            <param name="numberDice">number of dice.</param>
+            <param name="choose">choose how many results to return.</param>
+            <returns>IDice representing the current terms.</returns>
+        </member>
+        <member name="M:D20Tek.DiceNotation.IDice.Constant(System.Int32)">
+            <summary>
+            Creates a ConstantTerm with the specified value for this dice expression.
+            </summary>
+            <param name="constant">Constant value.</param>
+            <returns>IDice representing the current terms.</returns>
+        </member>
+        <member name="M:D20Tek.DiceNotation.IDice.Concat(D20Tek.DiceNotation.IDice)">
+            <summary>
+            Concatenates the terms of another Dice expression into this Dice expression.
+            </summary>
+            <param name="otherDice">Other IDice terms to concatentate.</param>
+            <returns>IDice representing the current terms.</returns>
+        </member>
+        <member name="M:D20Tek.DiceNotation.IDice.Roll(D20Tek.DiceNotation.IDieRoller)">
+            <summary>
+            Rolls the dice for all of the terms in this expression.
+            </summary>
+            <param name="dieRoller">Die roller to use in calculations.</param>
+            <returns>Dice results.</returns>
+        </member>
+        <member name="M:D20Tek.DiceNotation.IDice.Roll(System.String,D20Tek.DiceNotation.IDieRoller)">
+            <summary>
+            Rolls the dice for the dice expression as a string.
+            </summary>
+            <param name="expression">Expression string to parse.</param>
+            <param name="dieRoller">Die roller to use in calculations.</param>
+            <returns>Dice results.</returns>
+        </member>
+        <member name="T:D20Tek.DiceNotation.IDiceConfiguration">
+            <summary>
+            Interface for dice configuration which allows users to customize
+            some of the default behavior of the DiceNotation system.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.IDiceConfiguration.DefaultDieSides">
+            <summary>
+            Gets or sets the defualt sides of dice to use when it's omitted from dice notation.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.IDiceConfiguration.HasBoundedResult">
+            <summary>
+            Gets or sets a value indicating whether these dice have their results bounded to 1 or greater.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.IDiceConfiguration.BoundedResultMinimum">
+            <summary>
+            Gets or sets the value for the bounded minimum.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.IDiceConfiguration.DefaultDieRoller">
+            <summary>
+            Gets or sets the default die roller to use when one is not specified.
+            </summary>
+        </member>
+        <member name="T:D20Tek.DiceNotation.IDieRoller">
+            <summary>
+            Interface defining the random die roller.
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.IDieRoller.Roll(System.Int32,System.Nullable{System.Int32})">
+            <summary>
+            Rolls the die with the specified number of sides.
+            </summary>
+            <param name="sides">Number of sides on the die (also its max value).</param>
+            <param name="factor">Provide a factor to impact the roll (defaults to nothing, but used for fudge dice).</param>
+            <returns>Random value between 1 and sides.</returns>
+        </member>
+        <member name="T:D20Tek.DiceNotation.TermResult">
+            <summary>
+            The resulting role for a single term in dice notation.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.TermResult.Scalar">
+            <summary>
+            Gets or sets the scalar multiplier of this result.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.TermResult.Value">
+            <summary>
+            Gets or sets the result value.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.TermResult.Type">
+            <summary>
+            Gets or sets the type of the term.
+            </summary>
+        </member>
+        <member name="P:D20Tek.DiceNotation.TermResult.AppliesToResultCalculation">
+            <summary>
+             Gets or sets a value indicating whether this term applies to
+             the final result calculation.
+            </summary>
+        </member>
+        <member name="T:D20Tek.DiceNotation.TermResultListConverter">
+            <summary>
+            Value converter to change a list of TermResults into a display string.
+            </summary>
+        </member>
+        <member name="M:D20Tek.DiceNotation.TermResultListConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts the TermResults into a string respresentation.
+            </summary>
+            <param name="value">value to convert.</param>
+            <param name="targetType">target type of the conversion.</param>
+            <param name="parameter">converter parameter.</param>
+            <param name="language">language.</param>
+            <returns>Converted value.</returns>
+        </member>
+        <member name="M:D20Tek.DiceNotation.TermResultListConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts back from string representation to a list of TermResults.
+            </summary>
+            <param name="value">value to convert.</param>
+            <param name="targetType">target type of the conversion.</param>
+            <param name="parameter">converter parameter.</param>
+            <param name="language">language.</param>
+            <returns>Converted value.</returns>
+        </member>
+        <member name="M:D20Tek.DiceNotation.TermResultListConverter.DiceRollsToString(System.Collections.Generic.List{D20Tek.DiceNotation.TermResult})">
+            <summary>
+            Converts the DiceResult to a string representation of a list of
+            dice roll results.
+            </summary>
+            <param name="results">DiceResult to use.</param>
+            <returns>string represenation of DiceResult dice rolls.</returns>
+        </member>
+        <member name="T:System.StringExtensions">
+            <summary>
+            Common extension methods for string conversions.
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.Contains(System.String,System.String,System.StringComparison)">
+            <summary>
+            Determins whether a substring exists in the source string and allows
+            caller to specify the StringComparison method.
+            </summary>
+            <param name="source">Source string to check.</param>
+            <param name="substring">Substring to find.</param>
+            <param name="comparison">String comparison type to use.</param>
+            <returns>True means the substring exists in the source; false means it does not.</returns>
+        </member>
+        <member name="M:System.StringExtensions.AsInt(System.String)">
+            <summary>
+            Converts the string to an integer.
+            </summary>
+            <param name="value">Value to convert.</param>
+            <returns>Converted value.</returns>
+        </member>
+        <member name="M:System.StringExtensions.AsBool(System.String)">
+            <summary>
+            Converts the string to a bool value type.
+            </summary>
+            <param name="value">Value to convert.</param>
+            <returns>Converted value.</returns>
+        </member>
+        <member name="M:System.StringExtensions.AsEnum``1(System.String)">
+            <summary>
+            Converts the string to a specific enum type.
+            </summary>
+            <typeparam name="T">Type to convert to.</typeparam>
+            <param name="value">Value to convert.</param>
+            <returns>Converted value.</returns>
+        </member>
+        <member name="M:System.StringExtensions.SplitTypeIdentifier``1(System.String)">
+            <summary>
+            Splits a string as a type identifier Name:Value pair.
+            </summary>
+            <typeparam name="T">Type of value.</typeparam>
+            <param name="typeId">Type id string to parse.</param>
+            <returns>Tuple with the type name and its value of type T.</returns>
+        </member>
+    </members>
+</doc>

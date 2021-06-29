@@ -1,0 +1,30 @@
+{
+  "CurrentPlayer": {
+    "CharacterClass": "Fighter",
+    "ExperiencePoints": 0,
+    "Quests": [
+      {
+        "PlayerQuest": {
+          "ID": 1
+        },
+        "IsCompleted": false
+      }
+    ],
+    "Recipes": [],
+    "Name": "Ivar",
+    "Dexterity": 14,
+    "CurrentHitPoints": 10,
+    "MaximumHitPoints": 10,
+    "Gold": 10,
+    "Level": 1,
+    "Inventory": {
+      "Items": []
+    },
+    "CurrentWeapon": null,
+    "CurrentConsumable": null
+  },
+  "CurrentLocation": {
+    "XCoordinate": 0,
+    "YCoordinate": 0
+  }
+}

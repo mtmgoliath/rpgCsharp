@@ -1,0 +1,115 @@
+{
+  "Version": "0.1.000",
+  "CurrentPlayer": {
+    "CharacterClass": "Fighter",
+    "ExperiencePoints": 120,
+    "Quests": [],
+    "Recipes": [
+      {
+        "ID": 1
+      }
+    ],
+    "Name": "Mike",
+    "Dexterity": 16,
+    "CurrentHitPoints": 20,
+    "MaximumHitPoints": 20,
+    "Gold": 34,
+    "Level": 2,
+    "Inventory": {
+      "Items": [
+        {
+          "ItemTypeID": 1001
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9003
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9003
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9003
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9003
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9003
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9003
+        },
+        {
+          "ItemTypeID": 9004
+        }
+      ]
+    },
+    "CurrentWeapon": {
+      "ItemTypeID": 1001
+    },
+    "CurrentConsumable": null
+  },
+  "CurrentLocation": {
+    "XCoordinate": 0,
+    "YCoordinate": -1
+  }
+}
