@@ -1,7 +1,7 @@
 {
-  "Title": "Scott's Open Source C# RPG",
-  "SubTitle": "The Adventure Continues",
-  "Version": "0.1.000",
+  "Title": "Velathar Rising",
+  "SubTitle": "Venomfang's Wrath'",
+  "Version": "0.1.001",
   "PlayerAttributes": [
     {
       "Key": "STR",
@@ -69,6 +69,20 @@
         },
         {
           "Key": "STR",
+          "Modifier": "1"
+        }
+      ]
+    },
+    {
+      "Key": "HALFLING",
+      "DisplayName": "Halfling",
+      "PlayerAttributeModifiers": [
+        {
+          "Key": "STR",
+          "Modifier": "-1"
+        },
+        {
+          "Key": "DEX",
           "Modifier": "1"
         }
       ]

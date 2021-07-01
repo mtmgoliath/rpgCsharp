@@ -1,0 +1,109 @@
+{
+  "CurrentPlayer": {
+    "ExperiencePoints": 30,
+    "Quests": [
+      {
+        "PlayerQuest": {
+          "ID": 1
+        },
+        "IsCompleted": false
+      }
+    ],
+    "Recipes": [
+      {
+        "ID": 1
+      }
+    ],
+    "Attributes": [
+      {
+        "Key": "STR",
+        "DisplayName": "Strength",
+        "DiceNotation": "3d6",
+        "BaseValue": 11,
+        "ModifiedValue": 12
+      },
+      {
+        "Key": "DEX",
+        "DisplayName": "Dexterity",
+        "DiceNotation": "3d6",
+        "BaseValue": 14,
+        "ModifiedValue": 14
+      },
+      {
+        "Key": "CON",
+        "DisplayName": "Constitution",
+        "DiceNotation": "3d6",
+        "BaseValue": 7,
+        "ModifiedValue": 7
+      },
+      {
+        "Key": "INT",
+        "DisplayName": "Intelligence",
+        "DiceNotation": "3d6",
+        "BaseValue": 9,
+        "ModifiedValue": 9
+      },
+      {
+        "Key": "WIS",
+        "DisplayName": "Wisdom",
+        "DiceNotation": "3d6",
+        "BaseValue": 10,
+        "ModifiedValue": 10
+      },
+      {
+        "Key": "CHA",
+        "DisplayName": "Charisma",
+        "DiceNotation": "3d6",
+        "BaseValue": 14,
+        "ModifiedValue": 13
+      }
+    ],
+    "Name": "Hubert Tanglefoot",
+    "CurrentHitPoints": 9,
+    "MaximumHitPoints": 10,
+    "Gold": 16,
+    "Level": 1,
+    "Inventory": {
+      "Items": [
+        {
+          "ItemTypeID": 1001
+        },
+        {
+          "ItemTypeID": 2001
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 2001
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9001
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9002
+        }
+      ]
+    },
+    "CurrentWeapon": {
+      "ItemTypeID": 1001
+    },
+    "CurrentConsumable": null
+  },
+  "CurrentLocation": {
+    "XCoordinate": -1,
+    "YCoordinate": 0
+  }
+}

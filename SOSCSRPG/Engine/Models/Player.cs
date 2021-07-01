@@ -76,20 +76,5 @@ namespace Engine.Models
                 OnLeveledUp?.Invoke(this, System.EventArgs.Empty);
             }
         }
-
-        public int GetAttributeModifiedValue(string key)
-        {
-            var tempModValue = 0;
-            foreach ( PlayerAttribute attribute in Attributes)
-            {
-                if (attribute.Key == key)
-                {
-                    tempModValue = attribute.ModifiedValue;
-                }
-
-            }
-            return tempModValue;
-        }
-
     }
 }

@@ -1,0 +1,85 @@
+{
+  "CurrentPlayer": {
+    "ExperiencePoints": 0,
+    "Quests": [],
+    "Recipes": [
+      {
+        "ID": 1
+      }
+    ],
+    "Attributes": [
+      {
+        "Key": "STR",
+        "DisplayName": "Strength",
+        "DiceNotation": "3d6",
+        "BaseValue": 9,
+        "ModifiedValue": 8
+      },
+      {
+        "Key": "DEX",
+        "DisplayName": "Dexterity",
+        "DiceNotation": "3d6",
+        "BaseValue": 15,
+        "ModifiedValue": 16
+      },
+      {
+        "Key": "CON",
+        "DisplayName": "Constitution",
+        "DiceNotation": "3d6",
+        "BaseValue": 15,
+        "ModifiedValue": 15
+      },
+      {
+        "Key": "INT",
+        "DisplayName": "Intelligence",
+        "DiceNotation": "3d6",
+        "BaseValue": 10,
+        "ModifiedValue": 10
+      },
+      {
+        "Key": "WIS",
+        "DisplayName": "Wisdom",
+        "DiceNotation": "3d6",
+        "BaseValue": 13,
+        "ModifiedValue": 13
+      },
+      {
+        "Key": "CHA",
+        "DisplayName": "Charisma",
+        "DiceNotation": "3d6",
+        "BaseValue": 5,
+        "ModifiedValue": 5
+      }
+    ],
+    "Name": "Burt Bunglesoot",
+    "CurrentHitPoints": 10,
+    "MaximumHitPoints": 10,
+    "Gold": 10,
+    "Level": 1,
+    "Inventory": {
+      "Items": [
+        {
+          "ItemTypeID": 1001
+        },
+        {
+          "ItemTypeID": 2001
+        },
+        {
+          "ItemTypeID": 3001
+        },
+        {
+          "ItemTypeID": 3002
+        },
+        {
+          "ItemTypeID": 3003
+        }
+      ]
+    },
+    "CurrentWeapon": null,
+    "CurrentConsumable": null
+  },
+  "CurrentLocation": {
+    "XCoordinate": -1,
+    "YCoordinate": 0
+  }
+}

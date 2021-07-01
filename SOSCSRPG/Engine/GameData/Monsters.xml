@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Monsters RootImagePath="/Images/Monsters/">
-	<Monster ID="1" Name="Snake" MaximumHitPoints="4" WeaponID="1501" RewardXP="5" Gold="1" ImageName="Snake.png">
+	<Monster ID="1" Name="Snake" MaximumHitPoints="4" WeaponID="1501" RewardXP="8" Gold="1" ImageName="Snake.png">
 		<Dexterity>15</Dexterity>
 		<LootItems>
 			<LootItem ID="9001" Percentage="25"/>
-			<LootItem ID="9002" Percentage="75"/>
+			<LootItem ID="9002" Percentage="60"/>
+			<LootItem ID="9000" Percentage="15"/>
 		</LootItems>
 	</Monster>
 	<Monster ID="2" Name="Rat" MaximumHitPoints="5" WeaponID="1502" RewardXP="5" Gold="1" ImageName="Rat.png">

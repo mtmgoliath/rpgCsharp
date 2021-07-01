@@ -8,6 +8,9 @@
 	</Location>
 	<Location X="-1" Y="-1" Name="Farmer's House" ImageName="Farmhouse.png">
 		<Description><![CDATA[This is the house of your neighbor, Farmer Ted.]]></Description>
+		<Quests>
+			<Quest ID="2"/>
+		</Quests>
 		<Trader ID="2"/>
 	</Location>
 	<Location X="0" Y="-1" Name="Home" ImageName="Home.png">

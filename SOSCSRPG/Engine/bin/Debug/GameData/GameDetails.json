@@ -1,11 +1,21 @@
 {
-  "Title": "Scott's Open Source C# RPG",
-  "SubTitle": "The Adventure Continues",
-  "Version": "0.1.000",
+  "Title": "Velathar Rising",
+  "SubTitle": "Venomfang's Wrath'",
+  "Version": "0.1.001",
   "PlayerAttributes": [
     {
       "Key": "STR",
       "DisplayName": "Strength",
+      "DiceNotation": "3d6"
+    },
+    {
+      "Key": "DEX",
+      "DisplayName": "Dexterity",
+      "DiceNotation": "3d6"
+    },
+    {
+      "Key": "CON",
+      "DisplayName": "Constitution",
       "DiceNotation": "3d6"
     },
     {
@@ -16,16 +26,6 @@
     {
       "Key": "WIS",
       "DisplayName": "Wisdom",
-      "DiceNotation": "3d6"
-    },
-    {
-      "Key": "CON",
-      "DisplayName": "Constitution",
-      "DiceNotation": "3d6"
-    },
-    {
-      "Key": "DEX",
-      "DisplayName": "Dexterity",
       "DiceNotation": "3d6"
     },
     {
@@ -69,6 +69,20 @@
         },
         {
           "Key": "STR",
+          "Modifier": "1"
+        }
+      ]
+    },
+    {
+      "Key": "HALFLING",
+      "DisplayName": "Halfling",
+      "PlayerAttributeModifiers": [
+        {
+          "Key": "STR",
+          "Modifier": "-1"
+        },
+        {
+          "Key": "DEX",
           "Modifier": "1"
         }
       ]
