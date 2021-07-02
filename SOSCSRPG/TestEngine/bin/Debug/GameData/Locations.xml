@@ -8,6 +8,9 @@
 	</Location>
 	<Location X="-1" Y="-1" Name="Farmer's House" ImageName="Farmhouse.png">
 		<Description><![CDATA[This is the house of your neighbor, Farmer Ted.]]></Description>
+		<Quests>
+			<Quest ID="2"/>
+		</Quests>
 		<Trader ID="2"/>
 	</Location>
 	<Location X="0" Y="-1" Name="Home" ImageName="Home.png">
@@ -22,6 +25,9 @@
 	</Location>
 	<Location X="1" Y="0" Name="Town Gate" ImageName="TownGate.png">
 		<Description><![CDATA[There is a gate here, protecting the town from giant spiders.]]></Description>
+		<Quests>
+			<Quest ID="3"/>
+		</Quests>
 	</Location>
 	<Location X="2" Y="0" Name="Spider Forest" ImageName="SpiderForest.png">
 		<Description><![CDATA[The trees in this forest are covered with spider webs.]]></Description>

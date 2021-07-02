@@ -3,17 +3,33 @@
 	<Weapons>
 		<Weapon ID="1001" Name="Pointy stick" Price="1" DamageDice="1d2"/>
 		<Weapon ID="1002" Name="Rusty sword" Price="5" DamageDice="1d3"/>
-		<Weapon ID="1501" Name="Snake fang" Price="0" DamageDice="1d2"/>
-		<Weapon ID="1502" Name="Rat claw" Price="0" DamageDice="1d2"/>
-		<Weapon ID="1503" Name="Spider fang" Price="0" DamageDice="1d4"/>
+		<Weapon ID="1003" Name="Iron dagger" Price="35" DamageDice="1d4"/>
+		<Weapon ID="1004" Name="Iron sword" Price="50" DamageDice="1d6"/>
+
+		<Weapon ID="1501" Name="Snake fang" Price="0" DamageDice="1d3"/>
+		<Weapon ID="1502" Name="Rat claw" Price="0" DamageDice="1d4"/>
+		<Weapon ID="1503" Name="Spider fang" Price="0" DamageDice="1d6"/>
 	</Weapons>
 	<HealingItems>
 		<HealingItem ID="2001" Name="Granola bar" Price="5" HitPointsToHeal="2"/>
+		<HealingItem ID="2002" Name="Bandages" Price="10" HitPointsToHeal="5"/>
+		<HealingItem ID="2003" Name="Healing Poultice" Price="50" HitPointsToHeal="20"/>
 	</HealingItems>
 	<MiscellaneousItems>
 		<MiscellaneousItem ID="3001" Name="Oats" Price="1"/>
-		<MiscellaneousItem ID="3002" Name="Honey" Price="2"/>
+		<MiscellaneousItem ID="3002" Name="Honey" Price="3"/>
 		<MiscellaneousItem ID="3003" Name="Raisins" Price="2"/>
+		
+		<MiscellaneousItem ID="3004" Name="Linen Cloth" Price="3"/>
+		<MiscellaneousItem ID="3005" Name="Cotton" Price="3"/>
+		<MiscellaneousItem ID="3006" Name="Thread" Price="1"/>
+		<MiscellaneousItem ID="3007" Name="Needle" Price="15"/>
+
+		<MiscellaneousItem ID="3008" Name="Cave Moss" Price="10"/>
+		<MiscellaneousItem ID="3009" Name="Wound Wort" Price="1"/>
+		<MiscellaneousItem ID="3010" Name="Mortar and Pestle" Price="20"/>
+
+		<MiscellaneousItem ID="9000" Name="Snake blood" Price="15"/>
 		<MiscellaneousItem ID="9001" Name="Snake fang" Price="1"/>
 		<MiscellaneousItem ID="9002" Name="Snakeskin" Price="2"/>
 		<MiscellaneousItem ID="9003" Name="Rat tail" Price="1"/>

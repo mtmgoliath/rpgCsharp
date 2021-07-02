@@ -11,4 +11,30 @@
 			<Item ID="2001" Quantity="1"/>
 		</OutputItems>
 	</Recipe>
+	<Recipe ID="2">
+		<Name><![CDATA[Bandages]]></Name>
+		<Ingredients>
+			<Item ID="3004" Quantity="1"/>
+			<Item ID="3005" Quantity="1"/>
+			<Item ID="3006" Quantity="1"/>
+			<Item ID="3007" Quantity="1"/>
+		</Ingredients>
+		<OutputItems>
+			<Item ID="2002" Quantity="1"/>
+			<Item ID="3007" Quantity="1"/>
+		</OutputItems>
+	</Recipe>
+	<Recipe ID="3">
+		<Name><![CDATA[Healing Poultice]]></Name>
+		<Ingredients>
+			<Item ID="3008" Quantity="1"/>
+			<Item ID="3009" Quantity="1"/>
+			<Item ID="3010" Quantity="1"/>
+			<Item ID="9000" Quantity="1"/>
+		</Ingredients>
+		<OutputItems>
+			<Item ID="3010" Quantity="1"/>
+			<Item ID="2003" Quantity="1"/>
+		</OutputItems>
+	</Recipe>
 </Recipes>

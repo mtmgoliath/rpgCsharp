@@ -212,10 +212,13 @@ namespace Engine.ViewModels
 
                         foreach (ItemQuantity itemQuantity in quest.RewardItems)
                         {
-                            GameItem rewardItem = ItemFactory.CreateGameItem(itemQuantity.ItemID);
-
-                            _messageBroker.RaiseMessage($"You receive a {rewardItem.Name}");
-                            CurrentPlayer.AddItemToInventory(rewardItem);
+                            //added for loop to actually check quantity property
+                            for (int i = 0; i > itemQuantity.Quantity; i++)
+                            {
+                                GameItem rewardItem = ItemFactory.CreateGameItem(itemQuantity.ItemID);
+                                _messageBroker.RaiseMessage($"You receive a {rewardItem.Name}");
+                                CurrentPlayer.AddItemToInventory(rewardItem);
+                            }
                         }
 
                         // Mark the Quest as completed
