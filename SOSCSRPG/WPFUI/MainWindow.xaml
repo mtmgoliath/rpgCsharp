@@ -31,7 +31,7 @@
         <Menu Grid.Row="0" Grid.Column="0"
               Grid.ColumnSpan="2"
               FontSize="11pt"
-              Background="AliceBlue">
+              Background="PowderBlue">
             <MenuItem Header="File">
                 <MenuItem Header="New Game"
                           Click="StartNewGame_OnClick"/>
@@ -51,7 +51,7 @@
         </Menu>
 
         <!-- Player stats -->
-        <Grid Grid.Row="1" Grid.Column="0" Background="Aquamarine">
+        <Grid Grid.Row="1" Grid.Column="0" Background="LightSlateGray">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -80,7 +80,7 @@
             <!-- Player Attributes -->
             <ListBox Grid.Row="5" Grid.Column="0"
                       Grid.ColumnSpan="2"
-                      Background="Aquamarine"
+                      Background="LightSlateGray"
                       BorderThickness="0"
                       Grid.IsSharedSizeScope="True"
                       ItemsSource="{Binding CurrentPlayer.Attributes}">
@@ -111,7 +111,7 @@
 
         <!-- Gameplay -->
         <Grid Grid.Row="1" Grid.Column="1"
-              Background="Beige">
+              Background="SeaGreen">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -125,11 +125,11 @@
             <!-- Game Messages -->
             <Border Grid.Row="0" Grid.Column="0"
                     Grid.RowSpan="2"
-                    BorderBrush="Gainsboro"
+                    BorderBrush="DarkCyan"
                     BorderThickness="1">
 
                 <RichTextBox x:Name="GameMessages"
-                             Background="Beige"
+                             Background="DarkCyan"
                              VerticalScrollBarVisibility="Auto">
                     <RichTextBox.Resources>
                         <Style TargetType="{x:Type Paragraph}">
@@ -142,7 +142,7 @@
 
             <!-- Location information -->
             <Border Grid.Row="0" Grid.Column="1"
-                    BorderBrush="Gainsboro"
+                    BorderBrush="DarkSlateGray"
                     BorderThickness="1">
 
                 <Grid Margin="3">
@@ -159,8 +159,8 @@
                     <Image Grid.Row="1"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           Height="125"
-                           Width="125"
+                           Height="250"
+                           Width="250"
                            Source="{Binding CurrentLocation.ImageName, 
                                             Converter={StaticResource FileToBitmapConverter}}"/>
 
@@ -174,7 +174,7 @@
 
             <!-- Monster information -->
             <Border Grid.Row="1" Grid.Column="1"
-                    BorderBrush="Gainsboro"
+                    BorderBrush="DarkSlateGray"
                     BorderThickness="1">
 
                 <Grid>
@@ -192,8 +192,8 @@
                     <Image Grid.Row="1"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           Height="125"
-                           Width="125"
+                           Height="250"
+                           Width="250"
                            Source="{Binding CurrentMonster.ImageName, 
                                             Converter={StaticResource FileToBitmapConverter}}"/>
 
@@ -213,25 +213,48 @@
 
         <!-- Inventory, Quests, and Recipes -->
         <Grid Grid.Row="2" Grid.Column="0"
-              Background="BurlyWood">
+              Background="OliveDrab">
 
             <TabControl x:Name="PlayerDataTabControl">
                 <TabItem Header="Inventory"
                          x:Name="InventoryTabItem">
                     <DataGrid ItemsSource="{Binding CurrentPlayer.Inventory.GroupedInventory}"
                               AutoGenerateColumns="False"
-                              HeadersVisibility="Column">
+                              HeadersVisibility="Column"
+                              Background="OliveDrab">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Description"
                                                 Binding="{Binding Item.Name, Mode=OneWay}"
-                                                Width="*"/>
+                                                Width="*">
+                                <DataGridTextColumn.CellStyle>
+                                    <Style TargetType="DataGridCell">
+                                        <Setter Property="Background" Value="Khaki"/>
+                                        <Setter Property="BorderBrush" Value="Gold"/>
+                                    </Style>
+                                </DataGridTextColumn.CellStyle>
+                            </DataGridTextColumn>
+                                                
                             <DataGridTextColumn Header="Qty"
                                                 IsReadOnly="True"
                                                 Width="Auto"
-                                                Binding="{Binding Quantity, Mode=OneWay}"/>
+                                                Binding="{Binding Quantity, Mode=OneWay}">
+                                <DataGridTextColumn.CellStyle>
+                                    <Style TargetType="DataGridCell">
+                                        <Setter Property="Background" Value="Khaki"/>
+                                        <Setter Property="BorderBrush" Value="Gold"/>
+                                    </Style>
+                                </DataGridTextColumn.CellStyle>
+                            </DataGridTextColumn>
                             <DataGridTextColumn Header="Price"
                                                 Binding="{Binding Item.Price, Mode=OneWay}"
-                                                Width="Auto"/>
+                                                Width="Auto">
+                                <DataGridTextColumn.CellStyle>
+                                    <Style TargetType="DataGridCell">
+                                        <Setter Property="Background" Value="Khaki"/>
+                                        <Setter Property="BorderBrush" Value="Gold"/>
+                                    </Style>
+                                </DataGridTextColumn.CellStyle>
+                            </DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem>
@@ -240,13 +263,16 @@
                          x:Name="QuestsTabItem">
                     <DataGrid ItemsSource="{Binding CurrentPlayer.Quests}"
                               AutoGenerateColumns="False"
-                              HeadersVisibility="Column">
+                              HeadersVisibility="Column"
+                              Background="OliveDrab">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Name"
                                                 Binding="{Binding PlayerQuest.Name, Mode=OneWay}"
                                                 Width="*">
                                 <DataGridTextColumn.CellStyle>
                                     <Style TargetType="DataGridCell">
+                                        <Setter Property="Background" Value="Khaki"/>
+                                        <Setter Property="BorderBrush" Value="Gold"/>
                                         <Setter Property="ToolTip" 
                                                 Value="{Binding PlayerQuest.ToolTipContents}"/>
                                     </Style>
@@ -254,7 +280,14 @@
                             </DataGridTextColumn>
                             <DataGridTextColumn Header="Done?"
                                                 Binding="{Binding IsCompleted, Mode=OneWay}"
-                                                Width="Auto"/>
+                                                Width="Auto">
+                                <DataGridTextColumn.CellStyle>
+                                    <Style TargetType="DataGridCell">
+                                        <Setter Property="Background" Value="Khaki"/>
+                                        <Setter Property="BorderBrush" Value="Gold"/>
+                                    </Style>
+                                </DataGridTextColumn.CellStyle>
+                            </DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem>
@@ -263,13 +296,17 @@
                          x:Name="RecipesTabItem">
                     <DataGrid ItemsSource="{Binding CurrentPlayer.Recipes}"
                               AutoGenerateColumns="False"
-                              HeadersVisibility="Column">
+                              HeadersVisibility="Column"
+                              Background="OliveDrab">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Name"
                                                 Binding="{Binding Name, Mode=OneWay}"
                                                 Width="*">
+                                
                                 <DataGridTextColumn.CellStyle>
                                     <Style TargetType="DataGridCell">
+                                        <Setter Property="Background" Value="Khaki"/>
+                                        <Setter Property="BorderBrush" Value="Gold"/>
                                         <Setter Property="ToolTip" 
                                                 Value="{Binding ToolTipContents}"/>
                                     </Style>
@@ -278,6 +315,7 @@
                             <DataGridTemplateColumn MinWidth="75">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
+                                        
                                         <Button Click="OnClick_Craft"
                                                 Width="55"
                                                 Content="Craft"/>
@@ -292,7 +330,7 @@
 
         <!-- Action controls -->
         <Grid Grid.Row="2" Grid.Column="1"
-              Background="Lavender">
+              Background="DarkSlateGray">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
@@ -327,16 +365,25 @@
                 <Button Grid.Row="0" Grid.Column="2"
                         Visibility="{Binding HasMonster, Converter={StaticResource BooleanToVisibility}}"
                         Content="Use"
+                        FontWeight="DemiBold"
+                        Background="ForestGreen"
+                        BorderBrush="DarkGreen"
+                        BorderThickness="3px"
                         Click="OnClick_AttackMonster"/>
 
                 <ComboBox Grid.Row="1" Grid.Column="0"
                           Visibility="{Binding CurrentPlayer.Inventory.HasConsumable, Converter={StaticResource BooleanToVisibility}}"
                           ItemsSource="{Binding CurrentPlayer.Inventory.Consumables}"
                           SelectedItem="{Binding CurrentPlayer.CurrentConsumable}"
+                          Height="40" Width="150" 
                           DisplayMemberPath="Name"/>
 
                 <Button Grid.Row="1" Grid.Column="2"
                         Visibility="{Binding CurrentPlayer.Inventory.HasConsumable, Converter={StaticResource BooleanToVisibility}}"
+                        FontWeight="DemiBold"
+                        Background="ForestGreen"
+                        BorderBrush="DarkGreen"
+                        BorderThickness="3px"
                         Content="Use"
                         Click="OnClick_UseCurrentConsumable"/>
             </Grid>
@@ -357,27 +404,48 @@
                 </Grid.ColumnDefinitions>
 
                 <Button Grid.Row="0" Grid.Column="1" 
-                        Height="25" Width="65" Margin="10" 
+                        Height="40" Width="65" Margin="10"
+                        FontWeight="DemiBold"
+                        Background="ForestGreen"
+                        BorderBrush="DarkGreen"
+                        BorderThickness="3px"
                         Click="OnClick_MoveNorth"
                         Visibility="{Binding HasLocationToNorth, Converter={StaticResource BooleanToVisibility}}"
                         Content="North"/>
                 <Button Grid.Row="1" Grid.Column="0" 
-                        Height="25" Width="65" Margin="10" 
+                        Height="40" Width="65" Margin="10"
+                        FontWeight="DemiBold"
+                        Background="ForestGreen"
+                        BorderBrush="DarkGreen"
+                        BorderThickness="3px"
                         Click="OnClick_MoveWest"
                         Visibility="{Binding HasLocationToWest, Converter={StaticResource BooleanToVisibility}}"
                         Content="West"/>
                 <Button Grid.Row="1" Grid.Column="1" 
-                        Height="25" Width="65" Margin="10" 
+                        Height="40" Width="65" Margin="10"
+                        FontWeight="DemiBold"
+                        Background="ForestGreen"
+                        BorderBrush="DarkGreen"
+                        BorderThickness="3px"
+
                         Click="OnClick_DisplayTradeScreen"
                         Visibility="{Binding HasTrader, Converter={StaticResource BooleanToVisibility}}"
                         Content="Trade"/>
                 <Button Grid.Row="1" Grid.Column="2" 
-                        Height="25" Width="65" Margin="10" 
+                        Height="40" Width="65" Margin="10"
+                        FontWeight="DemiBold"
+                        Background="ForestGreen"
+                        BorderBrush="DarkGreen"
+                        BorderThickness="3px"
                         Click="OnClick_MoveEast"
                         Visibility="{Binding HasLocationToEast, Converter={StaticResource BooleanToVisibility}}"
                         Content="East"/>
                 <Button Grid.Row="2" Grid.Column="1" 
-                        Height="25" Width="65" Margin="10" 
+                        Height="40" Width="65" Margin="10"
+                        FontWeight="DemiBold"
+                        Background="ForestGreen"
+                        BorderBrush="DarkGreen"
+                        BorderThickness="3px"
                         Click="OnClick_MoveSouth"
                         Visibility="{Binding HasLocationToSouth, Converter={StaticResource BooleanToVisibility}}"
                         Content="South"/>

@@ -78,6 +78,9 @@ namespace Engine.ViewModels
             player.AddItemToInventory(ItemFactory.CreateGameItem(1001));
             player.AddItemToInventory(ItemFactory.CreateGameItem(2001));
             player.LearnRecipe(RecipeFactory.RecipeByID(1));
+            //added 2 new recipes, need to make a method to include as part of quest rewards or able to buy from shop
+            player.LearnRecipe(RecipeFactory.RecipeByID(2));
+            player.LearnRecipe(RecipeFactory.RecipeByID(3));
             player.AddItemToInventory(ItemFactory.CreateGameItem(3001));
             player.AddItemToInventory(ItemFactory.CreateGameItem(3002));
             player.AddItemToInventory(ItemFactory.CreateGameItem(3003));

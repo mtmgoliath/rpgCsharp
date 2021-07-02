@@ -1,7 +1,26 @@
 {
   "CurrentPlayer": {
-    "ExperiencePoints": 0,
-    "Quests": [],
+    "ExperiencePoints": 878,
+    "Quests": [
+      {
+        "PlayerQuest": {
+          "ID": 2
+        },
+        "IsCompleted": true
+      },
+      {
+        "PlayerQuest": {
+          "ID": 1
+        },
+        "IsCompleted": true
+      },
+      {
+        "PlayerQuest": {
+          "ID": 3
+        },
+        "IsCompleted": true
+      }
+    ],
     "Recipes": [
       {
         "ID": 1
@@ -52,10 +71,10 @@
       }
     ],
     "Name": "Burt Bunglesoot",
-    "CurrentHitPoints": 10,
-    "MaximumHitPoints": 10,
-    "Gold": 10,
-    "Level": 1,
+    "CurrentHitPoints": 25,
+    "MaximumHitPoints": 90,
+    "Gold": 231,
+    "Level": 9,
     "Inventory": {
       "Items": [
         {
@@ -65,21 +84,179 @@
           "ItemTypeID": 2001
         },
         {
-          "ItemTypeID": 3001
+          "ItemTypeID": 9003
         },
         {
-          "ItemTypeID": 3002
+          "ItemTypeID": 9003
         },
         {
-          "ItemTypeID": 3003
+          "ItemTypeID": 9003
+        },
+        {
+          "ItemTypeID": 9003
+        },
+        {
+          "ItemTypeID": 9003
+        },
+        {
+          "ItemTypeID": 9003
+        },
+        {
+          "ItemTypeID": 9003
+        },
+        {
+          "ItemTypeID": 9003
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 1003
+        },
+        {
+          "ItemTypeID": 9000
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9000
+        },
+        {
+          "ItemTypeID": 9000
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9000
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9000
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9000
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9000
+        },
+        {
+          "ItemTypeID": 1002
+        },
+        {
+          "ItemTypeID": 9001
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9001
+        },
+        {
+          "ItemTypeID": 9001
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9001
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9001
+        },
+        {
+          "ItemTypeID": 9001
+        },
+        {
+          "ItemTypeID": 9000
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9001
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9001
+        },
+        {
+          "ItemTypeID": 9001
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9001
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9001
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 2001
+        },
+        {
+          "ItemTypeID": 1004
+        },
+        {
+          "ItemTypeID": 9006
+        },
+        {
+          "ItemTypeID": 9006
+        },
+        {
+          "ItemTypeID": 9006
+        },
+        {
+          "ItemTypeID": 9006
+        },
+        {
+          "ItemTypeID": 2003
         }
       ]
     },
-    "CurrentWeapon": null,
+    "CurrentWeapon": {
+      "ItemTypeID": 1004
+    },
     "CurrentConsumable": null
   },
   "CurrentLocation": {
-    "XCoordinate": -1,
+    "XCoordinate": 1,
     "YCoordinate": 0
   }
 }
