@@ -52,6 +52,10 @@ namespace Engine.Factories
                     Convert.ToInt32(node.SelectSingleNode("./Dexterity").InnerText);
                 attributes.First(a => a.Key.Equals("DEX")).ModifiedValue =
                     Convert.ToInt32(node.SelectSingleNode("./Dexterity").InnerText);
+                attributes.First(a => a.Key.Equals("STR")).BaseValue =
+                    Convert.ToInt32(node.SelectSingleNode("./Strength").InnerText);
+                attributes.First(a => a.Key.Equals("STR")).ModifiedValue =
+                    Convert.ToInt32(node.SelectSingleNode("./Strength").InnerText);
 
                 Monster monster =
                     new Monster(node.AttributeAsInt("ID"),

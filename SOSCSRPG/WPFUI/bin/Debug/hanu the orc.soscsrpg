@@ -1,10 +1,16 @@
 {
   "CurrentPlayer": {
-    "ExperiencePoints": 0,
+    "ExperiencePoints": 313,
     "Quests": [
       {
         "PlayerQuest": {
           "ID": 1
+        },
+        "IsCompleted": true
+      },
+      {
+        "PlayerQuest": {
+          "ID": 2
         },
         "IsCompleted": false
       }
@@ -65,15 +71,12 @@
       }
     ],
     "Name": "Hanu Mazan",
-    "CurrentHitPoints": 10,
-    "MaximumHitPoints": 10,
-    "Gold": 10,
-    "Level": 1,
+    "CurrentHitPoints": 40,
+    "MaximumHitPoints": 40,
+    "Gold": 108,
+    "Level": 4,
     "Inventory": {
       "Items": [
-        {
-          "ItemTypeID": 1001
-        },
         {
           "ItemTypeID": 2001
         },
@@ -85,6 +88,27 @@
         },
         {
           "ItemTypeID": 3003
+        },
+        {
+          "ItemTypeID": 9000
+        },
+        {
+          "ItemTypeID": 9000
+        },
+        {
+          "ItemTypeID": 9000
+        },
+        {
+          "ItemTypeID": 9000
+        },
+        {
+          "ItemTypeID": 9000
+        },
+        {
+          "ItemTypeID": 9000
+        },
+        {
+          "ItemTypeID": 1002
         }
       ]
     },
@@ -92,7 +116,7 @@
     "CurrentConsumable": null
   },
   "CurrentLocation": {
-    "XCoordinate": 0,
-    "YCoordinate": 1
+    "XCoordinate": -1,
+    "YCoordinate": -1
   }
 }
