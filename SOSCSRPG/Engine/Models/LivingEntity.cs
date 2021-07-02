@@ -135,7 +135,7 @@ namespace Engine.Models
         public event EventHandler OnKilled;
 
         protected LivingEntity(string name, int maximumHitPoints, int currentHitPoints,
-                               ObservableCollection<PlayerAttribute>attributes, int gold, int level = 1)
+                               ObservableCollection<PlayerAttribute> attributes, int gold, int level = 1)
         {
             Name = name;
             MaximumHitPoints = maximumHitPoints;
@@ -231,6 +231,83 @@ namespace Engine.Models
 
             }
             return tempModValue;
+        }
+
+        //method to get int modifier based on attributes
+        //called in AttackWithWeapon class
+        public int GetAttributeValueModifier(LivingEntity entity, string attributeKey)
+        {
+            int entityAttributeValue = entity.GetAttributeModifiedValue(attributeKey);
+            int attributeValueModifier = 0;
+
+            switch (entityAttributeValue)
+            {
+                case 1:
+                    attributeValueModifier = -5;
+                    break;
+                case 2:
+                    attributeValueModifier = -4;
+                    break;
+                case 3:
+                    attributeValueModifier = -4;
+                    break;
+                case 4:
+                    attributeValueModifier = -3;
+                    break;
+                case 5:
+                    attributeValueModifier = -3;
+                    break;
+                case 6:
+                    attributeValueModifier = -2;
+                    break;
+                case 7:
+                    attributeValueModifier = -2;
+                    break;
+                case 8:
+                    attributeValueModifier = -1;
+                    break;
+                case 9:
+                    attributeValueModifier = -1;
+                    break;
+                case 10:
+                    attributeValueModifier = 0;
+                    break;
+                case 11:
+                    attributeValueModifier = 0;
+                    break;
+                case 12:
+                    attributeValueModifier = 1;
+                    break;
+                case 13:
+                    attributeValueModifier = 1;
+                    break;
+                case 14:
+                    attributeValueModifier = 2;
+                    break;
+                case 15:
+                    attributeValueModifier = 2;
+                    break;
+                case 16:
+                    attributeValueModifier = 3;
+                    break;
+                case 17:
+                    attributeValueModifier = 3;
+                    break;
+                case 18:
+                    attributeValueModifier = 4;
+                    break;
+                case 19:
+                    attributeValueModifier = 4;
+                    break;
+                case 20:
+                    attributeValueModifier = 5;
+                    break;
+                case 21:
+                    attributeValueModifier = 5;
+                    break;
+            }
+
+            return attributeValueModifier;
         }
 
         #region Private functions
