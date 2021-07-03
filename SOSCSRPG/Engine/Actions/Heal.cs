@@ -6,7 +6,7 @@ namespace Engine.Actions
     public class Heal : BaseAction, IAction
     {
         private readonly int _hitPointsToHeal;
-
+        //TODO Add CON modifier to healing received and change healing item to dice rolls not set value
         public Heal(GameItem itemInUse, int hitPointsToHeal)
             : base(itemInUse)
         {

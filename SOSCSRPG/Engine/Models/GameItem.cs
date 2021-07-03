@@ -9,7 +9,8 @@ namespace Engine.Models
         {
             Miscellaneous,
             Weapon,
-            Consumable
+            Consumable,
+            Armour
         }
 
         [JsonIgnore]

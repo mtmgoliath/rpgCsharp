@@ -34,6 +34,9 @@ namespace Engine.Models
         public new ObservableCollection<PlayerAttribute> Attributes { get; set; } =
             new ObservableCollection<PlayerAttribute>();
 
+        public ObservableCollection<PlayerArmourRating> ArmourRating { get; set; } =
+            new ObservableCollection<PlayerArmourRating>();
+
         #endregion
 
         public event EventHandler OnLeveledUp;
@@ -72,6 +75,7 @@ namespace Engine.Models
             if (Level != originalLevel)
             {
                 MaximumHitPoints = Level * 10;
+                //level * 1d6 + CON
 
                 OnLeveledUp?.Invoke(this, System.EventArgs.Empty);
             }

@@ -1,0 +1,118 @@
+{
+  "CurrentPlayer": {
+    "ExperiencePoints": 25,
+    "Quests": [
+      {
+        "PlayerQuest": {
+          "ID": 2
+        },
+        "IsCompleted": false
+      },
+      {
+        "PlayerQuest": {
+          "ID": 1
+        },
+        "IsCompleted": false
+      }
+    ],
+    "Recipes": [
+      {
+        "ID": 1
+      },
+      {
+        "ID": 2
+      },
+      {
+        "ID": 3
+      }
+    ],
+    "Attributes": [
+      {
+        "Key": "STR",
+        "DisplayName": "Strength",
+        "DiceNotation": "3d6",
+        "BaseValue": 16,
+        "ModifiedValue": 17
+      },
+      {
+        "Key": "DEX",
+        "DisplayName": "Dexterity",
+        "DiceNotation": "3d6",
+        "BaseValue": 8,
+        "ModifiedValue": 8
+      },
+      {
+        "Key": "CON",
+        "DisplayName": "Constitution",
+        "DiceNotation": "3d6",
+        "BaseValue": 9,
+        "ModifiedValue": 9
+      },
+      {
+        "Key": "INT",
+        "DisplayName": "Intelligence",
+        "DiceNotation": "3d6",
+        "BaseValue": 13,
+        "ModifiedValue": 13
+      },
+      {
+        "Key": "WIS",
+        "DisplayName": "Wisdom",
+        "DiceNotation": "3d6",
+        "BaseValue": 13,
+        "ModifiedValue": 13
+      },
+      {
+        "Key": "CHA",
+        "DisplayName": "Charisma",
+        "DiceNotation": "3d6",
+        "BaseValue": 12,
+        "ModifiedValue": 11
+      }
+    ],
+    "Name": "Kehglah",
+    "CurrentHitPoints": 10,
+    "MaximumHitPoints": 10,
+    "Gold": 5,
+    "Level": 1,
+    "Inventory": {
+      "Items": [
+        {
+          "ItemTypeID": 1001
+        },
+        {
+          "ItemTypeID": 2001
+        },
+        {
+          "ItemTypeID": 2001
+        },
+        {
+          "ItemTypeID": 2002
+        },
+        {
+          "ItemTypeID": 9001
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9002
+        }
+      ]
+    },
+    "CurrentWeapon": {
+      "ItemTypeID": 1001
+    },
+    "CurrentConsumable": null
+  },
+  "CurrentLocation": {
+    "XCoordinate": 0,
+    "YCoordinate": -1
+  }
+}

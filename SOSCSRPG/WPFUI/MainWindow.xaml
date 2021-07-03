@@ -159,8 +159,8 @@
                     <Image Grid.Row="1"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           Height="250"
-                           Width="250"
+                           Height="400"
+                           Width="400"
                            Source="{Binding CurrentLocation.ImageName, 
                                             Converter={StaticResource FileToBitmapConverter}}"/>
 
@@ -192,8 +192,8 @@
                     <Image Grid.Row="1"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
-                           Height="250"
-                           Width="250"
+                           Height="400"
+                           Width="400"
                            Source="{Binding CurrentMonster.ImageName, 
                                             Converter={StaticResource FileToBitmapConverter}}"/>
 
@@ -375,7 +375,6 @@
                           Visibility="{Binding CurrentPlayer.Inventory.HasConsumable, Converter={StaticResource BooleanToVisibility}}"
                           ItemsSource="{Binding CurrentPlayer.Inventory.Consumables}"
                           SelectedItem="{Binding CurrentPlayer.CurrentConsumable}"
-                          Height="40" Width="150" 
                           DisplayMemberPath="Name"/>
 
                 <Button Grid.Row="1" Grid.Column="2"

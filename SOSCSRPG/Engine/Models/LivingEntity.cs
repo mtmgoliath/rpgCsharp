@@ -16,6 +16,7 @@ namespace Engine.Models
         private int _gold;
         private int _level;
         private GameItem _currentWeapon;
+        private GameItem _currentArmour;
         private GameItem _currentConsumable;
         private Inventory _inventory;
 

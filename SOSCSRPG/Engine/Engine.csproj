@@ -88,6 +88,7 @@
   <ItemGroup>
     <Compile Include="Actions\AttackWithWeapon.cs" />
     <Compile Include="Actions\BaseActions.cs" />
+    <Compile Include="Actions\Block.cs" />
     <Compile Include="Actions\Heal.cs" />
     <Compile Include="Actions\IAction.cs" />
     <Compile Include="BaseNotificationClass.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Models\Monster.cs" />
     <Compile Include="Models\MonsterEncounter.cs" />
     <Compile Include="Models\Player.cs" />
+    <Compile Include="Models\PlayerArmourRating.cs" />
     <Compile Include="Models\PlayerAttribute.cs" />
     <Compile Include="Models\PlayerAttributeModifier.cs" />
     <Compile Include="Models\Quest.cs" />
