@@ -20,6 +20,7 @@ namespace Engine.Factories
                 LoadItemsFromNodes(data.SelectNodes("/GameItems/Weapons/Weapon"));
                 LoadItemsFromNodes(data.SelectNodes("/GameItems/HealingItems/HealingItem"));
                 LoadItemsFromNodes(data.SelectNodes("/GameItems/MiscellaneousItems/MiscellaneousItem"));
+                LoadItemsFromNodes(data.SelectNodes("/GameItems/Armour/Armour"));
             }
             else
             {
@@ -71,6 +72,8 @@ namespace Engine.Factories
                     return GameItem.ItemCategory.Weapon;
                 case "HealingItem":
                     return GameItem.ItemCategory.Consumable;
+                case "Armour":
+                    return GameItem.ItemCategory.Armour;
                 default:
                     return GameItem.ItemCategory.Miscellaneous;
             }

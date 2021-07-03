@@ -6,32 +6,32 @@
     {
       "Key": "STR",
       "DisplayName": "Strength",
-      "DiceNotation": "3d6"
+      "DiceNotation": "4d6p1"
     },
     {
       "Key": "DEX",
       "DisplayName": "Dexterity",
-      "DiceNotation": "3d6"
+      "DiceNotation": "4d6p1"
     },
     {
       "Key": "CON",
       "DisplayName": "Constitution",
-      "DiceNotation": "3d6"
+      "DiceNotation": "4d6p1"
     },
     {
       "Key": "INT",
       "DisplayName": "Intelligence",
-      "DiceNotation": "3d6"
+      "DiceNotation": "4d6p1"
     },
     {
       "Key": "WIS",
       "DisplayName": "Wisdom",
-      "DiceNotation": "3d6"
+      "DiceNotation": "4d6p1"
     },
     {
       "Key": "CHA",
       "DisplayName": "Charisma",
-      "DiceNotation": "3d6"
+      "DiceNotation": "4d6p1"
     }
   ],
   "Races": [
@@ -86,6 +86,15 @@
           "Modifier": "1"
         }
       ]
+    }
+  ],
+  "Armour": [
+    {
+      "Key": "AC",
+      "DisplayName": "Unarmoured",
+      "Formula": "10 + DEX",
+      "Base": "10",
+      "AttributeKey": "DEX" 
     }
   ]
 }

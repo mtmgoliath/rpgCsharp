@@ -10,6 +10,9 @@
 		<Weapon ID="1502" Name="Rat claw" Price="0" DamageDice="1d4"/>
 		<Weapon ID="1503" Name="Spider fang" Price="0" DamageDice="1d6"/>
 	</Weapons>
+	<Armour>
+		<Armour ID="6001" Name="Cloth Rags" Price="0" Rating="Unarmoured"/>
+	</Armour>
 	<HealingItems>
 		<HealingItem ID="2001" Name="Granola bar" Price="5" HitPointsToHeal="2"/>
 		<HealingItem ID="2002" Name="Bandages" Price="10" HitPointsToHeal="5"/>

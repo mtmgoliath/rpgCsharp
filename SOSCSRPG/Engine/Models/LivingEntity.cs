@@ -104,6 +104,27 @@ namespace Engine.Models
             }
         }
 
+        public GameItem CurrentArmour
+        {
+            get => _currentArmour;
+            set
+            {
+                if (_currentArmour != null)
+                {
+                    _currentArmour.Action.OnActionPerformed -= RaiseActionPerformedEvent;
+                }
+
+                _currentArmour = value;
+
+                if (_currentArmour != null)
+                {
+                    _currentArmour.Action.OnActionPerformed += RaiseActionPerformedEvent;
+                }
+
+                OnPropertyChanged();
+            }
+        }
+
         public GameItem CurrentConsumable
         {
             get => _currentConsumable;
