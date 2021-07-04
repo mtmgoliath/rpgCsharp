@@ -34,6 +34,8 @@ namespace Engine.Models
             ArmourRating = _modifiedValue;
         }
 
+        
+        //redundant?? \/ \/
         public int GetAttributeModifier(LivingEntity entity, string attributeKey)
         {
             int entityAttributeModifier = entity.GetAttributeValueModifier(entity, attributeKey);

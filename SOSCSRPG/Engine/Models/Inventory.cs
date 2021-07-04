@@ -28,6 +28,9 @@ namespace Engine.Models
         [JsonIgnore]
         public IReadOnlyList<GameItem> Weapons =>
             _backingInventory.ItemsThatAre(GameItem.ItemCategory.Weapon).AsReadOnly();
+        [JsonIgnore]
+        public IReadOnlyList<GameItem> Armour =>
+            _backingInventory.ItemsThatAre(GameItem.ItemCategory.Armour).AsReadOnly();
 
         [JsonIgnore]
         public IReadOnlyList<GameItem> Consumables =>
@@ -35,6 +38,9 @@ namespace Engine.Models
 
         [JsonIgnore]
         public bool HasConsumable => Consumables.Any();
+
+        [JsonIgnore]
+        public bool HasArmour => Armour.Any();
 
         #endregion
 

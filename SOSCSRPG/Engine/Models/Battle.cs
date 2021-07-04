@@ -46,6 +46,21 @@ namespace Engine.Models
             }
         }
 
+        public void BlockOpponent()
+        {
+            if (_player.CurrentArmour == null)
+            {
+                _messageBroker.RaiseMessage("You must select armour to block");
+                return;
+            }
+
+            _player.UseBlockAction(_opponent);
+            if (_opponent.IsAlive)
+            {
+                AttackPlayer();
+            }
+        }
+
         public void Dispose()
         {
             _player.OnActionPerformed -= OnCombatantActionPerformed;
@@ -77,6 +92,8 @@ namespace Engine.Models
         {
             _opponent.UseCurrentWeaponOn(_player);
         }
+
+
 
         private void OnCombatantActionPerformed(object sender, string result)
         {

@@ -58,6 +58,11 @@ namespace WPFUI
             _gameSession.AttackCurrentMonster();
         }
 
+        private void OnClick_BlockMonster(object sender, RoutedEventArgs e)
+        {
+            _gameSession.BlockCurrentMonster();
+        }
+
         private void OnClick_UseCurrentConsumable(object sender, RoutedEventArgs e)
         {
             _gameSession.UseCurrentConsumable();
@@ -94,6 +99,7 @@ namespace WPFUI
             _userInputActions.Add(Key.D, () => _gameSession.MoveEast());
             _userInputActions.Add(Key.Z, () => _gameSession.AttackCurrentMonster());
             _userInputActions.Add(Key.C, () => _gameSession.UseCurrentConsumable());
+            _userInputActions.Add(Key.B, () => _gameSession.BlockCurrentMonster());
             _userInputActions.Add(Key.I, () => SetTabFocusTo("InventoryTabItem"));
             _userInputActions.Add(Key.Q, () => SetTabFocusTo("QuestsTabItem"));
             _userInputActions.Add(Key.R, () => SetTabFocusTo("RecipesTabItem"));

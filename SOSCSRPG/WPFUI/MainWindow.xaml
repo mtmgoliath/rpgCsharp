@@ -59,6 +59,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -76,9 +77,11 @@
             <Label Grid.Row="3" Grid.Column="1" Content="{Binding CurrentPlayer.ExperiencePoints}"/>
             <Label Grid.Row="4" Grid.Column="0" Content="Level:"/>
             <Label Grid.Row="4" Grid.Column="1" Content="{Binding CurrentPlayer.Level}"/>
+            <Label Grid.Row="5" Grid.Column="0" Content="Armour Rating:"/>
+            <Label Grid.Row="5" Grid.Column="1" Content="{Binding CurrentPlayer.ArmourRating}"/>
 
             <!-- Player Attributes -->
-            <ListBox Grid.Row="5" Grid.Column="0"
+            <ListBox Grid.Row="6" Grid.Column="0"
                       Grid.ColumnSpan="2"
                       Background="LightSlateGray"
                       BorderThickness="0"
@@ -372,12 +375,27 @@
                         Click="OnClick_AttackMonster"/>
 
                 <ComboBox Grid.Row="1" Grid.Column="0"
+                          Visibility="{Binding CurrentPlayer.Inventory.HasArmour, Converter={StaticResource BooleanToVisibility}}"
+                          ItemsSource="{Binding CurrentPlayer.Inventory.Armour}"
+                          SelectedItem="{Binding CurrentPlayer.CurrentArmour}"
+                          DisplayMemberPath="Name"/>
+
+                <Button Grid.Row="1" Grid.Column="2"
+                        Visibility="{Binding HasMonster, Converter={StaticResource BooleanToVisibility}}"
+                        Content="Use"
+                        FontWeight="DemiBold"
+                        Background="ForestGreen"
+                        BorderBrush="DarkGreen"
+                        BorderThickness="3px"
+                        Click="OnClick_BlockMonster"/>
+
+                <ComboBox Grid.Row="2" Grid.Column="0"
                           Visibility="{Binding CurrentPlayer.Inventory.HasConsumable, Converter={StaticResource BooleanToVisibility}}"
                           ItemsSource="{Binding CurrentPlayer.Inventory.Consumables}"
                           SelectedItem="{Binding CurrentPlayer.CurrentConsumable}"
                           DisplayMemberPath="Name"/>
 
-                <Button Grid.Row="1" Grid.Column="2"
+                <Button Grid.Row="2" Grid.Column="2"
                         Visibility="{Binding CurrentPlayer.Inventory.HasConsumable, Converter={StaticResource BooleanToVisibility}}"
                         FontWeight="DemiBold"
                         Background="ForestGreen"

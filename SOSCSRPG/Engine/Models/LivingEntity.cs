@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Engine.Services;
 using Newtonsoft.Json;
+using Engine.ViewModels;
 
 namespace Engine.Models
 {
@@ -15,6 +16,8 @@ namespace Engine.Models
         private int _maximumHitPoints;
         private int _gold;
         private int _level;
+        private int _armourRating;
+        //private string _actionTaken;
         private GameItem _currentWeapon;
         private GameItem _currentArmour;
         private GameItem _currentConsumable;
@@ -73,6 +76,18 @@ namespace Engine.Models
             }
         }
 
+        public int ArmourRating
+        {
+            get => _armourRating;
+            private set
+            {
+                _armourRating = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string ActionTaken { get; set; }
+
         public Inventory Inventory
         {
             get => _inventory;
@@ -115,6 +130,7 @@ namespace Engine.Models
                 }
 
                 _currentArmour = value;
+                _armourRating = _currentArmour.Base + GetAttributeValueModifier(this, "DEX");
 
                 if (_currentArmour != null)
                 {
@@ -176,6 +192,11 @@ namespace Engine.Models
         public void UseCurrentWeaponOn(LivingEntity target)
         {
             CurrentWeapon.PerformAction(this, target);
+        }
+
+        public void UseBlockAction(LivingEntity target)
+        {
+            CurrentArmour.PerformAction(this, target);
         }
 
         public void UseCurrentConsumable()

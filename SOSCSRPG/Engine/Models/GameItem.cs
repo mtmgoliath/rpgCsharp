@@ -21,12 +21,16 @@ namespace Engine.Models
         [JsonIgnore]
         public int Price { get; }
         [JsonIgnore]
+        public string AttackStat { get; set; }
+        [JsonIgnore]
+        public int Base { get; set; }
+        [JsonIgnore]
         public bool IsUnique { get; }
         [JsonIgnore]
         public IAction Action { get; set; }
 
         public GameItem(ItemCategory category, int itemTypeID, string name, int price,
-            bool isUnique = false, IAction action = null)
+            bool isUnique = false, IAction action = null, string attackStat = "STR", int baseDefense = 10)
         {
             Category = category;
             ItemTypeID = itemTypeID;
@@ -34,6 +38,8 @@ namespace Engine.Models
             Price = price;
             IsUnique = isUnique;
             Action = action;
+            AttackStat = attackStat;
+            Base = baseDefense;
         }
 
         public void PerformAction(LivingEntity actor, LivingEntity target)

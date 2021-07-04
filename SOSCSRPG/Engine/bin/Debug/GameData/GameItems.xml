@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <GameItems>
 	<Weapons>
-		<Weapon ID="1001" Name="Pointy stick" Price="1" DamageDice="1d2"/>
-		<Weapon ID="1002" Name="Rusty sword" Price="5" DamageDice="1d3"/>
-		<Weapon ID="1003" Name="Iron dagger" Price="35" DamageDice="1d4"/>
-		<Weapon ID="1004" Name="Iron sword" Price="50" DamageDice="1d6"/>
+		<Weapon ID="1001" Name="Pointy stick" Price="1" DamageDice="1d2" AttackStat="STR"/>
+		<Weapon ID="1002" Name="Rusty sword" Price="5" DamageDice="1d3" AttackStat="STR"/>
+		<Weapon ID="1003" Name="Iron dagger" Price="35" DamageDice="1d4" AttackStat="DEX"/>
+		<Weapon ID="1004" Name="Iron sword" Price="50" DamageDice="1d6" AttackStat="STR"/>
 
-		<Weapon ID="1501" Name="Snake fang" Price="0" DamageDice="1d3"/>
-		<Weapon ID="1502" Name="Rat claw" Price="0" DamageDice="1d4"/>
-		<Weapon ID="1503" Name="Spider fang" Price="0" DamageDice="1d6"/>
+		<Weapon ID="1501" Name="Snake fang" Price="0" DamageDice="1d3" AttackStat="STR"/>
+		<Weapon ID="1502" Name="Rat claw" Price="0" DamageDice="1d4" AttackStat="STR"/>
+		<Weapon ID="1503" Name="Spider fang" Price="0" DamageDice="1d6" AttackStat="STR"/>
 	</Weapons>
 	<Armour>
-		<Armour ID="6001" Name="Cloth Rags" Price="0" Rating="Unarmoured"/>
+		<Armour ID="6001" Name="Cloth Rags" Price="0" Rating="Unarmoured" Base="10"/>
 	</Armour>
 	<HealingItems>
 		<HealingItem ID="2001" Name="Granola bar" Price="5" HitPointsToHeal="2"/>

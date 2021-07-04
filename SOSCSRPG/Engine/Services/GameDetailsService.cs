@@ -49,19 +49,7 @@ namespace Engine.Services
                     gameDetails.Races.Add(race);
                 }
             }
-
-            if (gameDetailsJson["ArmourRatings"] != null)
-                foreach (JToken token in gameDetailsJson["ArmourRatings"])
-                {
-                    ArmourItemRating armourRating = new ArmourItemRating(
-                        token.StringValueOf("Key"),
-                        token.StringValueOf("Rating"),
-                        token.IntValueOf("BaseValue"),
-                        token.StringValueOf("AttributeKey"),
-                        token.IntValueOf("AttributeModifier"));
-                    gameDetails.ArmourRatings.Add(armourRating);
-                }
-
+            
             return gameDetails;
         }
     }

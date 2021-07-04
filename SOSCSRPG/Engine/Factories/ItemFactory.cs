@@ -45,7 +45,8 @@ namespace Engine.Factories
             {
                 GameItem.ItemCategory itemCategory = DetermineItemCategory(node.Name);
                 GameItem gameItem =
-                new GameItem(itemCategory,
+                new GameItem(
+                    itemCategory,
                 node.AttributeAsInt("ID"),
                 node.AttributeAsString("Name"),
                 node.AttributeAsInt("Price"),
@@ -54,12 +55,19 @@ namespace Engine.Factories
                 {
                     gameItem.Action =
                     new AttackWithWeapon(gameItem, node.AttributeAsString("DamageDice"));
+                    gameItem.AttackStat = node.AttributeAsString("AttackStat");
                 }
                 else if (itemCategory == GameItem.ItemCategory.Consumable)
                 {
                     gameItem.Action =
                     new Heal(gameItem,
                     node.AttributeAsInt("HitPointsToHeal"));
+                }
+                else if (itemCategory == GameItem.ItemCategory.Armour)
+                {
+                    gameItem.Action =
+                        new Block(gameItem, node.AttributeAsString("Rating"));
+                    gameItem.Base = node.AttributeAsInt("Base");
                 }
                 _standardGameItems.Add(gameItem);
             }

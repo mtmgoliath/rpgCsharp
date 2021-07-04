@@ -264,6 +264,11 @@ namespace Engine.ViewModels
             _currentBattle?.AttackOpponent();
         }
 
+        public void BlockCurrentMonster()
+        {
+            _currentBattle?.BlockOpponent();
+        }
+
         public void UseCurrentConsumable()
         {
             if (CurrentPlayer.CurrentConsumable != null)
@@ -325,6 +330,7 @@ namespace Engine.ViewModels
         //add parameter to CurrentLocation: totalMonsters
         private void OnCurrentMonsterKilled(object sender, System.EventArgs eventArgs)
         {
+            //add conditional to check if monster cap reached
             // Get another monster to fight
             CurrentMonster = CurrentLocation.GetMonster();
         }
