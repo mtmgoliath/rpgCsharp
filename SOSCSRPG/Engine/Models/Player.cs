@@ -34,8 +34,8 @@ namespace Engine.Models
         public new ObservableCollection<PlayerAttribute> Attributes { get; set; } =
             new ObservableCollection<PlayerAttribute>();
 
-        public ObservableCollection<PlayerArmourRating> ArmourRating { get; set; } =
-            new ObservableCollection<PlayerArmourRating>();
+        public ObservableCollection<ArmourItemRating> ArmourRating { get; set; } =
+            new ObservableCollection<ArmourItemRating>();
 
         #endregion
 

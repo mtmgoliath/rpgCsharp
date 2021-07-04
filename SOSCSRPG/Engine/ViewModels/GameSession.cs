@@ -322,7 +322,7 @@ namespace Engine.ViewModels
             CurrentLocation = CurrentWorld.LocationAt(0, -1);
             CurrentPlayer.CompletelyHeal();
         }
-
+        //add parameter to CurrentLocation: totalMonsters
         private void OnCurrentMonsterKilled(object sender, System.EventArgs eventArgs)
         {
             // Get another monster to fight

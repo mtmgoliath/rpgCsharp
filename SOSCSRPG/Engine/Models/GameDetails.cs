@@ -14,6 +14,9 @@ namespace Engine.Models
         public List<Race> Races { get; } =
             new List<Race>();
 
+        public List<ArmourItemRating> ArmourRatings { get; } =
+            new List<ArmourItemRating>();
+
         public GameDetails(string title, string subTitle, string version)
         {
             Title = title;

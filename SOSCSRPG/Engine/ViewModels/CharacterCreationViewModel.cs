@@ -84,6 +84,7 @@ namespace Engine.ViewModels
             player.AddItemToInventory(ItemFactory.CreateGameItem(3001));
             player.AddItemToInventory(ItemFactory.CreateGameItem(3002));
             player.AddItemToInventory(ItemFactory.CreateGameItem(3003));
+            player.AddItemToInventory(ItemFactory.CreateGameItem(6001));
             player.Attributes = PlayerAttributes;
 
             return player;

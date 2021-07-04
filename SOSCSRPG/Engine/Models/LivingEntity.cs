@@ -257,9 +257,9 @@ namespace Engine.Models
 
         //method to get int modifier based on attributes
         //called in AttackWithWeapon class
-        public int GetAttributeValueModifier(LivingEntity entity, string attributeKey)
+        public int GetAttributeValueModifier(LivingEntity entity, string key)
         {
-            int entityAttributeValue = entity.GetAttributeModifiedValue(attributeKey);
+            int entityAttributeValue = entity.GetAttributeModifiedValue(key);
             int attributeValueModifier = 0;
 
             switch (entityAttributeValue)
