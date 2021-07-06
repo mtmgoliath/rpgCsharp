@@ -1,0 +1,112 @@
+{
+  "CurrentPlayer": {
+    "ExperiencePoints": 5,
+    "Quests": [
+      {
+        "PlayerQuest": {
+          "ID": 1
+        },
+        "IsCompleted": false
+      }
+    ],
+    "Recipes": [
+      {
+        "ID": 1
+      },
+      {
+        "ID": 2
+      },
+      {
+        "ID": 3
+      }
+    ],
+    "Attributes": [
+      {
+        "Key": "STR",
+        "DisplayName": "Strength",
+        "DiceNotation": "4d6p1",
+        "BaseValue": 10,
+        "ModifiedValue": 10
+      },
+      {
+        "Key": "DEX",
+        "DisplayName": "Dexterity",
+        "DiceNotation": "4d6p1",
+        "BaseValue": 16,
+        "ModifiedValue": 16
+      },
+      {
+        "Key": "CON",
+        "DisplayName": "Constitution",
+        "DiceNotation": "4d6p1",
+        "BaseValue": 14,
+        "ModifiedValue": 15
+      },
+      {
+        "Key": "INT",
+        "DisplayName": "Intelligence",
+        "DiceNotation": "4d6p1",
+        "BaseValue": 17,
+        "ModifiedValue": 17
+      },
+      {
+        "Key": "WIS",
+        "DisplayName": "Wisdom",
+        "DiceNotation": "4d6p1",
+        "BaseValue": 15,
+        "ModifiedValue": 15
+      },
+      {
+        "Key": "CHA",
+        "DisplayName": "Charisma",
+        "DiceNotation": "4d6p1",
+        "BaseValue": 13,
+        "ModifiedValue": 13
+      }
+    ],
+    "Name": "Alowischus",
+    "CurrentHitPoints": 2,
+    "MaximumHitPoints": 10,
+    "Gold": 11,
+    "Level": 1,
+    "ArmourRating": 13,
+    "ActionTaken": "Attacked",
+    "Inventory": {
+      "Items": [
+        {
+          "ItemTypeID": 1001
+        },
+        {
+          "ItemTypeID": 2001
+        },
+        {
+          "ItemTypeID": 3001
+        },
+        {
+          "ItemTypeID": 3002
+        },
+        {
+          "ItemTypeID": 3003
+        },
+        {
+          "ItemTypeID": 6001
+        },
+        {
+          "ItemTypeID": 9002
+        }
+      ]
+    },
+    "CurrentWeapon": {
+      "ItemTypeID": 1001
+    },
+    "CurrentArmour": {
+      "ItemTypeID": 6001
+    },
+    "CurrentShield": null,
+    "CurrentConsumable": null
+  },
+  "CurrentLocation": {
+    "XCoordinate": 0,
+    "YCoordinate": 2
+  }
+}

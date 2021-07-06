@@ -8,7 +8,9 @@
 		</ItemsToComplete>
 		<RewardItems>
 			<Item ID="1002" Quantity="1"/>
-			<Item ID="6001" Quantity="1"/>
+			<Item ID="1005" Quantity="1"/>
+			<Item ID="1009" Quantity="1"/>
+			<Item ID="6003" Quantity="1"/>
 		</RewardItems>
 	</Quest>
 	<Quest ID="2" RewardExperiencePoints="50" RewardGold="25">

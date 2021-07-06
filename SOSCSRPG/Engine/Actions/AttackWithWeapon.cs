@@ -7,6 +7,7 @@ namespace Engine.Actions
     {
         private readonly string _damageDice;
         private readonly string _attackStat;
+        
         public AttackWithWeapon(GameItem itemInUse, string damageDice)
             : base(itemInUse)
         {
@@ -35,7 +36,14 @@ namespace Engine.Actions
                 {
                     damage = (int) Math.Floor(0.25 * damage);
                 }
-                ReportResult($"{actorName} critically hit {targetName} for {damage} point{(damage > 1 ? "s" : "")}!");
+
+                if (damage < 0)
+                {
+                    damage = 0;
+                }
+
+                ReportResult($"{actorName} rolled {CombatService.AttackRollResult} to hit." + "\n" +
+                             $"{actorName} critically hit {targetName} for {damage} point{(damage > 1 ? "s" : "")}!");
                 target.TakeDamage(damage);
             }
             else if (CombatService.AttackSucceeded(actor, target))
@@ -46,7 +54,14 @@ namespace Engine.Actions
                 {
                     damage = (int)Math.Floor(0.5 * damage);
                 }
-                ReportResult($"{actorName} hit {targetName} for {damage} point{(damage > 1 ? "s" : "")}.");
+
+                if (damage < 0)
+                {
+                    damage = 0;
+                }
+                
+                ReportResult($"{actorName} rolled {CombatService.AttackRollResult} to hit." + "\n" +
+                             $"{actorName} hit {targetName} for {damage} point{(damage > 1 ? "s" : "")}.");
                 target.TakeDamage(damage);
             }
             else

@@ -17,8 +17,8 @@ namespace Engine.Services
         //add in crit result log
         
         public static bool CriticalHit { get; set; }
+        public static int AttackRollResult { get; set; }
 
-        
         public static Combatant FirstAttacker(Player player, Monster opponent)
         {
             // Formula is: ((Dex(player)^2 - Dex(monster)^2)/10) + Random(-10/10)
@@ -56,6 +56,7 @@ namespace Engine.Services
                                    attacker.GetAttributeValueModifier(attacker, attacker.CurrentWeapon.AttackStat);
             
             int armourRatingToBeat = target.ArmourRating;
+            AttackRollResult = attackRollResult;
             return attackRollResult >= armourRatingToBeat;
         }
 
