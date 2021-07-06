@@ -64,6 +64,7 @@ namespace Engine.Models
 
             // Select a random number between 1 and the total (in case the total chances is not 100).
             int randomNumber = DiceService.Instance.Roll(totalChances, 1).Value;
+            
 
             // Loop through the monster list, 
             // adding the monster's percentage chance of appearing to the runningTotal variable.
@@ -73,16 +74,21 @@ namespace Engine.Models
 
             foreach (MonsterEncounter monsterEncounter in MonstersHere)
             {
-                runningTotal += monsterEncounter.ChanceOfEncountering;
-
-                if (randomNumber <= runningTotal)
+               
+                int rollD100 = DiceService.Instance.Roll(100, 1).Value;
+                //runningTotal += monsterEncounter.ChanceOfEncountering;
+                if (rollD100 > totalChances)
                 {
+                    runningTotal++;
                     return MonsterFactory.GetMonster(monsterEncounter.MonsterID);
+
                 }
+
             }
 
             // If there was a problem, return the last monster in the list.
             return MonsterFactory.GetMonster(MonstersHere.Last().MonsterID);
         }
+
     }
 }

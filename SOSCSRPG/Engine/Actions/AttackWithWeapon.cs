@@ -30,7 +30,7 @@ namespace Engine.Actions
             string targetName = (target is Player) ? "you" : $"the {target.Name.ToLower()}";
             if (CombatService.AttackSucceeded(actor, target) && CombatService.CriticalHit)
             {
-                int damage = (2 * DiceService.Instance.Roll(_damageDice).Value) 
+                int damage = (2 * DiceService.Instance.Roll(_damageDice).Value)
                              + actor.GetAttributeValueModifier(actor, _attackStat);
                 if (CombatService.EvaluateActionTaken(target.ActionTaken))
                 {
@@ -44,6 +44,7 @@ namespace Engine.Actions
 
                 ReportResult($"{actorName} rolled {CombatService.AttackRollResult} to hit." + "\n" +
                              $"{actorName} critically hit {targetName} for {damage} point{(damage > 1 ? "s" : "")}!");
+               // CombatService.AttackRollResult = 0;
                 target.TakeDamage(damage);
             }
             else if (CombatService.AttackSucceeded(actor, target))
@@ -62,6 +63,7 @@ namespace Engine.Actions
                 
                 ReportResult($"{actorName} rolled {CombatService.AttackRollResult} to hit." + "\n" +
                              $"{actorName} hit {targetName} for {damage} point{(damage > 1 ? "s" : "")}.");
+               // CombatService.AttackRollResult = 0;
                 target.TakeDamage(damage);
             }
             else

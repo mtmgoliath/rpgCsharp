@@ -24,10 +24,10 @@ namespace Engine.Models
             _messageBroker.RaiseMessage("");
             _messageBroker.RaiseMessage($"You see a {_opponent.Name} here!");
 
-            if (CombatService.FirstAttacker(_player, _opponent) == CombatService.Combatant.Opponent)
-            {
-                AttackPlayer();
-            }
+            //if (CombatService.FirstAttacker(_player, _opponent) == CombatService.Combatant.Opponent)
+           // {
+            //    AttackPlayer();
+        //    }
         }
 
         public void AttackOpponent()
