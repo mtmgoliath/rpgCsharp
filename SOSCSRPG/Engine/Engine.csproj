@@ -89,6 +89,7 @@
     <Compile Include="Actions\AttackWithWeapon.cs" />
     <Compile Include="Actions\BaseActions.cs" />
     <Compile Include="Actions\Block.cs" />
+    <Compile Include="Actions\EquipItem.cs" />
     <Compile Include="Actions\Heal.cs" />
     <Compile Include="Actions\IAction.cs" />
     <Compile Include="Actions\MakeSkillCheck.cs" />

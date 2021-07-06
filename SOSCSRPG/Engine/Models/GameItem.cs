@@ -10,7 +10,8 @@ namespace Engine.Models
             Miscellaneous,
             Weapon,
             Consumable,
-            Armour
+            Armour,
+            Shield
         }
 
         [JsonIgnore]
@@ -23,7 +24,7 @@ namespace Engine.Models
         [JsonIgnore]
         public string AttackStat { get; set; }
         [JsonIgnore]
-        public int Base { get; set; }
+        public int BaseDefense { get; set; }
         [JsonIgnore]
         public bool IsUnique { get; }
         [JsonIgnore]
@@ -39,7 +40,7 @@ namespace Engine.Models
             IsUnique = isUnique;
             Action = action;
             AttackStat = attackStat;
-            Base = baseDefense;
+            BaseDefense = baseDefense;
         }
 
         public void PerformAction(LivingEntity actor, LivingEntity target)
@@ -49,7 +50,7 @@ namespace Engine.Models
 
         public GameItem Clone()
         {
-            return new GameItem(Category, ItemTypeID, Name, Price, IsUnique, Action);
+            return new GameItem(Category, ItemTypeID, Name, Price, IsUnique, Action, AttackStat, BaseDefense);
         }
     }
 }

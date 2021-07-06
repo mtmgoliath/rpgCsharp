@@ -21,6 +21,7 @@ namespace Engine.Factories
                 LoadItemsFromNodes(data.SelectNodes("/GameItems/HealingItems/HealingItem"));
                 LoadItemsFromNodes(data.SelectNodes("/GameItems/MiscellaneousItems/MiscellaneousItem"));
                 LoadItemsFromNodes(data.SelectNodes("/GameItems/Armour/Armour"));
+                LoadItemsFromNodes(data.SelectNodes("/GameItems/Shields/Shield"));
             }
             else
             {
@@ -50,7 +51,7 @@ namespace Engine.Factories
                 node.AttributeAsInt("ID"),
                 node.AttributeAsString("Name"),
                 node.AttributeAsInt("Price"),
-                itemCategory == GameItem.ItemCategory.Weapon);
+                itemCategory == GameItem.ItemCategory.Weapon || itemCategory == GameItem.ItemCategory.Armour || itemCategory == GameItem.ItemCategory.Shield);
                 if (itemCategory == GameItem.ItemCategory.Weapon)
                 {
                     gameItem.Action =
@@ -66,8 +67,14 @@ namespace Engine.Factories
                 else if (itemCategory == GameItem.ItemCategory.Armour)
                 {
                     gameItem.Action =
-                        new Block(gameItem, node.AttributeAsString("Rating"));
-                    gameItem.Base = node.AttributeAsInt("Base");
+                        new EquipItem(gameItem);
+                    gameItem.BaseDefense = node.AttributeAsInt("BaseDefense");
+                }
+                else if (itemCategory == GameItem.ItemCategory.Shield)
+                {
+                    gameItem.Action =
+                        new Block(gameItem, node.AttributeAsString("BaseDefense"));
+                    gameItem.BaseDefense = node.AttributeAsInt("BaseDefense");
                 }
                 _standardGameItems.Add(gameItem);
             }
@@ -82,6 +89,8 @@ namespace Engine.Factories
                     return GameItem.ItemCategory.Consumable;
                 case "Armour":
                     return GameItem.ItemCategory.Armour;
+                case "Shield":
+                    return GameItem.ItemCategory.Shield;
                 default:
                     return GameItem.ItemCategory.Miscellaneous;
             }

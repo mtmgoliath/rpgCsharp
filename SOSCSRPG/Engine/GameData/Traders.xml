@@ -7,6 +7,7 @@
 			<Item ID="3006" Quantity="20"/>
 			<Item ID="3007" Quantity="1"/>
 			<Item ID="1003" Quantity="1"/>
+			<Item ID="1006" Quantity="1"/>
 			<Item ID="2002" Quantity="1"/>
 		</InventoryItems>
 	</Trader>
@@ -26,6 +27,7 @@
 			<Item ID="3008" Quantity="5"/>
 			<Item ID="3009" Quantity="4"/>
 			<Item ID="3010" Quantity="1"/>
+			<Item ID="1006" Quantity="1"/>
 			<Item ID="2003" Quantity="1"/>
 		</InventoryItems>
 	</Trader>

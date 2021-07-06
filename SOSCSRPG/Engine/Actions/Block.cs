@@ -5,16 +5,16 @@ namespace Engine.Actions
 {
     public class Block : BaseAction, IAction
     {
-        private readonly string _rating;
-        public Block(GameItem itemInUse, string rating)
+        private readonly string _baseDefense;
+        public Block(GameItem itemInUse, string baseDefense)
             : base(itemInUse)
         {
-            if (itemInUse.Category != GameItem.ItemCategory.Armour)
+            if (itemInUse.Category != GameItem.ItemCategory.Shield)
             {
-                throw new ArgumentException($"{itemInUse.Name} is not armour");
+                throw new ArgumentException($"{itemInUse.Name} is a shield");
             }
 
-            _rating = rating;
+            _baseDefense = baseDefense;
         }
         public void Execute(LivingEntity actor, LivingEntity target)
         {

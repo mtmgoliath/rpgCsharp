@@ -20,6 +20,7 @@ namespace Engine.Models
         //private string _actionTaken;
         private GameItem _currentWeapon;
         private GameItem _currentArmour;
+        private GameItem _currentShield;
         private GameItem _currentConsumable;
         private Inventory _inventory;
 
@@ -79,7 +80,8 @@ namespace Engine.Models
         public int ArmourRating
         {
             get => _armourRating;
-            private set
+            
+            set
             {
                 _armourRating = value;
                 OnPropertyChanged();
@@ -130,9 +132,31 @@ namespace Engine.Models
                 }
 
                 _currentArmour = value;
-                _armourRating = _currentArmour.Base + GetAttributeValueModifier(this, "DEX");
+                _armourRating = _currentArmour.BaseDefense + GetAttributeValueModifier(this, "DEX");
 
                 if (_currentArmour != null)
+                {
+                    _currentArmour.Action.OnActionPerformed += RaiseActionPerformedEvent;
+                }
+
+                OnPropertyChanged();
+            }
+        }
+
+        public GameItem CurrentShield
+        {
+            get => _currentShield;
+            set
+            {
+                if (_currentShield!= null)
+                {
+                    _currentShield.Action.OnActionPerformed -= RaiseActionPerformedEvent;
+                }
+
+                _currentShield = value;
+                _armourRating += _currentShield.BaseDefense;
+
+                if (_currentShield != null)
                 {
                     _currentArmour.Action.OnActionPerformed += RaiseActionPerformedEvent;
                 }
@@ -173,7 +197,7 @@ namespace Engine.Models
         public event EventHandler OnKilled;
 
         protected LivingEntity(string name, int maximumHitPoints, int currentHitPoints,
-                               ObservableCollection<PlayerAttribute> attributes, int gold, int level = 1)
+                               ObservableCollection<PlayerAttribute> attributes, int gold, int level = 1, int armourRating = 10)
         {
             Name = name;
             MaximumHitPoints = maximumHitPoints;
@@ -196,14 +220,20 @@ namespace Engine.Models
 
         public void UseBlockAction(LivingEntity target)
         {
-            CurrentArmour.PerformAction(this, target);
+            CurrentShield.PerformAction(this, target);
         }
+
 
         public void UseCurrentConsumable()
         {
             CurrentConsumable.PerformAction(this, this);
 
             RemoveItemFromInventory(CurrentConsumable);
+        }
+
+        public void UseEquipItemAction()
+        {
+            CurrentArmour.PerformAction(this, this);
         }
 
         public void TakeDamage(int hitPointsOfDamage)

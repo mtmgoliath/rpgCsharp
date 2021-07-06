@@ -67,6 +67,10 @@ namespace WPFUI
         {
             _gameSession.UseCurrentConsumable();
         }
+        private void OnClick_EquipCurrentArmour(object sender, RoutedEventArgs e)
+        {
+            _gameSession.EquipCurrentArmour();
+        }
 
         private void OnGameMessageRaised(object sender, GameMessageEventArgs e)
         {

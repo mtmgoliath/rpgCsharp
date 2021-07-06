@@ -1,13 +1,19 @@
 {
   "CurrentPlayer": {
-    "ExperiencePoints": 50,
+    "ExperiencePoints": 100,
     "ArmourRating": 10,
     "Quests": [
       {
         "PlayerQuest": {
-          "ID": 1
+          "ID": 2
         },
         "IsCompleted": false
+      },
+      {
+        "PlayerQuest": {
+          "ID": 1
+        },
+        "IsCompleted": true
       }
     ],
     "Recipes": [
@@ -26,51 +32,51 @@
         "Key": "STR",
         "DisplayName": "Strength",
         "DiceNotation": "4d6p1",
-        "BaseValue": 11,
-        "ModifiedValue": 12
+        "BaseValue": 12,
+        "ModifiedValue": 13
       },
       {
         "Key": "DEX",
         "DisplayName": "Dexterity",
         "DiceNotation": "4d6p1",
-        "BaseValue": 16,
-        "ModifiedValue": 16
+        "BaseValue": 18,
+        "ModifiedValue": 18
       },
       {
         "Key": "CON",
         "DisplayName": "Constitution",
         "DiceNotation": "4d6p1",
-        "BaseValue": 18,
-        "ModifiedValue": 18
+        "BaseValue": 10,
+        "ModifiedValue": 10
       },
       {
         "Key": "INT",
         "DisplayName": "Intelligence",
         "DiceNotation": "4d6p1",
-        "BaseValue": 14,
-        "ModifiedValue": 14
+        "BaseValue": 18,
+        "ModifiedValue": 18
       },
       {
         "Key": "WIS",
         "DisplayName": "Wisdom",
         "DiceNotation": "4d6p1",
-        "BaseValue": 12,
-        "ModifiedValue": 12
+        "BaseValue": 15,
+        "ModifiedValue": 15
       },
       {
         "Key": "CHA",
         "DisplayName": "Charisma",
         "DiceNotation": "4d6p1",
-        "BaseValue": 15,
-        "ModifiedValue": 14
+        "BaseValue": 10,
+        "ModifiedValue": 9
       }
     ],
-    "Name": "Trogdor",
-    "CurrentHitPoints": 10,
-    "MaximumHitPoints": 10,
-    "Gold": 20,
-    "Level": 1,
-    "ActionTaken": "Blocked",
+    "Name": "GromBlorr",
+    "CurrentHitPoints": 2,
+    "MaximumHitPoints": 20,
+    "Gold": 35,
+    "Level": 2,
+    "ActionTaken": "Attacked",
     "Inventory": {
       "Items": [
         {
@@ -80,19 +86,28 @@
           "ItemTypeID": 2001
         },
         {
-          "ItemTypeID": 3001
-        },
-        {
-          "ItemTypeID": 3002
-        },
-        {
-          "ItemTypeID": 3003
-        },
-        {
           "ItemTypeID": 6001
         },
         {
-          "ItemTypeID": 9001
+          "ItemTypeID": 2001
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9002
+        },
+        {
+          "ItemTypeID": 9002
         },
         {
           "ItemTypeID": 9002
@@ -107,13 +122,10 @@
           "ItemTypeID": 9002
         },
         {
-          "ItemTypeID": 9001
-        },
-        {
           "ItemTypeID": 9002
         },
         {
-          "ItemTypeID": 9002
+          "ItemTypeID": 9000
         }
       ]
     },
@@ -123,12 +135,13 @@
     "CurrentArmour": {
       "ItemTypeID": 6001
     },
+    "CurrentShield": null,
     "CurrentConsumable": {
       "ItemTypeID": 2001
     }
   },
   "CurrentLocation": {
     "XCoordinate": 0,
-    "YCoordinate": -1
+    "YCoordinate": 1
   }
 }

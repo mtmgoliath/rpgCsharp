@@ -72,7 +72,7 @@ namespace Engine.ViewModels
 
         public Player GetPlayer()
         {
-            Player player = new Player(Name, 0, 10, 10, PlayerAttributes, 10);
+            Player player = new Player(Name, 0, 10, 10, PlayerAttributes, 10, 10);
 
             // Give player default inventory items, weapons, recipes, etc.
             player.AddItemToInventory(ItemFactory.CreateGameItem(1001));

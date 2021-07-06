@@ -53,7 +53,8 @@ namespace Engine.Services
                            (int)data[nameof(GameSession.CurrentPlayer)][nameof(Player.MaximumHitPoints)],
                            (int)data[nameof(GameSession.CurrentPlayer)][nameof(Player.CurrentHitPoints)],
                            GetPlayerAttributes(data),
-                           (int)data[nameof(GameSession.CurrentPlayer)][nameof(Player.Gold)]);
+                           (int)data[nameof(GameSession.CurrentPlayer)][nameof(Player.Gold)],
+                           (int)data[nameof(GameSession.CurrentPlayer)][nameof(Player.ArmourRating)]);
 
             PopulatePlayerInventory(data, player);
 

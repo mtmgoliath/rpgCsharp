@@ -39,7 +39,7 @@ namespace Engine.Models
             }
 
             _player.UseCurrentWeaponOn(_opponent);
-
+            //could split the counter attack so it waits to check on action state??
             if (_opponent.IsAlive)
             {
                 AttackPlayer();
@@ -50,7 +50,7 @@ namespace Engine.Models
         {
             if (_player.CurrentArmour == null)
             {
-                _messageBroker.RaiseMessage("You must select armour to block");
+                _messageBroker.RaiseMessage("You must select a shield to block");
                 return;
             }
 

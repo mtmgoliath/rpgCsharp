@@ -44,7 +44,7 @@ namespace Engine.Actions
                              + actor.GetAttributeValueModifier(actor, _attackStat);
                 if (CombatService.EvaluateActionTaken(target.ActionTaken))
                 {
-                    damage = (int)Math.Floor(0.25 * damage);
+                    damage = (int)Math.Floor(0.5 * damage);
                 }
                 ReportResult($"{actorName} hit {targetName} for {damage} point{(damage > 1 ? "s" : "")}.");
                 target.TakeDamage(damage);

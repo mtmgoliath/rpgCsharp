@@ -351,6 +351,8 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
@@ -367,7 +369,7 @@
 
                 <Button Grid.Row="0" Grid.Column="2"
                         Visibility="{Binding HasMonster, Converter={StaticResource BooleanToVisibility}}"
-                        Content="Use"
+                        Content="Attack"
                         FontWeight="DemiBold"
                         Background="ForestGreen"
                         BorderBrush="DarkGreen"
@@ -375,14 +377,14 @@
                         Click="OnClick_AttackMonster"/>
 
                 <ComboBox Grid.Row="1" Grid.Column="0"
-                          Visibility="{Binding CurrentPlayer.Inventory.HasArmour, Converter={StaticResource BooleanToVisibility}}"
-                          ItemsSource="{Binding CurrentPlayer.Inventory.Armour}"
-                          SelectedItem="{Binding CurrentPlayer.CurrentArmour}"
+                          Visibility="{Binding CurrentPlayer.Inventory.HasShield, Converter={StaticResource BooleanToVisibility}}"
+                          ItemsSource="{Binding CurrentPlayer.Inventory.Shields}"
+                          SelectedItem="{Binding CurrentPlayer.CurrentShield}"
                           DisplayMemberPath="Name"/>
 
                 <Button Grid.Row="1" Grid.Column="2"
                         Visibility="{Binding HasMonster, Converter={StaticResource BooleanToVisibility}}"
-                        Content="Use"
+                        Content="Block"
                         FontWeight="DemiBold"
                         Background="ForestGreen"
                         BorderBrush="DarkGreen"
@@ -403,6 +405,21 @@
                         BorderThickness="3px"
                         Content="Use"
                         Click="OnClick_UseCurrentConsumable"/>
+
+                <ComboBox Grid.Row="3" Grid.Column="0"
+                          Visibility="{Binding CurrentPlayer.Inventory.HasArmour, Converter={StaticResource BooleanToVisibility}}"
+                          ItemsSource="{Binding CurrentPlayer.Inventory.Armour}"
+                          SelectedItem="{Binding CurrentPlayer.CurrentArmour}"
+                          DisplayMemberPath="Name"/>
+
+                <Button Grid.Row="3" Grid.Column="2"
+                        Visibility="{Binding CurrentPlayer.Inventory.HasConsumable, Converter={StaticResource BooleanToVisibility}}"
+                        FontWeight="DemiBold"
+                        Background="ForestGreen"
+                        BorderBrush="DarkGreen"
+                        BorderThickness="3px"
+                        Content="Equip"
+                        Click="OnClick_EquipCurrentArmour"/>
             </Grid>
 
             <!-- Movement Controls -->

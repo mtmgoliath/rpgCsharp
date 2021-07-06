@@ -1,17 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <GameItems>
 	<Weapons>
-		<Weapon ID="1001" Name="Pointy stick" Price="1" DamageDice="1d2" AttackStat="STR"/>
-		<Weapon ID="1002" Name="Rusty sword" Price="5" DamageDice="1d3" AttackStat="STR"/>
-		<Weapon ID="1003" Name="Iron dagger" Price="35" DamageDice="1d4" AttackStat="DEX"/>
-		<Weapon ID="1004" Name="Iron sword" Price="50" DamageDice="1d6" AttackStat="STR"/>
+		<Weapon ID="1001" Name="Pointy stick" Price="1" DamageDice="1d4" AttackStat="STR"/>
+		<Weapon ID="1002" Name="Rusty sword" Price="5" DamageDice="1d6" AttackStat="STR"/>
+		<Weapon ID="1003" Name="Iron dagger" Price="35" DamageDice="1d4+1" AttackStat="DEX"/>
+		<Weapon ID="1004" Name="Iron sword" Price="50" DamageDice="1d6+1" AttackStat="STR"/>
+		<Weapon ID="1005" Name="Flail" Price="45" DamageDice="1d8" AttackStat="STR"/>
+		<Weapon ID="1006" Name="Battleaxe" Price="45" DamageDice="1d8" AttackStat="STR"/>
+		<Weapon ID="1007" Name="Glaive" Price="80" DamageDice="1d10" AttackStat="STR"/>
+		<Weapon ID="1008" Name="Greataxe" Price="125" DamageDice="1d12" AttackStat="STR"/>
+		<Weapon ID="1009" Name="Greatsword" Price="199" DamageDice="2d6" AttackStat="STR"/>
 
 		<Weapon ID="1501" Name="Snake fang" Price="0" DamageDice="1d3" AttackStat="STR"/>
 		<Weapon ID="1502" Name="Rat claw" Price="0" DamageDice="1d4" AttackStat="STR"/>
 		<Weapon ID="1503" Name="Spider fang" Price="0" DamageDice="1d6" AttackStat="STR"/>
 	</Weapons>
 	<Armour>
-		<Armour ID="6001" Name="Cloth Rags" Price="0" Rating="Unarmoured" Base="10"/>
+		<Armour ID="6000" Name="Cloth Rags" Price="0" Rating="Unarmoured" BaseDefense="10"/>
+		<Armour ID="6001" Name="Padded Armour" Price="0" Rating="Light Armour" BaseDefense="11" Stealth="2d20l1"/>
+		<Armour ID="6002" Name="Leather Armour" Price="50" Rating="Light Armour" BaseDefense="11"/>
+		<Armour ID="6003" Name="Studded Leather Armour" Price="85" Rating="Light Armour" BaseDefense="12"/>
+
+		<Armour ID="6004" Name="Chain Shirt" Price="120" Rating="Medium Armour" BaseDefense="13"/>
+		<Armour ID="6005" Name="Scale Mail" Price="140" Rating="Medium Armour" BaseDefense="14" Stealth="2d20l1"/>
+		<Armour ID="6006" Name="Breastplate" Price="400" Rating="Medium Armour" BaseDefense="14"/>
+		<Armour ID="6007" Name="Half Plate" Price="750" Rating="Medium Armour" BaseDefense="15" Stealth="2d20l1"/>
+
+		<Armour ID="6008" Name="Chain Mail" Price="75" Rating="Heavy Armour" RequiredStrength="13" BaseDefense="16" Stealth="2d20l1"/>
+		<Armour ID="6009" Name="Splint Armour" Price="200" Rating="Heavy Armour" RequiredStrength="15" BaseDefense="17" Stealth="2d20l1"/>
+		<Armour ID="6010" Name="Plate Armour" Price="1500" Rating="Heavy Armour" RequiredStrength="15" BaseDefense="18" Stealth="2d20l1"/>
+		<Armour ID="6011" Name="Dragon Plate Armour" Price="3223" Rating="Heavy Armour" RequiredStrength="16" BaseDefense="19" Stealth="2d20l1"/>
+		<Shields>
+			<Shield ID="6101" Name="Wooden Shield" Price="50" Rating="Shield" BaseDefense="2"/>
+			<Shield ID="6102" Name="Tower Shield" Price="150" Rating="Shield" BaseDefense="3"/>
+		</Shields>
 	</Armour>
 	<HealingItems>
 		<HealingItem ID="2001" Name="Granola bar" Price="5" HitPointsToHeal="2"/>

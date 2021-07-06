@@ -3,7 +3,7 @@
 	<Location X="-2" Y="-1" Name="Farmer's Field" ImageName="FarmFields.png">
 		<Description><![CDATA[There are rows of corn here, with giant rats hiding between them.]]></Description>
 		<Monsters>
-			<Monster ID="2" Percent="100"/>
+			<Monster ID="2" Percent="75"/>
 		</Monsters>
 	</Location>
 	<Location X="-1" Y="-1" Name="Farmer's House" ImageName="Farmhouse.png">
@@ -32,7 +32,7 @@
 	<Location X="2" Y="0" Name="Spider Forest" ImageName="SpiderForest.png">
 		<Description><![CDATA[The trees in this forest are covered with spider webs.]]></Description>
 		<Monsters>
-			<Monster ID="3" Percent="100"/>
+			<Monster ID="3" Percent="66"/>
 		</Monsters>
 	</Location>
 	<Location X="0" Y="1" Name="Herbalist's Hut" ImageName="HerbalistsHut.png">
@@ -45,7 +45,7 @@
 	<Location X="0" Y="2" Name="Herbalist's Garden" ImageName="HerbalistsGarden.png">
 		<Description><![CDATA[There are many plants here, with snakes hiding behind them.]]></Description>
 		<Monsters>
-			<Monster ID="1" Percent="100"/>
+			<Monster ID="1" Percent="75"/>
 		</Monsters>
 	</Location>
 </Locations>

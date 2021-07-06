@@ -287,6 +287,29 @@ namespace Engine.ViewModels
             }
         }
 
+        public void EquipCurrentArmour()
+        {
+            if (CurrentPlayer.CurrentArmour != null)
+            {
+                if (_currentBattle == null)
+                {
+                    CurrentPlayer.OnActionPerformed += OnEquipItemActionPerformed;
+                }
+
+                CurrentPlayer.UseEquipItemAction();
+
+                if (_currentBattle == null)
+                {
+                    CurrentPlayer.OnActionPerformed -= OnEquipItemActionPerformed;
+                }
+            }
+        }
+
+        private void OnEquipItemActionPerformed(object sender, string result)
+        {
+            _messageBroker.RaiseMessage(result);
+        }
+
         private void OnConsumableActionPerformed(object sender, string result)
         {
             _messageBroker.RaiseMessage(result);

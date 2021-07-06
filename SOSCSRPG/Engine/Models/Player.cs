@@ -25,7 +25,7 @@ namespace Engine.Models
             }
         }
 
-        public new int ArmourRating { get; set; }
+//        public new int ArmourRating { get; set; }
 
         public ObservableCollection<QuestStatus> Quests { get; } =
             new ObservableCollection<QuestStatus>();
@@ -42,16 +42,18 @@ namespace Engine.Models
 
         public Player(string name, int experiencePoints,
             int maximumHitPoints, int currentHitPoints,
-            ObservableCollection<PlayerAttribute> attributes, int gold) :
+            ObservableCollection<PlayerAttribute> attributes, int gold, int armourRating) :
             base(name, maximumHitPoints, currentHitPoints, attributes, gold)
         {
             ExperiencePoints = experiencePoints;
-            ArmourRating = 10;
+            ArmourRating = armourRating;
             foreach (PlayerAttribute attribute in attributes)
             {
                 Attributes.Add(attribute);
             }
         }
+
+        
 
         public void AddExperience(int experiencePoints)
         {
