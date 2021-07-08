@@ -17,7 +17,10 @@ namespace Engine.Models
         private int _gold;
         private int _level;
         private int _armourRating;
-        //private string _actionTaken;
+        private int _modifiedArmourRating;
+        private int _lastAttackRollResult;
+        private int _lastDamageRollResult;
+        private string _actionTaken;
         private GameItem _currentWeapon;
         private GameItem _currentArmour;
         private GameItem _currentShield;
@@ -88,6 +91,37 @@ namespace Engine.Models
             }
         }
 
+        public int ModifiedArmourRating
+        {
+            get => _modifiedArmourRating;
+            set
+            {
+                _modifiedArmourRating = value;
+                OnPropertyChanged();
+            }
+        }
+        public int LastAttackRollResult
+        {
+            get => _lastAttackRollResult;
+
+            set
+            {
+                _lastAttackRollResult = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public int LastDamageRollResult
+        {
+            get => _lastDamageRollResult;
+
+            set
+            {
+                _lastDamageRollResult = value;
+                OnPropertyChanged();
+            }
+        }
+
         public string ActionTaken { get; set; }
 
         public Inventory Inventory
@@ -132,7 +166,7 @@ namespace Engine.Models
                 }
 
                 _currentArmour = value;
-                _armourRating = _currentArmour.BaseDefense + GetAttributeValueModifier(this, "DEX");
+                _armourRating = _currentArmour.BaseDefense + GetAttributeValueRollModifier(this, "DEX");
 
                 if (_currentArmour != null)
                 {
@@ -308,79 +342,79 @@ namespace Engine.Models
 
         //method to get int modifier based on attributes
         //called in AttackWithWeapon class
-        public int GetAttributeValueModifier(LivingEntity entity, string key)
+        public int GetAttributeValueRollModifier(LivingEntity entity, string key)
         {
             int entityAttributeValue = entity.GetAttributeModifiedValue(key);
-            int attributeValueModifier = 0;
+            int attributeValueRollModifier = 0;
 
             switch (entityAttributeValue)
             {
                 case 1:
-                    attributeValueModifier = -5;
+                    attributeValueRollModifier = -5;
                     break;
                 case 2:
-                    attributeValueModifier = -4;
+                    attributeValueRollModifier = -4;
                     break;
                 case 3:
-                    attributeValueModifier = -4;
+                    attributeValueRollModifier = -4;
                     break;
                 case 4:
-                    attributeValueModifier = -3;
+                    attributeValueRollModifier = -3;
                     break;
                 case 5:
-                    attributeValueModifier = -3;
+                    attributeValueRollModifier = -3;
                     break;
                 case 6:
-                    attributeValueModifier = -2;
+                    attributeValueRollModifier = -2;
                     break;
                 case 7:
-                    attributeValueModifier = -2;
+                    attributeValueRollModifier = -2;
                     break;
                 case 8:
-                    attributeValueModifier = -1;
+                    attributeValueRollModifier = -1;
                     break;
                 case 9:
-                    attributeValueModifier = -1;
+                    attributeValueRollModifier = -1;
                     break;
                 case 10:
-                    attributeValueModifier = 0;
+                    attributeValueRollModifier = 0;
                     break;
                 case 11:
-                    attributeValueModifier = 0;
+                    attributeValueRollModifier = 0;
                     break;
                 case 12:
-                    attributeValueModifier = 1;
+                    attributeValueRollModifier = 1;
                     break;
                 case 13:
-                    attributeValueModifier = 1;
+                    attributeValueRollModifier = 1;
                     break;
                 case 14:
-                    attributeValueModifier = 2;
+                    attributeValueRollModifier = 2;
                     break;
                 case 15:
-                    attributeValueModifier = 2;
+                    attributeValueRollModifier = 2;
                     break;
                 case 16:
-                    attributeValueModifier = 3;
+                    attributeValueRollModifier = 3;
                     break;
                 case 17:
-                    attributeValueModifier = 3;
+                    attributeValueRollModifier = 3;
                     break;
                 case 18:
-                    attributeValueModifier = 4;
+                    attributeValueRollModifier = 4;
                     break;
                 case 19:
-                    attributeValueModifier = 4;
+                    attributeValueRollModifier = 4;
                     break;
                 case 20:
-                    attributeValueModifier = 5;
+                    attributeValueRollModifier = 5;
                     break;
                 case 21:
-                    attributeValueModifier = 5;
+                    attributeValueRollModifier = 5;
                     break;
             }
 
-            return attributeValueModifier;
+            return attributeValueRollModifier;
         }
 
         #region Private functions

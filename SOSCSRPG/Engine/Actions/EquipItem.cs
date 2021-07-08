@@ -22,7 +22,7 @@ namespace Engine.Actions
         {
             actor.ActionTaken = "EquippedItem";
             ReportResult("You equipped " + _itemInUse.Name);
-            actor.ArmourRating = _baseDefense + actor.GetAttributeValueModifier(actor, "DEX");
+            actor.ArmourRating = _baseDefense + actor.GetAttributeValueRollModifier(actor, "DEX");
         }
     }
 }

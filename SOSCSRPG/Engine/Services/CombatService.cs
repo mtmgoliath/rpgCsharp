@@ -37,15 +37,24 @@ namespace Engine.Services
 
             //Roll for initiative! d20 + DexMod
             
-            int playerResult = DiceService.Instance.Roll(20, 1, modifier: player.GetAttributeValueModifier(player, "DEX")).Value;
-            int opponentResult = DiceService.Instance.Roll(20, 1, modifier: opponent.GetAttributeValueModifier(opponent, "DEX")).Value;
+            int playerResult = DiceService.Instance.Roll(20, 1, modifier: player.GetAttributeValueRollModifier(player, "DEX")).Value;
+            int opponentResult = DiceService.Instance.Roll(20, 1, modifier: opponent.GetAttributeValueRollModifier(opponent, "DEX")).Value;
             return playerResult >= opponentResult ? Combatant.Player : Combatant.Opponent;
         }
 
-        public static bool EvaluateActionTaken(string blockAction)
+        public static bool BlockActionTaken(string actionTaken)
         {
-            return blockAction == "Blocked";
+            return actionTaken == "Blocked";
         }
+        public static bool AttackActionTaken(string actionTaken)
+        {
+            return actionTaken == "Attacked";
+        }
+        public static bool DodgeActionTaken(string actionTaken)
+        {
+            return actionTaken == "Dodged";
+        }
+
         public static bool AttackSucceeded(LivingEntity attacker, LivingEntity target)
         {
             int attackRollResultWithoutModifier = DiceService.Instance.Roll(20).Value;
@@ -53,10 +62,10 @@ namespace Engine.Services
             
 
             int attackRollResult = attackRollResultWithoutModifier +
-                                   attacker.GetAttributeValueModifier(attacker, attacker.CurrentWeapon.AttackStat);
+                                   attacker.GetAttributeValueRollModifier(attacker, attacker.CurrentWeapon.AttackStat);
             
             int armourRatingToBeat = target.ArmourRating;
-            AttackRollResult = attackRollResult;
+            attacker.LastAttackRollResult = attackRollResult;
             return attackRollResult >= armourRatingToBeat;
         }
 

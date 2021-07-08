@@ -17,7 +17,7 @@ namespace Engine.Actions
             string targetName = (target is Player) ? "you" : $"the {target.Name.ToLower()}";
             if (CombatService.AttackSucceeded(actor, target))
             {
-                int damage = DiceService.Instance.Roll(_damageDice).Value + actor.GetAttributeValueModifier(actor, "STR");
+                int damage = DiceService.Instance.Roll(_damageDice).Value + actor.GetAttributeValueRollModifier(actor, "STR");
                 ReportResult($"{actorName} hit {targetName} for {damage} point{(damage > 1 ? "s" : "")}.");
                 target.TakeDamage(damage);
             }

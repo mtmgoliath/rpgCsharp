@@ -51,8 +51,29 @@
         </Menu>
 
         <!-- Player stats -->
-        <Grid Grid.Row="1" Grid.Column="0" Background="LightSlateGray">
+        <Grid Grid.Row="1" Grid.Column="0" Background="RoyalBlue">
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -66,25 +87,37 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content=""/>
+            <Label Grid.Row="1" Grid.Column="0" Content="Name:"/>
+            <Label Grid.Row="1" Grid.Column="1" Content="{Binding CurrentPlayer.Name}"/>
+            
+            <Label Grid.Row="3" Grid.Column="0" Content="Hit points:"/>
+            <Label Grid.Row="3" Grid.Column="1" Content="{Binding CurrentPlayer.CurrentHitPoints}"/>
+            <Label Grid.Row="4" Grid.Column="0" Content="Gold:"/>
+            <Label Grid.Row="4" Grid.Column="1" Content="{Binding CurrentPlayer.Gold}"/>
+            <Label Grid.Row="5" Grid.Column="0" Content="XP:"/>
+            <Label Grid.Row="5" Grid.Column="1" Content="{Binding CurrentPlayer.ExperiencePoints}"/>
+            <Label Grid.Row="6" Grid.Column="0" Content="Level:"/>
+            <Label Grid.Row="6" Grid.Column="1" Content="{Binding CurrentPlayer.Level}"/>
+            <Label Grid.Row="7" Grid.Column="0" Content="Armour Rating:"/>
+            <Label Grid.Row="7" Grid.Column="1" Content="{Binding CurrentPlayer.ArmourRating}"/>
+            <Label Grid.Row="8" Grid.Column="0" Content=""/>
 
-            <Label Grid.Row="0" Grid.Column="0" Content="Name:"/>
-            <Label Grid.Row="0" Grid.Column="1" Content="{Binding CurrentPlayer.Name}"/>
-            <Label Grid.Row="1" Grid.Column="0" Content="Hit points:"/>
-            <Label Grid.Row="1" Grid.Column="1" Content="{Binding CurrentPlayer.CurrentHitPoints}"/>
-            <Label Grid.Row="2" Grid.Column="0" Content="Gold:"/>
-            <Label Grid.Row="2" Grid.Column="1" Content="{Binding CurrentPlayer.Gold}"/>
-            <Label Grid.Row="3" Grid.Column="0" Content="XP:"/>
-            <Label Grid.Row="3" Grid.Column="1" Content="{Binding CurrentPlayer.ExperiencePoints}"/>
-            <Label Grid.Row="4" Grid.Column="0" Content="Level:"/>
-            <Label Grid.Row="4" Grid.Column="1" Content="{Binding CurrentPlayer.Level}"/>
-            <Label Grid.Row="5" Grid.Column="0" Content="Armour Rating:"/>
-            <Label Grid.Row="5" Grid.Column="1" Content="{Binding CurrentPlayer.ArmourRating}"/>
-
+            <!--DEBUG CODE FOR BATTLE AND ACTIONS-->
+            <Label Grid.Row="9" Grid.Column="0" Content="Last Attack Roll:"/>
+            <Label Grid.Row="9" Grid.Column="1" Content="{Binding CurrentPlayer.LastAttackRollResult}"/>
+            <Label Grid.Row="10" Grid.Column="0" Content="Last Damage Roll:"/>
+            <Label Grid.Row="10" Grid.Column="1" Content="{Binding CurrentPlayer.LastDamageRollResult}"/>
+            
+            
+            
             <!-- Player Attributes -->
-            <ListBox Grid.Row="6" Grid.Column="0"
+            <ListBox Grid.Row="16" Grid.Column="0"
                       Grid.ColumnSpan="2"
                       Background="LightSlateGray"
                       BorderThickness="0"
+                      Margin="15, 15, 1, 1"
+                      Padding="2, 4"
                       Grid.IsSharedSizeScope="True"
                       ItemsSource="{Binding CurrentPlayer.Attributes}">
                 <ListBox.ItemTemplate>
@@ -128,8 +161,8 @@
             <!-- Game Messages -->
             <Border Grid.Row="0" Grid.Column="0"
                     Grid.RowSpan="2"
-                    BorderBrush="DarkCyan"
-                    BorderThickness="1">
+                    BorderBrush="DarkSlateGray"
+                    BorderThickness="4">
 
                 <RichTextBox x:Name="GameMessages"
                              Background="DarkCyan"
@@ -146,7 +179,7 @@
             <!-- Location information -->
             <Border Grid.Row="0" Grid.Column="1"
                     BorderBrush="DarkSlateGray"
-                    BorderThickness="1">
+                    BorderThickness="4">
 
                 <Grid Margin="3">
                     <Grid.RowDefinitions>
@@ -356,13 +389,13 @@
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="150"/>
-                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="50"/>
                     <ColumnDefinition Width="50"/>
                 </Grid.ColumnDefinitions>
-
-                <ComboBox Grid.Row="0" Grid.Column="0"
-                          Visibility="{Binding HasMonster, Converter={StaticResource BooleanToVisibility}}"
+                <Label Grid.Row="0" Grid.Column="0" Background="LightSkyBlue" BorderBrush="Black">Weapons:</Label>
+                <ComboBox Grid.Row="0" Grid.Column="1"
                           ItemsSource="{Binding CurrentPlayer.Inventory.Weapons}"
                           SelectedItem="{Binding CurrentPlayer.CurrentWeapon}"
                           DisplayMemberPath="Name"/>
@@ -376,7 +409,11 @@
                         BorderThickness="3px"
                         Click="OnClick_AttackMonster"/>
 
-                <ComboBox Grid.Row="1" Grid.Column="0"
+                <Label Grid.Row="1" Grid.Column="0"
+                       Background="LightSkyBlue"
+                       BorderBrush="Black" 
+                       Visibility="{Binding CurrentPlayer.Inventory.HasShield, Converter={StaticResource BooleanToVisibility}}">Shields:</Label>
+                <ComboBox Grid.Row="1" Grid.Column="1"
                           Visibility="{Binding CurrentPlayer.Inventory.HasShield, Converter={StaticResource BooleanToVisibility}}"
                           ItemsSource="{Binding CurrentPlayer.Inventory.Shields}"
                           SelectedItem="{Binding CurrentPlayer.CurrentShield}"
@@ -391,7 +428,11 @@
                         BorderThickness="3px"
                         Click="OnClick_BlockMonster"/>
 
-                <ComboBox Grid.Row="2" Grid.Column="0"
+                <Label Grid.Row="2" Grid.Column="0" 
+                       Background="LightSkyBlue" 
+                       BorderBrush="Black"
+                       Visibility="{Binding CurrentPlayer.Inventory.HasConsumable, Converter={StaticResource BooleanToVisibility}}">Healing items:</Label >
+                <ComboBox Grid.Row="2" Grid.Column="1"
                           Visibility="{Binding CurrentPlayer.Inventory.HasConsumable, Converter={StaticResource BooleanToVisibility}}"
                           ItemsSource="{Binding CurrentPlayer.Inventory.Consumables}"
                           SelectedItem="{Binding CurrentPlayer.CurrentConsumable}"
@@ -406,14 +447,19 @@
                         Content="Use"
                         Click="OnClick_UseCurrentConsumable"/>
 
-                <ComboBox Grid.Row="3" Grid.Column="0"
+                <Label Grid.Row="3" Grid.Column="0"
+                       Background="LightSkyBlue"
+                       BorderBrush="Black"
+                       Visibility="{Binding CurrentPlayer.Inventory.HasArmour, Converter={StaticResource BooleanToVisibility}}"
+                       >Armour:</Label>
+                <ComboBox Grid.Row="3" Grid.Column="1"
                           Visibility="{Binding CurrentPlayer.Inventory.HasArmour, Converter={StaticResource BooleanToVisibility}}"
                           ItemsSource="{Binding CurrentPlayer.Inventory.Armour}"
                           SelectedItem="{Binding CurrentPlayer.CurrentArmour}"
                           DisplayMemberPath="Name"/>
 
                 <Button Grid.Row="3" Grid.Column="2"
-                        Visibility="{Binding CurrentPlayer.Inventory.HasConsumable, Converter={StaticResource BooleanToVisibility}}"
+                        Visibility="{Binding CurrentPlayer.Inventory.HasArmour, Converter={StaticResource BooleanToVisibility}}"
                         FontWeight="DemiBold"
                         Background="ForestGreen"
                         BorderBrush="DarkGreen"

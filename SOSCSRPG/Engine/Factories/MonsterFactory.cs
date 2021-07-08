@@ -60,7 +60,7 @@ namespace Engine.Factories
                     Convert.ToInt32(node.SelectSingleNode("./Constitution").InnerText);
                 attributes.First(a => a.Key.Equals("CON")).ModifiedValue =
                     Convert.ToInt32(node.SelectSingleNode("./Constitution").InnerText);
-
+                int armourRatingFromNode = Convert.ToInt32(node.SelectSingleNode("./ArmourRating").InnerText);
 
                 Monster monster =
                     new Monster(node.AttributeAsInt("ID"),
@@ -70,7 +70,8 @@ namespace Engine.Factories
                                 attributes,
                                 ItemFactory.CreateGameItem(node.AttributeAsInt("WeaponID")),
                                 node.AttributeAsInt("RewardXP"),
-                                node.AttributeAsInt("Gold"));
+                                node.AttributeAsInt("Gold"),
+                                armourRatingFromNode);
 
                 XmlNodeList lootItemNodes = node.SelectNodes("./LootItems/LootItem");
 

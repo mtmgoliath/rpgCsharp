@@ -1,0 +1,186 @@
+{
+  "CurrentPlayer": {
+    "ExperiencePoints": 170,
+    "Quests": [
+      {
+        "PlayerQuest": {
+          "ID": 1
+        },
+        "IsCompleted": true
+      },
+      {
+        "PlayerQuest": {
+          "ID": 2
+        },
+        "IsCompleted": false
+      }
+    ],
+    "Recipes": [
+      {
+        "ID": 1
+      },
+      {
+        "ID": 2
+      },
+      {
+        "ID": 3
+      }
+    ],
+    "Attributes": [
+      {
+        "Key": "STR",
+        "DisplayName": "Strength",
+        "DiceNotation": "4d6p1",
+        "BaseValue": 16,
+        "ModifiedValue": 15
+      },
+      {
+        "Key": "DEX",
+        "DisplayName": "Dexterity",
+        "DiceNotation": "4d6p1",
+        "BaseValue": 13,
+        "ModifiedValue": 14
+      },
+      {
+        "Key": "CON",
+        "DisplayName": "Constitution",
+        "DiceNotation": "4d6p1",
+        "BaseValue": 12,
+        "ModifiedValue": 12
+      },
+      {
+        "Key": "INT",
+        "DisplayName": "Intelligence",
+        "DiceNotation": "4d6p1",
+        "BaseValue": 15,
+        "ModifiedValue": 15
+      },
+      {
+        "Key": "WIS",
+        "DisplayName": "Wisdom",
+        "DiceNotation": "4d6p1",
+        "BaseValue": 8,
+        "ModifiedValue": 8
+      },
+      {
+        "Key": "CHA",
+        "DisplayName": "Charisma",
+        "DiceNotation": "4d6p1",
+        "BaseValue": 13,
+        "ModifiedValue": 13
+      }
+    ],
+    "Name": "Moirak Etyrnim",
+    "CurrentHitPoints": 20,
+    "MaximumHitPoints": 20,
+    "Gold": 34,
+    "Level": 2,
+    "ArmourRating": 12,
+    "ModifiedArmourRating": 0,
+    "LastAttackRollResult": 17,
+    "LastDamageRollResult": 7,
+    "ActionTaken": "Attacked",
+    "Inventory": {
+      "Items": [
+        {
+          "ItemTypeID": 1001
+        },
+        {
+          "ItemTypeID": 6001
+        },
+        {
+          "ItemTypeID": 1005
+        },
+        {
+          "ItemTypeID": 1009
+        },
+        {
+          "ItemTypeID": 6003
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 3006
+        },
+        {
+          "ItemTypeID": 3006
+        },
+        {
+          "ItemTypeID": 3006
+        },
+        {
+          "ItemTypeID": 3006
+        },
+        {
+          "ItemTypeID": 3004
+        },
+        {
+          "ItemTypeID": 3004
+        },
+        {
+          "ItemTypeID": 3005
+        },
+        {
+          "ItemTypeID": 2002
+        },
+        {
+          "ItemTypeID": 3007
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9003
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9003
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9004
+        },
+        {
+          "ItemTypeID": 9003
+        }
+      ]
+    },
+    "CurrentWeapon": {
+      "ItemTypeID": 1009
+    },
+    "CurrentArmour": {
+      "ItemTypeID": 6003
+    },
+    "CurrentShield": null,
+    "CurrentConsumable": {
+      "ItemTypeID": 2002
+    }
+  },
+  "CurrentLocation": {
+    "XCoordinate": 0,
+    "YCoordinate": -1
+  }
+}

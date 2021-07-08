@@ -38,7 +38,7 @@ namespace Engine.Models
         //redundant?? \/ \/
         public int GetAttributeModifier(LivingEntity entity, string attributeKey)
         {
-            int entityAttributeModifier = entity.GetAttributeValueModifier(entity, attributeKey);
+            int entityAttributeModifier = entity.GetAttributeValueRollModifier(entity, attributeKey);
             return entityAttributeModifier;
         }
     }//make method to change armour.

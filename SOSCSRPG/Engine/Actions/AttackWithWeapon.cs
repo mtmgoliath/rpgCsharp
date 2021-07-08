@@ -31,8 +31,9 @@ namespace Engine.Actions
             if (CombatService.AttackSucceeded(actor, target) && CombatService.CriticalHit)
             {
                 int damage = (2 * DiceService.Instance.Roll(_damageDice).Value)
-                             + actor.GetAttributeValueModifier(actor, _attackStat);
-                if (CombatService.EvaluateActionTaken(target.ActionTaken))
+                             + actor.GetAttributeValueRollModifier(actor, _attackStat);
+                actor.LastDamageRollResult = damage;
+                if (CombatService.BlockActionTaken(target.ActionTaken))
                 {
                     damage = (int) Math.Floor(0.25 * damage);
                 }
@@ -42,16 +43,17 @@ namespace Engine.Actions
                     damage = 0;
                 }
 
-                ReportResult($"{actorName} rolled {CombatService.AttackRollResult} to hit." + "\n" +
+                ReportResult($"{actorName} rolled {actor.LastAttackRollResult} to beat {target.ArmourRating}." + "\n" +
                              $"{actorName} critically hit {targetName} for {damage} point{(damage > 1 ? "s" : "")}!");
-               // CombatService.AttackRollResult = 0;
+               
                 target.TakeDamage(damage);
             }
             else if (CombatService.AttackSucceeded(actor, target))
             {
                 int damage = DiceService.Instance.Roll(_damageDice).Value 
-                             + actor.GetAttributeValueModifier(actor, _attackStat);
-                if (CombatService.EvaluateActionTaken(target.ActionTaken))
+                             + actor.GetAttributeValueRollModifier(actor, _attackStat);
+                actor.LastDamageRollResult = damage;
+                if (CombatService.BlockActionTaken(target.ActionTaken))
                 {
                     damage = (int)Math.Floor(0.5 * damage);
                 }
@@ -61,14 +63,14 @@ namespace Engine.Actions
                     damage = 0;
                 }
                 
-                ReportResult($"{actorName} rolled {CombatService.AttackRollResult} to hit." + "\n" +
+                ReportResult($"{actorName} rolled {actor.LastAttackRollResult} to beat {target.ArmourRating}." + "\n" +
                              $"{actorName} hit {targetName} for {damage} point{(damage > 1 ? "s" : "")}.");
-               // CombatService.AttackRollResult = 0;
+               
                 target.TakeDamage(damage);
             }
             else
             {
-                ReportResult($"{actorName} missed {targetName}.");
+                ReportResult($"{actorName} rolled {actor.LastAttackRollResult} to hit but missed {targetName}.");
             }
         }
     }

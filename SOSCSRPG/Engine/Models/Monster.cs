@@ -20,7 +20,7 @@ namespace Engine.Models
         public Monster(int id, string name, string imageName,
                        int maximumHitPoints, ObservableCollection<PlayerAttribute> attributes,
                        GameItem currentWeapon,
-                       int rewardExperiencePoints, int gold) :
+                       int rewardExperiencePoints, int gold, int armourRating) :
             base(name, maximumHitPoints, maximumHitPoints, attributes, gold)
         {
             ID = id;
@@ -28,6 +28,7 @@ namespace Engine.Models
             CurrentWeapon = currentWeapon;
             RewardExperiencePoints = rewardExperiencePoints;
             Attributes = attributes;
+            ArmourRating = armourRating;
         }
 
         public void AddItemToLootTable(int id, int percentage)
@@ -44,7 +45,7 @@ namespace Engine.Models
             // "Clone" this monster to a new Monster object
             Monster newMonster =
                 new Monster(ID, Name, ImageName, MaximumHitPoints, Attributes,
-                            CurrentWeapon, RewardExperiencePoints, Gold);
+                            CurrentWeapon, RewardExperiencePoints, Gold, ArmourRating);
 
             foreach (ItemPercentage itemPercentage in _lootTable)
             {
