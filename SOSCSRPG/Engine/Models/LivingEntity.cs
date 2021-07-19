@@ -326,6 +326,11 @@ namespace Engine.Models
             Inventory = Inventory.RemoveItems(itemQuantities);
         }
 
+        public void AddItemsToInventory(IEnumerable<ItemQuantity> itemQuantities)
+        {
+            Inventory = Inventory.AddItems(itemQuantities);
+        }
+
         public int GetAttributeModifiedValue(string key)
         {
             var tempModValue = 0;

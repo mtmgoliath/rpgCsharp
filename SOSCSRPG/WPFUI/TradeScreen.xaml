@@ -63,7 +63,7 @@ Binding="{Binding Item.Price}"/>
                 <DataGridTemplateColumn MinWidth="75">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Click="OnClick_Sell"
+                            <Button Click="OnClick_SellAll"
                                     Width="55"
                                     Content="Sell All"/>
                         </DataTemplate>
@@ -105,7 +105,7 @@ Content="Buy 1"/>
                     <DataGridTemplateColumn MinWidth="75">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Click="OnClick_Buy"
+                            <Button Click="OnClick_BuyAll"
                                 Width="55"
                                 Content="Buy 5"/>
                         </DataTemplate>

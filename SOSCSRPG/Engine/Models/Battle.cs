@@ -28,6 +28,10 @@ namespace Engine.Models
             {
                AttackPlayer();
             }
+            else
+            {
+                _messageBroker.RaiseMessage("It hasn't seen you, you act first!");
+            }
         }
 
         public void AttackOpponent()

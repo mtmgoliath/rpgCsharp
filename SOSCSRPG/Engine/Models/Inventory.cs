@@ -14,6 +14,7 @@ namespace Engine.Models
 
         private readonly List<GroupedInventoryItem> _backingGroupedInventoryItems =
             new List<GroupedInventoryItem>();
+        //this contains a list of all the unique named game items with object containing  obj gameItem  and int quantity
 
         #endregion
 
